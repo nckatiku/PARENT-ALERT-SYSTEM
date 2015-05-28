@@ -3,7 +3,7 @@
     <?php
 
     include 'layout.php';
-    
+
 
 
 
@@ -42,21 +42,23 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="canvasjs.min.js"></script>
+    
 
 <!DOCTYPE HTML>
 <html>
 
 <head>
 
-  
   <script type="text/javascript">
-  window.onload = function () {
+  window.onload = function x() {
+
+    var lo = 122;
+
     var chart = new CanvasJS.Chart("chartContainer",
     {
-      theme: "theme2",
+      theme: "theme3",
       title:{
-        text: "Earthquakes - per month"
+        text: "Messages - per month"
       },
       animationEnabled: true,
       axisX: {
@@ -74,15 +76,15 @@
         type: "column",
         //lineThickness: 3,        
         dataPoints: [
-        { x: new Date(2012, 00, 1), y: 450 },
+        { x: new Date(2012, 00, 1), y: lo },
         { x: new Date(2012, 01, 1), y: 414},
-        { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
+        { x: new Date(2012, 02, 1), y: 520},
         { x: new Date(2012, 03, 1), y: 460 },
         { x: new Date(2012, 04, 1), y: 450 },
         { x: new Date(2012, 05, 1), y: 500 },
         { x: new Date(2012, 06, 1), y: 480 },
         { x: new Date(2012, 07, 1), y: 480 },
-        { x: new Date(2012, 08, 1), y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross"},
+        { x: new Date(2012, 08, 1), y: 410 },
         { x: new Date(2012, 09, 1), y: 500 },
         { x: new Date(2012, 10, 1), y: 480 },
         { x: new Date(2012, 11, 1), y: 510 }
@@ -97,28 +99,9 @@
 chart.render();
 }
 </script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
 
-<script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
-  });
-  </script>
 
-<script type="text/javascript">
-
-function viewline(){
-  document.getElementById("chartContainer").style.visibility = "visible";
-
-}
-  </script>
-  
-
-  <script type="text/javascript">
-
-function hideline(){
-  document.getElementById("chartContainer").style.visibility = "hidden";
-}
-  </script>
   
 <script type="text/javascript">
     
@@ -127,6 +110,8 @@ function hideline(){
     {
 
         document.getElementById("b").style.visibility = "visible";
+        document.getElementById("b").style.height = "50px";
+        document.getElementById("b").style.width = "100%";
         return true;
     }
 </script>
@@ -138,6 +123,8 @@ function hideline(){
     {
 
         document.getElementById("b").style.visibility = "hidden";
+          document.getElementById("b").style.height = "1px";
+        document.getElementById("b").style.width = "100%";
         return true;
     }
 </script>
@@ -166,14 +153,8 @@ function hideline(){
             <ul class="nav navbar-right top-nav">
             
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a  href="login_lit.php" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-power-off"></i> Logout</a>
                     
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -187,13 +168,13 @@ function hideline(){
                 <ul class="nav navbar-nav side-nav">
                 <br>
                     <li class="active">
-                  <a href="Adminpage.php" class="active"> <i class="fa  fa-dashboard"></i>     Admin Page</a>
+                  <a href="adminpage.php" class="active"> <i class="fa  fa-dashboard"></i> Admin Page</a>
                 
                     </li>
 
 
                     <li>
-                        <a href="index.html"><i class="fa fa-fw fa-tasks"></i>Back To home</a>
+                        <a href="myhome.php"><i class="fa fa-fw fa-tasks"></i>Back To home</a>
                     </li>
                    
                    
@@ -214,26 +195,35 @@ function hideline(){
                              
                         </h1>
 
+
                          <div class="row">
 
-   <h3 style="color:rgb(110,110,110);">Monthly Analysis of Messages transactions </h3> <br>
+    <div class="centered"><h3 style="color:rgb(110,110,110);">Monthly Analysis of Messages transactions </h3> <br></div>
 
    </div>
+
+
+   
+
+    <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+  
                
 
-        
 
-              <div id="chartContainer" style="height: 300px; width: 100%;">
+</form>        
+
+  
   </div>
 
+          <hr>
 
-
-
-           </div>
+          </div>
                      
 
+                          
                    
-                   <h3 style="color:rgb(110,110,110);">Number Of Students </h3><br>
+                  <div class="centered"> <h3 style="color:rgb(110,110,110);">Number Of Students </h3><br> </div>
                 
                  <div class="row">
                     
@@ -274,19 +264,60 @@ function hideline(){
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
+
+                                        <div class="col-md-2">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-3x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">                                    <div>
+                                        <?php
+
+                                        require 'connect.php';
+
+                                        $query= "SELECT * FROM  student where `class` = 'crech'";
+                           
+                            if(mysql_query($query))
+             {
+                              $query_run=mysql_query($query);
+
+                               echo mysql_num_rows($query_run);
+
+                              
+              }
+
+          ?>
+          </div></div>
+                                        <div>CRECH</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     
 
                 
 
                     <div class="col-md-2">
-                        <div class="panel panel-green">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -317,8 +348,8 @@ function hideline(){
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -328,7 +359,7 @@ function hideline(){
 
 
                     <div class="col-md-2">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -359,15 +390,15 @@ function hideline(){
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="panel panel-green">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -398,8 +429,8 @@ function hideline(){
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -407,18 +438,18 @@ function hideline(){
                     </div>
 
                    
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
+                                        <i class="fa fa-support fa-3x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge"><div>
                                         <?php
 
-                                        $query= "SELECT * FROM  student";
+                                        $query= "SELECT * FROM  student WHERE class != 'Alumini'";
                            
                             if(mysql_query($query))
              {
@@ -437,8 +468,8 @@ function hideline(){
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -452,10 +483,10 @@ function hideline(){
 
 
 
-
+          <hr>
              <div class="row">
 
-   <h3 style="color:rgb(110,110,110);">Yearly Events And Holidays </h3> <br>
+   <div class="centered"><h3 style="color:rgb(110,110,110)">Yearly Events And Holidays </h3> <br></div>
             
            <div class="col-sm-3">
                         <div class="list-group">
@@ -543,6 +574,8 @@ function hideline(){
                             <a href="#" class="list-group-item active">National</a>
                                                      <?php
 
+                                      
+
                         $query="SELECT * FROM `events` WHERE `type` = 'national'";
     
                             if(mysql_query($query))
@@ -578,6 +611,8 @@ function hideline(){
                        
                            
                             <?php
+
+
 
                         $query="SELECT * FROM `events` WHERE `type` = 'personal'";
     
@@ -619,7 +654,7 @@ function hideline(){
               <div id ="a"   onclick="newev()" ondblclick="newev2()" class="btn btn-success">Add New Event </div><br><br>
 
              <?php
-include 'connect.php';
+             include 'connect.php';
 
 
              if(isset($_POST['type'])&& isset($_POST['name']) && isset($_POST['date'])) 
@@ -637,6 +672,8 @@ include 'connect.php';
 
               if(!empty($type) && !empty($name) && !empty($date))
               {
+
+
 
                 $chk = "SELECT * FROM `events` WHERE `type` = '$type' AND `name` = '$name'";
 
@@ -669,7 +706,7 @@ include 'connect.php';
 
 
 
-                 <div id="b" style="visibility:hidden"> <form method ="POST" action ="adminpage.php" class="form form-horizontal style-from" style="background-color:rgb(91,130,181)">
+                 <div id="b" style="visibility:hidden;height:1px;"> <form method ="POST" action ="adminpage.php" class="form form-horizontal style-from" style="background-color:rgb(91,130,181)">
 
                                     <br>
                                      <div class="form-group">
@@ -679,10 +716,12 @@ include 'connect.php';
                                             <div class="col-md-2">
 
                                     
-                                                <select name="type" class="form-control">
+                                                <select  name="type" class="form-control style-form">
                                               <option >  Choose</option>
-                                         <option >  Social</option>
-                                        <option  >Cultural</option>
+
+                                         <option>  Social</option>
+
+                                        <option>Cultural</option>
                                          <option>National</option>
                           
                                                 <option>Personal</option>
@@ -727,15 +766,15 @@ include 'connect.php';
                                           
                                          
 
-                                          </form>  </div>
+                                          </form>    </div>
 
                 
 
 
 
-    
+                <br>
                    <div class="row">
-                    <h3 style="color:rgb(110,110,110);">Message Count </h3> <br>
+                    <div class="centered"> <h3 style="color:rgb(110,110,110);">Message Count </h3> <br> </div>
 
                        <div class="col-sm-4">
                         <div class="panel panel-yellow">

@@ -67,7 +67,7 @@ header("Location:login_lit.php");
 			
               	  	
                   <li class="sub-menu">
-                      <a   href="myhome.php">
+                      <a   href="userhome.php">
                           <i class="li_shop"></i>
                           <span >Back to Home</span>
                       </a>
@@ -80,52 +80,13 @@ header("Location:login_lit.php");
                           <span>Compose</span>
                       </a>
                       <ul class="sub">
-                          <li  ><a  href="mycompose.php">New Event Message</a></li>
-                 <li  class="active"><a  href="simple.php">Simple Message</a></li>
+                          <li  ><a  href="mycompose2.php">New Event Message</a></li>
+                 <li  class="active"><a  href="usersimple.php">Simple Message</a></li>
                        
                           
                       </ul>
                   </li> 
     
-  
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="li_pen"></i>
-                          <span> Contact</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="newcontact.php">New Contact</a></li>
-                <li ><a  href="classselect.php">Update Contact</a></li>
-                 <li ><a  href="delete.php">Delete Contact</a></li>
-                 
-                      </ul>
-                  </li> 
-          
-          <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="li_pen"></i>
-                          <span> Class Operations</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="updateclass.php">Update Whole Class</a></li>
-                <li ><a  href="getcontacts.php">Get All Contacts</a></li>
-                 
-                 <li ><a  href="delkgii.php">Delete Class KG-II</a></li>
-                      </ul>
-                  </li>
-
-                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="li_user"></i>
-                          <span>Staff</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="staffmessage.php">Message Staff</a></li>
-              <li><a  href="newstaff.php">Add New Staff </a></li>
-              <li><a  href="staffdel.php">Delete a Staff</a></li>
-              <li><a  href="selectstaff.php">Update Staff Contact</a></li>
- 
-          
                  
               </ul>
               <!-- sidebar menu end-->
@@ -144,7 +105,7 @@ header("Location:login_lit.php");
 			   <div class="col-md-offset-2">
 					<div class="col-lg-11">
 					
-								<form class="form-horizontal style-form" action ="main2.php"  method="POST">
+								<form class="form-horizontal style-form" action ="usermain2.php"  method="POST">
 									
 									
 									<div class="form-panel" >
@@ -158,17 +119,21 @@ header("Location:login_lit.php");
 											</div>
 											<div class="col-sm-6">
 
-										 <select multiple="multiple" name="classes[]" class="form-control">
-                                    <option>Crech</option>
-                                        <option>Playgroup </option>
+										  <select name="class" class="form-control">
                                        
+                                         <option >Choose Class</option>
                                         <option  >Nursery</option>
-                                        
-                                    
-                    <option>KG-I</option>
+                                         <option>Playgroup</option>
+                        
+                                                <option>KG-I</option>
                                         <option>KG-II</option>
-      
-  </select>
+                                         <option>All</option>
+            
+                                        
+                                             </select>
+
+                         </select>
+                    
 
                     	</div>	
 										</div> <br><br><br><br><br><br>

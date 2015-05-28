@@ -1,6 +1,7 @@
 <?php
 
  require 'connect.php';
+
  session_start();
 
 if(!$_SESSION['id'])
@@ -15,7 +16,7 @@ header("Location:login_lit.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?php
+     <?php
 
     include 'layout.php';
 
@@ -39,10 +40,10 @@ header("Location:login_lit.php");
             
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-
+                
               <button class="btn btn-warning" type="button">
                           <a href="logout.php"><span style="color:white"> Logout <i class="glyphicon glyphicon-off"> </i></span></a>
-                            </button>   
+                            </button>
             	</ul>
             </div>
 			</div>
@@ -60,40 +61,55 @@ header("Location:login_lit.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-			     	 <p class="centered"><img src="imgs/im6.jpg" class="img-circle"  width="250" height = "180"></p>
+			  
+			  <div style="margin-top:1%"> <p class="centered"><img  src="imgs/im5.jpg"class="img-circle"  width="250" height = "180"></p> </div>
 				  <li class="mt">
                       <a href="myhome.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Back to Home</span>
                       </a>
                   </li>
-				  <li>
-				  <li class="sub-menu">
+				                    <li class="sub-menu">
                       <a  href="javascript:;" >
+                          <i class="li_mail"></i>
+                          <span>Compose</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="mycompose.php">New Event Message</a></li>
+						    <li ><a  href="simple.php">Simple Message</a></li>
+                          
+                      </ul>
+                  </li>
+
+                   <li class="sub-menu">
+                      <a class ="active" href="javascript:;" >
                           <i class="li_pen"></i>
                           <span> Contact</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-						    <li ><a  href="classselect.php">Update Contact</a></li>
-							   <li ><a  href="delete.php">Delete Contact</a></li>
+						    <li class="active"><a  href="classselect.php">Update Contact</a></li>
+							   <li ><a  href="delete.php"> Delete Contact </a></li>
 							   
                       </ul>
                   </li>
 				  
 				  <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="li_pen"></i>
                           <span> Class Operations</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="updateclass.php">Update Whole Class</a></li>
-						    <li class="active" ><a  href="getcontacts.php">Get All Contacts</a></li>
+                          <li><a  href="updateclass.php">Update Whole Class</a></li>
+						    <li ><a  href="getcontacts.php">Get All Contacts</a></li>
 							   
 							   <li ><a  href="delkgii.php">Delete Class KG-II</a></li>
                       </ul>
                   </li>
-				   <li class="sub-menu">
+                
+
+ 
+                <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="li_user"></i>
                           <span>Staff</span>
@@ -108,9 +124,7 @@ header("Location:login_lit.php");
                       </ul>
                   </li>
 
-                
 
-  
               <!-- sidebar menu end-->
 			</div>
 		</aside>
@@ -118,30 +132,27 @@ header("Location:login_lit.php");
 	<!-- BASIC FORM ELELEMNTS -->
 	<section id="main-content">
 		<section class="wrapper">
-		
 					
 			<div class="row mt">
-							<div class="col-sm-offset-2">
+			<div class="col-md-offset-2">
 					<div class="col-lg-12">
 					
-								<form class="form-horizontal style-form" action ="allcontact.php"  method="POST">
+								<form class="form-horizontal style-form" action ="updateselect2.php"  method="POST">
 									<div class="form-panel">
-
 	
-       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Select Class</span></div></div></h4><br>
-												
-                               <br> <br>												
+       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-4"><span style="color:white">Select a Class to Update student record</span></div></div></h4><br>
+									
+								
 										<div class="form-group">
 											<div class="col-sm-4">
 												<label class="label-control"><h4>Class</h4> </label>
 											</div>
 											<div class="col-sm-6">
 
-
-										
+											 
                           <select name="class" class="form-control">
                                        
-                                            <option >Choose Class</option>
+                                         <option >Choose Class</option>
                                                 <option>Crech</option>
                                                    <option>Playgroup</option>
                                         <option  >Nursery</option>
@@ -149,25 +160,25 @@ header("Location:login_lit.php");
                                            <option>KG-I</option>
                                         <option>KG-II</option>
                                       
-                                           <option>Alumini</option>
-                                         
             
                                         
                                              </select>
 
-                         </select>
+                  
 
-                    	</div>	
+											   
+
+											</div>	
 										</div> <br><br><br><br><br>
 										<div class="col-sm-offset-4">
-											<input type="submit" class="btn btn-lg btn-info" name ="submit" value="Get Contacts">
+											<input type="submit" class="btn btn-lg btn-info" name ="submit" value="Procced to select student name">
 										</div>
 									</div>
 							  </form>
 			
 					</div>
 					<!-- col-lg-12-->   
-                    </div>					
+                   </div>					
 			</div>
 			<!-- /row -->
 		</section>  
@@ -185,13 +196,12 @@ header("Location:login_lit.php");
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
-  
-    
+
+      
   <?php
   include 'layout2.php';
 
   ?>
   
-
   </body>
 </html>

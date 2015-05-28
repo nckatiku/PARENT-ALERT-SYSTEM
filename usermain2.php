@@ -33,18 +33,6 @@ header("Location:login_lit.php");
   });
   </script>
 
-  
-    <script>
-      function countChar(val) {
-        var len = val.value.length;
-        if (len >= 500) {
-          val.value = val.value.substring(0, 500);
-        } else {
-          $('#charNum').text(0 + len);
-        }
-      };
-    </script>
-
 
  <?php
 
@@ -92,13 +80,13 @@ header("Location:login_lit.php");
               <ul class="sidebar-menu" id="nav-accordion">
 			 
 				  <li class="mt">
-                      <a href="myhome.php">
+                      <a href="userhome.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Home</span>
                       </a>
                   </li>
                   <li class="sub-menu active">
-                      <a href="main2.php" >
+                      <a href="usermain2.php" >
                           <i class="fa fa-tasks"></i>
                           <span>Message</span>
                       </a>
@@ -107,7 +95,7 @@ header("Location:login_lit.php");
             
 			  
 			     <li class="sub-menu active">
-                      <a href="simple.php" >
+                      <a href="usersimple.php" >
                           <i class="fa fa-dashboard"></i>
                           <span>Back to Compose</span>
                       </a>
@@ -126,16 +114,16 @@ header("Location:login_lit.php");
 			<div class="col-md-offset-1">
 					<div class="col-lg-12">
 					
-					<form class="form-horizontal style-form" action ="main2.php"  method="POST">
+					<form class="form-horizontal style-form" action ="usermain2.php"  method="POST">
 					    
                <div style="margin-top:-3%; margin-left:2%">
 					
               <div class="form-panel">
                    
-							   <div style="background-color:rgb(230,230,230)">
-       <div style = "margin-top:-2%">
+							   <div style="background-color:rgb(179,223,247)">
+       <div style ="margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%">
 
-       <div><span style="color:rgb(70,70,70)"><div><h4><div class="centered" style="font-family:colona MT;padding:5px;background-color:rgb(85,85,85);color:white">Simple Message</div></h4></span></div>
+       <div><span style="color:rgb(70,70,70)"><div style="margin-left:1.5%"><h4>Simple Message</h4></span></div>
              
 
         <?php
@@ -168,7 +156,6 @@ header("Location:login_lit.php");
                        $mes = $m. " "."Date:".$date." "."to"." ".$date2;
 
                       
-                      echo $mes;
                       }
 
                       else if( isset($_POST['when'])  )
@@ -179,7 +166,7 @@ header("Location:login_lit.php");
                      $mes = $m." "."Date:".$date;
 
                       
-                      echo $mes;
+          
                       }
 
                        else
@@ -233,72 +220,68 @@ header("Location:login_lit.php");
                     if(!empty($contact) && !empty($mes) )
           
     {
-            echo $cont;
+          
                          
              /* place ur api here and enjoy */
+              $mobilenumbers =$cont;
+              
+                      $message = $mes;
+            
+          $user="swap81099"; //your username
+                    $password="86235184"; //your password
+                    $senderid="SMSCountry"; //Your senderid
+                    $messagetype="N"; //Type Of Your Message
+                    $DReports="Y"; //Delivery Reports
+                    $url="http://www.smscountry.com/SMSCwebservice_Bulk.aspx";
+                    $message = urlencode($message);
+          
+          
+                            
+              $ch = curl_init();
+                            if (!$ch){die("Couldn't initialize a cURL handle");}
+                            $ret = curl_setopt($ch, CURLOPT_URL,$url);
+                            curl_setopt ($ch, CURLOPT_POST, 1);
+                            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+                            curl_setopt ($ch, CURLOPT_POSTFIELDS,
+                "User=$user&passwd=$password&mobilenumber=$mobilenumbers&message=$message&sid=$senderid&mtype=$messagetype&DR=$DReports");
+                            $ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                            //If you are behind proxy then please uncomment below line and provide your proxy ip with port.
+                            // $ret = curl_setopt($ch, CURLOPT_PROXY, "PROXY IP ADDRESS:PORT");
+                            $curlresponse = curl_exec($ch); // execute
+                            if(curl_errno($ch))
+                            echo 'curl error : '. curl_error($ch);
+                            if (empty($ret)) 
+          {
+                      // some kind of an error happened
+                         die(curl_error($ch));
+                         curl_close($ch); // close cURL handler
+                } 
+        else 
+        {
+                          $info = curl_getinfo($ch);
+                          curl_close($ch); // close cURL handler
+                           //echo "";
+            
+                          
+                          echo $curlresponse;
+              echo '<article class="col-md-offset-2 col-md-10"><div style="margin-top:-2%; font-size:18px; color:rgb(0,0,220)"><div class="centered">Message Sent Succesfully </div> </div> </article>' ;
+                         
 
-             $authKey = "4537An3eeHCCL2Iv5560b0ea";
+         } 
+           
 
-//Multiple mobiles numbers separated by comma
-$mobileNumber = $cont;
-
-//Sender ID,While using route4 sender id should be 6 characters long.
-$senderId = "LITSOL";
-
-//Your message to send, Add URL encoding here.
-$message = urlencode($mes);
-
-//Define route 
-$route = "1";
-//Prepare you post parameters
-$postData = array(
-    'authkey' => $authKey,
-    'mobiles' => $mobileNumber,
-    'message' => $message,
-    'sender' => $senderId,
-    'route' => $route
-);
-
-//API URL
-$url="http://sms.bulk24sms.com/sendhttp.php";
-
-// init the resource
-$ch = curl_init();
-curl_setopt_array($ch, array(
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $postData
-    //,CURLOPT_FOLLOWLOCATION => true
-));
-
-
-//Ignore SSL certificate verification
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-
-
-//get response
-$output = curl_exec($ch);
-
-//Print error if any
-if(curl_errno($ch))
-{
-    echo 'error:' . curl_error($ch);
+   }
+        else
+  {
+ echo '<article class="col-md-offset-2 col-md-10"><div style="margin-top:-2%; font-size:15px "><div style="color:rgb(248,81,81)"><div class="centered">Warning::::Blank message or no contact numbers selected please  resend</div></div></div></article>';
+        
+  }
+  
 }
+       
 
-curl_close($ch);
-
-echo $output;
-echo "Message Sending Suceesfully Completed";
-
-}
-
-}
-
-             
-}
-
+ }
 
  
 
@@ -307,31 +290,25 @@ echo "Message Sending Suceesfully Completed";
   
 ?>
 </div>
-							
+							<br>
 									<div class="form-group">
 											<div class="col-sm-3" style="margin-left:2%">
-												<label class="label-control"><?php if(isset($_POST['class']))
-                          {
-                            $class=$_POST['class']; echo '<div class ="btn btn-info"><i class="fa fa-tasks"> </i> Class Selected :'.$class.' </div>'; } ?>      <h4>Contact Numbers<br><br>  
-</h4></label>
+												<label class="label-control"><h4>Contact Numbers</h4></label>
 											</div>
 											<div class="col-sm-8">
-												<textarea class="form-control"  rows="5" name="contact">
-                  
+												<textarea class="form-control"  rows="3" name="contact">
                         <?php 
-
-                                $class=$_POST['classes'];
+													
+                                $class=$_POST['class'];
 
                          if($class == "All")
 
 
         {
-
-                     echo "Contacts";
                           
-                             
+                                      echo "Selected"." ".$class." "."Classes"."\n";
 
-                  $query= "SELECT * FROM  student ORDER BY `class` where `class` != 'ALUMINI'";
+                  $query= "SELECT * FROM  student ORDER BY `class`";
                            
                             if(mysql_query($query))
              {
@@ -368,55 +345,12 @@ echo "Message Sending Suceesfully Completed";
         else if($class != "All")
 
                               {  
-
-                                   echo "Contacts::";
         
-												 if(isset($_POST['classes']))
-                       {
-                                $class = $_POST['classes'];
-     
-                              $no_cls = count($class);
-      
-  
-                   
+                          if(isset($_POST['class']))
+                          {
+                            $class=$_POST['class'];
 
-                                                 if($no_cls == 1)
-                                                 {
-                                              
-                              
-    
-                               
-
-														$query="select `student`,`contact` from student where class='".$class[0]."';";
-														
-                            if(mysql_query($query)){
-															$query_run=mysql_query($query);
-															if(mysql_num_rows($query_run)==NULL){
-																echo 'no contacts found';
-															}
-															else{
-																$i=0;
-                      
-         
-																while($i<mysql_num_rows($query_run)){
-																		$contacts=mysql_result($query_run,$i,'contact');
-																		 $student=mysql_result($query_run,$i,'student');
-
-                                    echo $student." "."=>".$contacts.", ";
-
-
-																		$i=$i+1;
-																   }
-															}
-														}
-													}
-                          if($no_cls == 2)
-                                                 {
-                                              
-                              
-    
-
-                            $query="select `student`,`contact` from student where class='".$class[0]."';";
+                            $query="select `student`,`contact` from student where class='".$class."';";
                             
                             if(mysql_query($query)){
                               $query_run=mysql_query($query);
@@ -425,7 +359,7 @@ echo "Message Sending Suceesfully Completed";
                               }
                               else{
                                 $i=0;
-                      
+                                                       echo "Class Selected:".$class."\n"."All contacts::"." ";
          
                                 while($i<mysql_num_rows($query_run)){
                                     $contacts=mysql_result($query_run,$i,'contact');
@@ -433,37 +367,30 @@ echo "Message Sending Suceesfully Completed";
 
                                     echo $student." "."=>".$contacts.", ";
 
-
                                     $i=$i+1;
-                                   }
+                                }
                               }
                             }
-                          
-
-                         }
-
-                        }
-													}
-                        
+                          }
+                          }
                       
-												?>
-                        </textarea>
+													
+												?></textarea>
 											</div>	
 										</div>
 										
 										<div class="form-group" style="margin-left:1%" >
                                             <label class="col-sm-3 col-sm-3 control-label"><h4>Message</h4></label>
                                              <div class="col-sm-8">
-                                     <div> <textarea id="field" onkeyup="countChar(this)" class="form-control round-form" name ="mes" rows="4" value="" required></textarea> 
-                                             Wordcoount:: <span id="charNum"></span>
-                                           <span class="help-block"><p class ="centered">Type your message here must be less than 130 characters</p></span> </div>
+                                     <textarea class="form-control round-form"  name ="mes" rows="4" value=""></textarea> 
+                                           <span class="help-block"><p class ="centered">Type your message here</p></span>
                                             </div>
                                            </div>
 										   
 										     <div class="form-group" style="margin-left:1%">
                                             <label class="col-sm-3 col-sm-3 control-label"><h4>Date</h4></label>
                                           <div class="col-sm-3">
-                                    <input type="text" name ="when" id="datepicker" onclick="return x()" onkeyup="countChar(this)"  class="form-control round-form" required/>
+                                    <input type="text" name ="when" id="datepicker"   class="form-control round-form"/>
 
 
 									 

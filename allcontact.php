@@ -14,36 +14,15 @@ header("Location:login_lit.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Liitle Soldiers School</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="assets/custom.css"> 
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/table-responsive.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
-    
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+   <?php
 
-    <script src="assets/js/chart-master/Chart.js"></script>
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+    include 'layout.php';
+
+   ?>
+  
+   </head>
 <body>
 <section id="container" >
 	<!--header start-->
@@ -61,7 +40,7 @@ header("Location:login_lit.php");
             	<ul class="nav pull-right top-menu">
                       
               <button class="btn btn-warning" type="button">
-                          <a href="logout.php"><span style="color:white"> Logout <i class="glyphicon glyphicon-backward"> </i></span></a>
+                          <a href="logout.php"><span style="color:white"> Logout <i class="glyphicon glyphicon-off"> </i></span></a>
                             </button>          	
                             </ul>
             </div>
@@ -154,21 +133,33 @@ header("Location:login_lit.php");
 				
 	
 			<div class="row mt">
-					<div class="col-md-6">
-					<div class="col-md-offset-4">
-							<table class="table table-striped table-bordered table-hover ">
+         <?php $class=$_POST['class']; ?>
+					<div class="col-md-6" style="margin-top:-3%">
+    
+					<div class="col-md-offset-8">
+                  
+
+                    <div style="font-family:Algerian;position:relative;left:230px;"><?php echo "<h3>$class</h3>";?> </div>
+
+                   <div > <h3 style=font-family:Algerian;position:relative;left:190px;>Class Details</h3></div>
+
+                    <div class="table-responsive">
+
+							<table  border ="2" class="table table-striped table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
 				
 											<?php 
+
+                      $serial = 1;
 											
 													if(isset($_POST['class']))
 								{
 														$class=$_POST['class'];
-														$query="select * from student where class='".$class."';";
+														$query="select * from student where class='".$class."' ORDER BY `student`;";
 														if(mysql_query($query))
 								{
 															$query_run=mysql_query($query);
 															if(mysql_num_rows($query_run)==NULL){
-																echo 'no contacts found';
+																echo '<h4>No contacts found</h4>';
 															}
 															else{
 															    $count = 0;
@@ -177,11 +168,15 @@ header("Location:login_lit.php");
 																
 																if($count == 0)
 																{
-											echo "<tr><td>Student</td><td>Contact</td><td>Class</td><td>Father</td><td>Mother Contact</td><td>Guardian</td></tr> "; 
+                                  
+											
+                      echo '<tr style="font-size:20px;color:rgb(46,55,169);"> <td>S.NO.</td><td>Student</td> <td>Contact</td><td>Class</td><td>Fathers Name</td><td>Guardian</td></tr>'; 
 															 
 															    $count = $count + 1;
 																
 																}
+
+
 																
 																else{
 																    
@@ -192,11 +187,12 @@ header("Location:login_lit.php");
 																		$mother=mysql_result($query_run,$i,'mother');
 																		$guardian=mysql_result($query_run,$i,'guardian');
 																		
-			 echo "<tr><td>".$student."</td><td>".$contacts."</td><td>".$class."</td><td>".$father."</td><td>".$mother."</td><td>".$guardian."</td></tr> "; 
-																	 echo "<br>";
+			 echo "<tr><td>".$serial."</td><td>".$student."</td><td>".$contacts."</td><td>".$class."</td><td>".$father."</td><td>".$guardian."</td></tr> "; 
+																
 																
 																		
 																		$i=$i+1;
+                                    $serial = $serial + 1;
 																}
 																}
 															}
@@ -206,7 +202,8 @@ header("Location:login_lit.php");
 												?>
 				
 							</table>
-						
+
+						</div>
 					</div>				
 			</div>
 			<!-- /row -->
@@ -224,56 +221,15 @@ header("Location:login_lit.php");
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.sparkline.js"></script>
 
 
-    <!--common script for all pages-->
-    <script src="assets/js/common-scripts.js"></script>
-    
-    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+  <?php
+  include 'layout2.php';
 
-    
-	
-	<script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
-        
-            $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
-            });
-        });
-        
-        
-        function myNavFunction(id) {
-            $("#date-popover").hide();
-            var nav = $("#" + id).data("navigation");
-            var to = $("#" + id).data("to");
-            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        }
-    </script>
+  ?>
   
+
+
 
   </body>
 </html>

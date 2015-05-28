@@ -21,32 +21,6 @@ header("Location:login_lit.php");
     include 'layout.php';
 
    ?>
-
-    <script type="text/javascript">
-
-  
- 	function my() {
-
-    var x = confirm("Delete the Student Contact");
-
-    if(x == true)
-
-    {
-
-      
-      
-      return true;
-    }
-
-    else
-    {
-      return false;
-    }
-
-  }
-
-  </script>
- 
 </head>
 <body>
 <section id="container" >
@@ -146,8 +120,8 @@ header("Location:login_lit.php");
                       <ul class="sub">
                           <li><a  href="staffmessage.php">Message Staff</a></li>
 						  <li><a  href="newstaff.php">Add New Staff </a></li>
-						  <li class="active"><a  href="staffdel.php">Delete a Staff</a></li>
-						   <li><a  href="selectstaff.php">Update Staff Contact</a></li>
+						  <li><a  href="staffdel.php">Delete a Staff</a></li>
+						  <li class="active"><a  href="selectstaff.php">Update Staff Contact</a></li>
                  
                       </ul>
                   </li>
@@ -165,39 +139,75 @@ header("Location:login_lit.php");
 					<div>
            <?php
 
+    
+ 
+     if(isset($_POST['st_name']))
+                         {
+						        $x =$_POST['st_name'];
+                                  
+					
+		    
 
-  if( isset($_POST['st_name']))
-  {
+				
+					
+					   if (isset($_POST['Delete'])) 
+		               {
+				     
+		                        if(!empty($x))
+               
+                                {
 
-  
+                                   
+						 
+					                    
+					 
+                                           $query1= "DELETE FROM `staff` WHERE `teacher` = '$x'"; 
+				
+        
+                                         if($query_run = mysql_query($query1))
+                       
+                                            {
+								
+								  
+						 echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info"><div class="centered" style="margin-top:%">Staff Record '.$x.' Deleted Sucessfully.. </div></div></article>';
+									  
+						                    }
+						  
+						    
+					                    	
 
-           $_SESSION['st_name'] = $_POST['st_name'];
+										   
+                                     
+					                   
 
 
+    									 				
 
-           $l =  $_SESSION['st_name'];
+				        
+						
+						        }  
 
-           $k = $_POST['st_name'];
+                                 else
+                                  
+				                { 
+           echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger"><div class="centered" style="margin-top:1%" >Warning:: No Name Selected</div></div></article>';
+		                        }				
 
-           if($k = $l)
-             {
-              include 'stfdel.php';
-              }
-  
-           
-
-  
-  }
-
-
- ?>
-
+               
+		                }
+		
+            }
+ 
+       
+	
+	      
+   ?>
                                          </div>
 			<div class="row mt">
 					<div class="col-sm-offset-2">
 					<div class="col-lg-12" style="margin-top:7%">
 					
-								<form class="form-horizontal style-form" action ="staffdel.php"  method="POST">
+								<form class="form-horizontal style-form" action ="updatestaff.php"  method="POST">
 									<div class="form-panel" >
 	
        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Delete Staff Record</span></div></div></h4><br>
@@ -210,7 +220,7 @@ header("Location:login_lit.php");
 											</div>
 											<div class="col-sm-6">
                                             
-											   <select name="st_name" class="form-control ">
+											   <select name="teacher" class="form-control ">
 											   
 													<option value="0">Select Faculty Name </option>
 													<?php 
@@ -264,7 +274,7 @@ header("Location:login_lit.php");
 										<br> <br>
 										
 										<div class="col-sm-offset-3">
-											<input type="submit" class="btn btn-lg btn-danger" name ="Delete" onclick= "return my()" value="Delete Staff Record">
+											<input type="submit" class="btn btn-lg btn-info" name ="Delete" value="Procced to Update Staff Record">
 										</div>
 									
 									</div>

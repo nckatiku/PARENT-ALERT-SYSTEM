@@ -51,7 +51,7 @@ function myfn() {
                        
 
 
-                                          $query1= "DELETE FROM `soldiers` WHERE `student` = '$m' "; 
+                                          $query1= "UPDATE `student` SET `class`='alumini' `student` = '$m' "; 
 				
                                        
                                          if($query_run = mysql_query($query1))

@@ -1,129 +1,46 @@
-<?php
 
- require 'connect.php';
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <?php
+     
 
- session_start();
+    include 'layout.php';
+
+   session_start(); 
 
 if(!$_SESSION['id'])
 {
 header("Location:login_lit.php");
 }
 
-	
- ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-
-    <title>Liitle Soldiers School</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="assets/custom.css"> 
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
-    
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
-
-    <script src="assets/js/chart-master/Chart.js"></script>
-
-       
-    
-    
-<script type ="text/javascript">
-
-function myfn() 
-
-{
-
-  
-
-
-
-  var k = confirm("Confirm delete contact");
-
+   ?>
 
     
-    if(k == true)
-
-    {
-    	document.write("sdaada");
-    	ver();
-
-    }
-    else if(k == false)
-
-    {
-    	document.write("cancelled");
-
-    	alert("cancelled");
-
-    	return false;
-    }
-
-}
-
-  </script>
 
   <script type="text/javascript">
 
-function ver()
-
- {
- 		document.write("<?php $l = 'true'; echo $l;?>");
-    	
-
-    	document.write("fsfsfs");
-
-
   
+ 	function my() {
 
-    	document.write("<?php  
+    var x = confirm("Delete the Student Contact");
 
+    if(x == true)
 
-     if(isset($_POST['st_name']))
+    {
 
-                   {
-
-                      $m = $_POST['st_name'];
-
-
-       $query1 = 'DELETE FROM `student` WHERE `student` = '."$m".' ";
-
-                    $query_run = mysql_query($query1)
-
- 
-
-    		                               if($query_run)
-                       
-                                            {
-								
-					                                    echo 'deleted';
-					                             }
-                                    
-
-					                 
-						  
-					   ?>"); 
-
-    	  alert("deleted");
-
-    	     
+      
+      
+      return true;
     }
 
+    else
+    {
+      return false;
+    }
 
- 	
+  }
 
   </script>
  
@@ -248,8 +165,9 @@ function ver()
 			</div>
 		</aside>
       <!--sidebar end-->
-
 	<!-- BASIC FORM ELELEMNTS -->
+
+
 
 	<section id="main-content">
 		<section class="wrapper">
@@ -259,13 +177,50 @@ function ver()
 					<div class="col-md-offset-2">
 					<div class="col-lg-12">
 					<br><br>
-					<form  class="form-horizontal style-form"  method="POST">
+
+          <?php
+
+include 'connect.php';
+
+
+         
+
+  if( isset($_POST['st_name']))
+  {
+
+  
+
+           $_SESSION['st_name'] = $_POST['st_name'];
+
+
+
+           $l =  $_SESSION['st_name'];
+
+           $k = $_POST['st_name'];
+
+           if($k = $l)
+             {
+              include 'mydel.php';
+              }
+  
+           
+
+  
+  }
+
+
+ ?>
+
+					<form  class="form-horizontal style-form"  method="POST" action="deletestu.php">
 									<div class="form-panel">
+
+
 		
 
        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Delete Student Record</span></div></div></h4><br>
 									
-									
+					
+
 										<br><br>
 										<div class="form-group">
 											<div class="col-sm-6">
@@ -277,6 +232,8 @@ function ver()
                          
                           <option value="0">Select Student Name </option>
                           <?php 
+
+                          require 'connect.php';
                               if(isset($_POST['class']))
                           {
                             $class=$_POST['class'];
@@ -325,10 +282,10 @@ function ver()
                         </div>
                          <br><br>
 
-
-
+                            
+                        
 										<div class="col-sm-offset-3">
-			<input type="submit" class="btn btn-lg btn-danger" name ="Delete" value="Delete Record" onclick="myfn()">
+			<input type="submit" class="btn btn-lg btn-danger" name ="Delete" value="Delete Record" onclick= "return my()">
 										</div>
 									
 									</div>

@@ -12,6 +12,8 @@ session_start();
            
 
 	if( isset($_POST['id']) && isset($_POST['password']))
+           
+
            {
 		
                       $id =$_POST['id'];
@@ -22,14 +24,16 @@ session_start();
 
               
                 if (isset($_POST['login'])) //to insert data in a table 
-				{
+	{
 				     
 		            if(!empty($id) && !empty($password))
                
-                    {
+        {
 
 
+                         $id = mysql_escape_string($id);
 
+                        $pssword = mysql_escape_string($password);
                                 
                         $query="SELECT * FROM `admin` WHERE `id` = '$id' AND `password` = '$password'"; 
 				
@@ -44,36 +48,51 @@ session_start();
 
 
                                             if($query_num_rows == 1)
-                                               {
+                              {
 
                                           
-                            $_SESSION['id'] = $id;                        
+                                       $_SESSION['id'] = $id;                        
                                     
                                                
 									  
-								                    echo "<script> window.open('myhome.php','_self') </script>";
-														
+								                      if($id == "admin" && $password = "admin")                    
+                                    
+                                               {
+                    
+                                    echo "<script> window.open('myhome.php','_self') </script>";
+                                        }
+
+                                    else
+
+                                 {
+                           echo "<script> window.open('userhome.php','_self') </script>";
+                                 }   
+                                
+                                    
+        
+                               }
+
+                          
+
+                            else
+                                  
+                              { 
+                                   echo "<script> alert('ID or password is incorrect')</script>"; 
+                               }
+        										
+                            }		
 																
 																		
 				
-                                              }
-				
-		       
-		 
+                  
+		  }
 
-                               else
+       else
                                   
-								  { 
-                                   echo "<script> alert('ID or password is incorrect')</script>"; 
-		                           }
-
-                         }
-
-    } else
-                                  
-                  { 
-                                   echo "<script> alert('Either ID or Password Field Left Empty')</script>"; 
-                               }
+        { 
+         echo "<script> alert('Either ID or Password Field Left Empty')</script>"; 
+                               
+        }
 
 				
 
@@ -103,11 +122,12 @@ session_start();
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
+
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
 
-<body>
+<body style = "background-color:rgb(22,145,210)">
 
 <!-- Form --------------------------------------FORM------------------------FORM-------------------FORM----------------FORM --> 
 
@@ -134,7 +154,7 @@ session_start();
 
                                <br> <br>
                          
-						      <input type="submit"  name = "login" class="btn btn-theme btn-block" value ="LOG IN">
+						     <input type="submit"  name = "login" class="btn btn-login btn-block" value ="LOG IN"> 
 
     
 		                      <br><hr>
@@ -153,11 +173,13 @@ session_start();
     <script src="assets/js/bootstrap.min.js"></script>
 
     <!--BACKSTRETCH-->
-    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
     <script>
-       $.backstretch("assets/img/login-bg.jpg", {speed: 500});
+      $.backstretch("imgs/im2.jpg", {speed: 100});
     </script>
+
+    -->
 
 
 </body>

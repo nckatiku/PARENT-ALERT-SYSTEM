@@ -153,7 +153,7 @@ header("Location:login_lit.php");
           <div class="col-md-offset-2">
           <div class="col-lg-12">
           <br><br>
-          <form  class="form-horizontal style-form"  method="POST" action="update.php">
+          <form  class="form-horizontal style-form"  method="POST" action="updateallinfo.php">
                   <div class="form-panel">
     
 

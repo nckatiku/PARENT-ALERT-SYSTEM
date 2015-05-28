@@ -51,7 +51,7 @@ a, a:hover, a:focus {
 	color: white;
 }
 
-.btn-round {
+.round {
 	border-radius: 20px;
 	-webkit-border-radius: 20px;
 }
@@ -95,6 +95,27 @@ a, a:hover, a:focus {
   background-color: #68dff0;
   border-color: #48bcb4;
 }
+
+.btn-login
+{
+ color: #fff;
+  background-color: rgb(70,70,70);
+  border-color: #48bcb4;
+
+
+}
+
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:active,
+.btn-login.active,
+.open .dropdown-toggle.btn-theme {
+  color:white;
+  background-color: rgb(22,145,210);
+  border-color: black;
+}
+
 .btn-theme:hover,
 .btn-theme:focus,
 .btn-theme:active,
@@ -161,10 +182,10 @@ a, a:hover, a:focus {
 }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 0;
-  border-top: 1px solid #797979;
+  border-top: 2px solid #797979;
 }
 
 
@@ -229,7 +250,7 @@ ul.top-menu > li > .logout {
 /*sidebar navigation*/
 
 #sidebar {
-    width: 330px;
+    width: 270px;
     height: 100%;
     position: fixed;
     background: #333332;
@@ -354,7 +375,10 @@ ul.sidebar-menu li a{
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
+
+    
     font-family: comic sans ms;
+
     font-size: 14px;
     outline: none;
     -webkit-transition: all 0.3s ease;
@@ -1938,7 +1962,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: rgb(70,70,70);
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;

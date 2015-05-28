@@ -240,61 +240,48 @@ header("Location:login_lit.php");
           <?php
 
     
-
-         
            
+if(isset($_POST['student']) && isset($_POST['contact']) && isset($_POST['class']) && isset($_POST['father'])&&isset($_POST['mother'])&& isset($_POST['gu']))
+     {  
 
-  if(isset($_POST['contact']) && isset($_POST['new']) && isset($_POST['reent']))
-     {
 
+
+
+
+              
           
-            
-                     
+                      $student  =   $_POST['student'];
                       $contact  =   $_POST['contact'];
-            $new  =       $_POST['new'];
-                      $reent   =    $_POST['reent'];
+                      $class  =   $_POST['class'];
+                      echo $father  =   $_POST['father'];
+                      $mother  =   $_POST['mother'];
+                  
+                     
+                      $guard =   $_POST['gu'];
+                  
 
-                         $j = str_split($new);
-
-                      $count = NULL;
-
-                   foreach ($j as  $value) {
-
+                  
+        
+            
                       
 
-                     if(is_numeric($value))
-                    {
-
-                     $count = $count + 1;
-                    }
-
-            
-                        } 
-
-              if(is_numeric($new))
-
-       {
              
-             if($count == 10)
-
-             { 
-
+            
 
 
                           if (isset($_POST['enter'])) //to insert data in a table 
                {
              
-                                      if(!empty($contact) && !empty($new) && !empty($reent))
+              if(!empty($student) && !empty($contact) && !empty($class) && !empty($father) && !empty($mother) && !empty($guard))
                
                    {
 
                     
-                                                  if($new == $reent)
-           
-                      {
+                                            
 
                                 
-                                                      $query="UPDATE `student` SET `contact`='$new' WHERE `contact` ='$contact'"; 
+$query="UPDATE `student` SET `student`=$student,`class`='$class',`contact`='$contact',`mother`='$mother',`father`=`$father`,
+                 `guardian`='$guard' WHERE `class` = '$class' "; 
         
         
 
@@ -309,16 +296,7 @@ header("Location:login_lit.php");
                                                          }
               
               
-                                                        }
-            
                     
-                                                        else 
-            
-                                                    {
-                       
-                      echo '<article class="col-md-9 col-md-offset-3"><div class="alert alert-danger alert-dismissable"><div class="centered">Warning:: You filled new contact and reenter contact with diffrent values Please Renter</div></div></article>';
-                               
-                                                       }
                   
 
             
@@ -333,35 +311,16 @@ header("Location:login_lit.php");
                                  }
 
                     
-            }
+            
 
-       }     
-
-       
-
-         else
- {
-
-    echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger alert-dismissable"><div class="centered">WARNING::You enter '."$count".' digits only  10 digits required in the new  contact number field.Please Renter</div></div></article>';
-               
- }
    
 
-    }
 
- else
- {
 
-    echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger alert-dismissable"><div class="centered">WARNING::Invalid Contact Number entered.Please Renter</div></div></article>';
-               
+   
  }
 
- 
-               
-    
-    
-    
- }
+}
 
  ?>
  </div>
@@ -369,32 +328,20 @@ header("Location:login_lit.php");
 
           <article class="col-md-10 col-md-offset-2">
 
-        
-				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
-                    
-                        <form name= "myform" class="form-horizontal style-form" action ="update.php" method="POST"  onsubmit="return validate()">
+          <div class="table-responsive">
+            <div style="padding:2px;background-color:rgb(100,100,100);margin-left:-1%;margin-top:-1%"><h4><div class="centered"><span style="color:white">Exixsting Student Details</span></div></div></h4>
 
+      <table  border ="2" class="table table-striped" style="font-family:century-schoolbook;margin-left:-1%;color:white;width:944px;font-size:16px;background-color:rgb(60,191,255)">
 
-                                  
-                          <div class="form-panel">
-	
-       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Update Student Record</span></div></div></h4><br><br>
-									
-	
-               
-        
-						 
-                        
-             
-                          
+               <?php 
 
-                                 <?php
-
-                        if(isset($_POST['st_name']))
+                           if(isset($_POST['st_name']))
    
          {
 
                                 $stu =$_POST['st_name'];
+
+                                $_SESSION['name'] = $stu;
 
                             
 
@@ -402,7 +349,7 @@ header("Location:login_lit.php");
                         
                           
                         
-                                $query="select `class`,`student`,`class` from `student` where `student` ='".$stu."';";
+                                $query="select * from `student` where `student` ='".$stu."';";
 
                                 $query_run=mysql_query($query);
 
@@ -410,29 +357,25 @@ header("Location:login_lit.php");
 
                                 $i = 0;
 
+                                   echo '<tr style="font-size:16px;color:rgb(46,55,169);"><td>Student</td> <td>Contact</td><td>Class</td><td>Fathers Name</td><td>Guardian</td></tr>'; 
+  
+
 
                             if($v == 1)
                                {
                       
-                        
-
-
-
-
-
-                                  $student =mysql_result($query_run,$i,'student');
-
-                                  $class =mysql_result($query_run,$i,'class');
-
-                            echo '<div class="centered"><div class="btn btn-lg btn-warning">Class::'.$class.' </div></div>';
-
-              
-
-                                 
-
-                                 echo '<div class="btn btn-warning">Student Name::'.$student.' </div>';
-
-                      }
+                              
+                                  
+                                                            $contacts=mysql_result($query_run,$i,'contact');
+                                                            $student=mysql_result($query_run,$i,'student');
+                                                            $class=mysql_result($query_run,$i,'class');
+                                                            $father=mysql_result($query_run,$i,'father');
+                                                            $mother=mysql_result($query_run,$i,'mother');
+                                                            $guardian=mysql_result($query_run,$i,'guardian');
+                                                            
+                                echo "<tr><td >".$student." "." "."</td><td>".$contacts."</td><td>".$class."</td><td>".$father."</td><td>".$guardian."</td></tr> "; 
+                                            
+                              }
                           
                             
                           
@@ -445,128 +388,122 @@ header("Location:login_lit.php");
    
               
                           ?>
-                                            
-                <br><br>
+                </table>
 
-                   
-
-                   
-
-                        <div class="form-group">
-                  
-                        <label class="col-sm-3 col-sm-3 control-label"><h4>Exixsting Contact</h4> </label>
-                    
-                      <div class="col-sm-5">
-
-             
-                         <input type="text" class="form-control round-form" name= "contact" class="form-control"  value= "<?php 
-
-                           if(isset($_POST['st_name']))
-   
-         {
-
-                                $stu =$_POST['st_name'];
-
-                            
-
-
-                        
-                                $v = 0;
-                        
-                                $query="select `contact` from `student` where `student` ='".$stu."';";
-
-                                $query_run=mysql_query($query);
-
-                                $v = mysql_num_rows($query_run);
-
-                                $i = 0;
-
-                                 if($v == 0)
-                               {
-                      
-                        
-
-                              
-
-                                  
-                                   echo "No Student Name selected select again";
-                              }
-                          
-                            
-                          
-
-
-
-                            if($v == 1)
-                               {
-                      
-                        
-
-                                  $contact =mysql_result($query_run,$i,'contact');
-
-                                  
-                                   echo $contact;
-                              }
-                          
-                            
-                          
-
-                    }
-
-                          
-                          
-                          
-   
-              
-                          ?>">
+                </div>
         
-                         
-                      
-                            <span class="help-block"><p class="col-md-offset-1">Existing Contact of the student</p></span>
-          
-                      </div>  
-                      </div>
+                
+
+        
+				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
                     
-                    
+                        <form name= "myform" class="form-horizontal style-form" action ="updateallinfo.php" method="POST"  onsubmit="return validate()">
 
 
+                                  
+                          <div class="form-panel">
+	
+       <div style ="padding:2px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Update Student Record</span></div></div></h4><br><br>
+									
+	
+               
+        
+						 
                           
-                    
-                    
-
-
                               <div class="form-group">
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>New Contact</h4></label>
-                                   <div class="col-sm-5">
-                                        <input type="text" class="form-control round-form" name = "new" required>
-                                        <span class="help-block"><p class="col-md-offset-1">Enter the new contact of the student</p></span> 
-                                    <span style= "color:white;background-color:rgb(244,80,81)" id="numloc"> </span>
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Student Name</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name = "student" required>
+                                        <span class="help-block"><p class="col-md-offset-1">Name of the student</p></span> 
+                                           <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
 
  
                                     </div>
-                            </div><br>
+                
 
-                              <div class="form-group">
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Renter Contact</h4></label>
-                                   <div class="col-sm-5">
-                                    <input type="text" class="form-control round-form" name = "reent" required>
-                         <span class="help-block"><p class="col-md-offset-1">Again Enter the new contact of the student</p></span> 
+                      
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Contact</h4></label>
+                                   <div class="col-sm-4">
+                                    <input type="text" class="form-control round-form" name = "contact" required>
+                         <span class="help-block"><p class="col-md-offset-1">Enter the new contact of the student</p></span> 
                                     </div><br><br><br><br>
 
              <span class="col-md-offset-5" style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span> 
 
-                  <div class="centered">  <input type="submit" class="btn btn-lg btn-success" value="Update" name="enter"><span class="col-md-offset-3">
-
-                     <input type="reset" class="btn btn-lg btn-danger" value="Clear" name="clear"> </span>
-                   </div>
 
                             </div>
 
+                             <div class="form-group">
+
+
+
+                      
+
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Class</h4></label>
+                                   <div class="col-sm-4">
+                           <select name="class" class="form-control">
+                                       
+                                         <option >Choose Class</option>
+                                                <option>Crech</option>
+     
+                                        <option  >Nursery</option>
+                                    
+                                           <option>KG-I</option>
+                                        <option>KG-II</option>
+                                      
+            
+                                        
+                                             </select>
+
+                         
+                                    </div>
+
+             
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Father</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name ="father" required>
+                                        <span class="help-block"><p class="col-md-offset-1">Father's Name</p></span> 
+                                           <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+
+ 
+                                    </div>
+             
+
+
+                            </div>
+
+
+                        <div class="form-group">
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Mother's Name</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name = "mother" required>
+                                        <span class="help-block"><p class="col-md-offset-1">Mother's Name</p></span> 
+                                           <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+
+ 
+                                    </div>
+
+                                    <label class="col-sm-2 col-sm-2 control-label"><h4>Guardian</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name = "gu" value="none" required>
+                                        <span class="help-block"><p class="col-md-offset-1">Guardian's Name</p></span> 
+                                           <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+
+ 
+                                    </div>
                 
-                     
+                
+
+                      
+                            
+                
+                      
 						 
-						 
+						 </div>
+               <div class="text-right">  <input type="submit" class="btn btn-lg btn-success" value="Update" name="enter"> </div>
 							</div> 
+
+
 						 
 		
                       </form>
