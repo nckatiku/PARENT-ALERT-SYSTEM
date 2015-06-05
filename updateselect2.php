@@ -68,11 +68,22 @@ header("Location:login_lit.php");
           <li class="mt">
                       <a href="myhome.php">
                           <i class="fa fa-dashboard"></i>
+<<<<<<< HEAD
                           <span> Home</span>
                       </a>
                   </li>
           <li>
           
+=======
+                          <span>Back to Home</span>
+                      </a>
+                  </li>
+          <li>
+          <a  href="delete.php">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Delete More</span>
+                      </a>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                   </li>
 
                     <li class="sub-menu">
@@ -96,10 +107,14 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
+<<<<<<< HEAD
              <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
+=======
+                <li ><a  href="classselect.php">Update Contact</a></li>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                  <li ><a  href="delete.php">Delete Contact</a></li>
                  
                       </ul>

@@ -91,10 +91,14 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
+<<<<<<< HEAD
              <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
+=======
+                <li ><a  href="classselect.php">Update Contact</a></li>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                  <li ><a  href="delete.php">Delete Contact</a></li>
                  
                       </ul>
@@ -153,6 +157,7 @@ header("Location:login_lit.php");
 											<div class="col-sm-6">
 
 									
+<<<<<<< HEAD
 											            <select multiple="multiple" name="classes[]" class="form-control">
                                     <option>Crech</option>
                                         <option>Playgroup </option>
@@ -166,6 +171,22 @@ header("Location:login_lit.php");
                                            <option>All</option>
       
   </select>
+=======
+											    <select name="class" class="form-control">
+                                       
+                                         <option >Choose Class</option>
+                                        <option  >Nursery</option>
+                                         <option>Playgroup</option>
+                                           <option>Crech</option>
+                          
+                                                <option>KG-I</option>
+                                        <option>KG-II</option>
+                                         <option>All</option>
+            
+                                        
+                                             </select>
+
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                   
 										
                             

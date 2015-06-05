@@ -181,10 +181,14 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
+<<<<<<< HEAD
 						  <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
+=======
+						    <li ><a  href="classselect.php">Update Contact</a></li>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -370,7 +374,11 @@ header("Location:login_lit.php");
  </div>
 
 
+<<<<<<< HEAD
           <article class="col-md-8 col-md-offset-2">
+=======
+          <article class="col-md-10 col-md-offset-2">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
         
 				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
@@ -387,6 +395,7 @@ header("Location:login_lit.php");
                
         
 						 
+<<<<<<< HEAD
                            <br>
 
                    <?php 
@@ -412,6 +421,17 @@ header("Location:login_lit.php");
                         <label class="col-sm-5 col-sm-5 control-label"><h4>Exixsting Contact</h4> </label>
                     
                       <div class="col-sm-4">
+=======
+                           <br><br><br>
+
+                   
+
+                        <div class="form-group">
+                  
+                        <label class="col-sm-3 col-sm-3 control-label"><h4>Exixsting Contact</h4> </label>
+                    
+                      <div class="col-sm-5">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                             
                 
                          <input type="text" class="form-control round-form" name= "contact" class="form-control"  value= "<?php 
@@ -472,19 +492,29 @@ header("Location:login_lit.php");
 
 
                               <div class="form-group">
+<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>New Contact</h4></label>
                                    <div class="col-sm-4">
+=======
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>New Contact</h4></label>
+                                   <div class="col-sm-5">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         <input type="text" class="form-control round-form" name = "new" required>
                                         <span class="help-block"><p class="col-md-offset-1">Enter the new contact of the staff</p></span>
                                          
    
+<<<<<<< HEAD
                                     </div><br>
+=======
+                                    </div><br><br><br><br>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                     <span class="col-md-offset-3"  style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
 
  
                             </div><br>
 
                               <div class="form-group">
+<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>Renter Contact</h4></label>
                                    <div class="col-sm-4">
                                     <input type="text" class="form-control round-form" name = "reent" required>
@@ -494,6 +524,17 @@ header("Location:login_lit.php");
 
                               <span class="col-md-offset-5"  style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span>          
                             </div>
+=======
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Renter Contact</h4></label>
+                                   <div class="col-sm-5">
+                                    <input type="text" class="form-control round-form" name = "reent" required>
+                         <span class="help-block"><p class="col-md-offset-1">Again Enter the new contact of the staff</p></span> 
+
+                                    </div> <br><br>
+
+                              <span class="col-md-offset-5"  style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span>          
+                            </div><br>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                       
 

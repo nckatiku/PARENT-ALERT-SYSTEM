@@ -90,10 +90,14 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
+<<<<<<< HEAD
 						     <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
+=======
+						    <li ><a  href="update.php">Update Contact</a></li>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li class="active"><a  href="delete.php"> Delete Contact </a></li>
 							   
                       </ul>

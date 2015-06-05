@@ -94,10 +94,14 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
+<<<<<<< HEAD
 						   <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
+=======
+						    <li ><a  href="classselect.php">Update Contact</a></li>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -148,7 +152,11 @@ header("Location:login_lit.php");
        <section id="main-content">
           <section class="wrapper">
            	
+<<<<<<< HEAD
 	<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger"><div class="centered"><b>Alert::Be very Careful while updating choose right class in both the  fields else data will be messed up and students may have wrong class inserted and  Update KG-I TO KG-II only after deleting whole class KG-II after end of session</b></div></div></article>
+=======
+	<article class="col-md-offset-2 col-md-10"><div class="alert alert-warning"><div class="centered"><b>Alert::Be very Careful while updating choose right class in both the  fields else data will be messed up and students may have wrong class inserted and  Update KG-I TO KG-II only after deleting whole class KG-II after end of session</b></div></div></article>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 			<div>
 			<?php
 
@@ -266,8 +274,11 @@ header("Location:login_lit.php");
 			
 										<option> Nursery</option>
 										<option>KG-I</option>
+<<<<<<< HEAD
 
                         <option>KG-II</option>
+=======
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         
 						
                                         

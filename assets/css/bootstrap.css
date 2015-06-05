@@ -2857,11 +2857,14 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+<<<<<<< HEAD
     border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 border-bottom-right-radius: 20px;
 border-bottom-left-radius: 20px;
 
+=======
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2904,7 +2907,10 @@ fieldset[disabled] .btn-success.active {
   background-color: #5bc0de;
   border-color: #46b8da;
   border-top-right-radius: 20px;
+<<<<<<< HEAD
   border-top-left-radius: 20px;
+=======
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 border-bottom-right-radius: 20px;
 border-bottom-left-radius: 20px;
 }

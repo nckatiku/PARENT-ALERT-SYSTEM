@@ -27,7 +27,11 @@ header("Location:login_lit.php");
   
  	function my() {
 
+<<<<<<< HEAD
     var x = confirm("Confirm Delete the Staff Contact??");
+=======
+    var x = confirm("Delete the Student Contact");
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
     if(x == true)
 
@@ -117,7 +121,10 @@ header("Location:login_lit.php");
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
 						    <li ><a  href="classselect.php">Update Contact</a></li>
+<<<<<<< HEAD
 						    <li ><a  href="classselect2.php">Update Whole Contact</a></li>
+=======
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -218,7 +225,11 @@ header("Location:login_lit.php");
 												
 													
 												
+<<<<<<< HEAD
 														$query="SELECT * FROM `staff` WHERE `status` = 'active'";
+=======
+														$query="SELECT `teacher` FROM `staff`";
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 														if(mysql_query($query))
 														{
 															$query_run=mysql_query($query);
@@ -275,7 +286,11 @@ header("Location:login_lit.php");
 					</div>
 					<!-- col-lg-12-->       
 			</div>
+<<<<<<< HEAD
 
+=======
+			<!-- /row -->
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 		</section>  
 		<!--wrapper -->
 	</section>   

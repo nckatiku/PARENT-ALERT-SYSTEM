@@ -473,7 +473,7 @@ header("Location:login_lit.php");
                         
                                 $v = 0;
                         
-                                $query="select `contact` from `student` where `student` ='".$stu."';";
+                                $query="select `contact` from `student_info` where `student` ='".$stu."';";
 
                                 $query_run=mysql_query($query);
 

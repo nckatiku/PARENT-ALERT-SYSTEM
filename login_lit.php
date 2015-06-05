@@ -55,7 +55,11 @@ session_start();
                                     
                                                
 									  
+<<<<<<< HEAD
 								                      if($id == "soldieradmin" && $password = "littlesoldier")                    
+=======
+								                      if($id == "admin" && $password = "admin")                    
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                     
                                                {
                     
@@ -127,10 +131,17 @@ session_start();
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
 
+<<<<<<< HEAD
 <body>
 
 <!-- Form --------------------------------------FORM------------------------FORM-------------------FORM----------------FORM --> 
 <div class="col-md-offset-4" style="margin-top:170px">
+=======
+<body style = "background-color:rgb(22,145,210)">
+
+<!-- Form --------------------------------------FORM------------------------FORM-------------------FORM----------------FORM --> 
+
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 <div id="login-page">
 	<div class="container">
 
@@ -157,7 +168,11 @@ session_start();
 						     <input type="submit"  name = "login" class="btn btn-login btn-block" value ="LOG IN"> 
 
     
+<<<<<<< HEAD
 		                      <br>
+=======
+		                      <br><hr>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                         </div>
 
@@ -171,12 +186,24 @@ session_start();
 
 <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
    
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
     <script>
        $.backstretch("imgs/im10.jpg", {speed: 5000});
     </script>
 
+=======
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+      $.backstretch("imgs/im2.jpg", {speed: 100});
+    </script>
+
+    -->
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
 
 </body>

@@ -115,6 +115,7 @@ header("Location:login_lit.php");
 											<div class="col-sm-6">
 
 									
+<<<<<<< HEAD
 											   
                                   <select multiple="multiple" name="classes[]" class="form-control">
                                     <option>Crech</option>
@@ -129,6 +130,25 @@ header("Location:login_lit.php");
                                            <option>All</option>
       
   </select>
+=======
+											    <select name="class" class="form-control">
+                                       
+                                         <option >Choose Class</option>
+                                        <option  >Nursery</option>
+                                         <option>Playgroup</option>
+                                           <option>Crech</option>
+                            
+                                                <option>KG-I</option>
+                                        <option>KG-II</option>
+                                         <option>All</option>
+            
+                                        
+                                             </select>
+
+                         </select>
+										
+
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                     	</div>	
 										</div> <br><br><br><br><br><br>
 										<div class="col-sm-offset-4">

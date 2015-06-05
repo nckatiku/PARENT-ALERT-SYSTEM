@@ -23,99 +23,6 @@ header("Location:login_lit.php");
     include 'layout.php';
 
    ?>
-
-       <script>
-
-    function validate() 
-    {
-     var num = document.myform.contact.value;
-
-     
-
-
-
-
-     if(isNaN(num))
-
-     {
-        document.getElementById("numloc").style.padding = "8px";
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-        
-
-      document.getElementById("numloc").innerHTML = "Wrong value entered Enter only Numeric Value";
-
-      return false;
-
-     }
-
-
-     else
-     {
-
-      var count = 0; 
-      var len = num.length;
-
-      var num2 = num.split("");
-
-      var i = 0;
-
-      for(i = 0; i < len ; i++)
-
-      {
-
-         count = count + 1;
-
-      }
-
-                  if(count > 10 || count < 10 )
-                        {
-                            document.getElementById("numloc").style.padding = "8px";
-
-                         
-                        
-<<<<<<< HEAD
-                            document.getElementById("numloc").innerHTML = " Entered" + " " +count+" "+ "digits Contact Number must be of 10 digits only";
-=======
-                            document.getElementById("numloc").innerHTML = " Entered" + " " +count+" "+ "digits Contact Number must be of 10 digits ony";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-                           
-                            
-                            return false;
-                        }
-
-                   else {
-
-                                    return true;
-                                  }
-                      
-     }
-
-    }
-
-    </script>
-
-
-<<<<<<< HEAD
-
-    <script type="text/javascript">
-
-    function validatehide(){
-
-     document.getElementById("numloc").style.visibility = "hidden";
-
-   };
-
-
-    </script>
-
-
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
    
   </head>
 
@@ -194,17 +101,7 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
-
-						    <li ><a  href="classselect.php">Update Contact Number</a></li>
-
-              
-
-                    <li ><a  href="classselect2.php">Update Whole Contact</a></li>
-    
-=======
 						    <li ><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -268,46 +165,20 @@ header("Location:login_lit.php");
 
 	if( isset($_POST['class'])&& isset($_POST['student']) && isset($_POST['contact']) && isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['guardian']))
      {
-<<<<<<< HEAD
-
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 		
                       $class    =   $_POST['class'];
-					  $studen =   $_POST['student'];
-
-            $student = ucfirst($studen);
-                     
-           $contact  =   $_POST['contact'];
-					
-            $moth   =   $_POST['mother'];
-
-            $mother = ucfirst($moth);
-                     
-            $fath   =   $_POST['father'];
-            
-            $father = ucfirst($fath);
-					  
-            $guardian =   $_POST['guardian'];
-
-<<<<<<< HEAD
-            echo "hello";
-
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-
-      
+					  $student =   $_POST['student'];
+                      $contact  =   $_POST['contact'];
+					  $mother   =   $_POST['mother'];
+                      $father   =   $_POST['father'];
+					  $guardian =   $_POST['guardian'];
 
             $rows_num = 0;
 					  
 
-            $q = "SELECT  `student`, `contact`,`class` FROM `student` WHERE `student` = '$student' AND `contact` = '$contact' AND `class` != 'Alumini'";
+            $q = "SELECT  `student`, `contact` FROM `student` WHERE `student` = '$student' AND `contact` = '$contact'";
 
-<<<<<<< HEAD
-               if($my_q_run =  mysql_query($q))
-=======
              if($my_q_run =  mysql_query($q))
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
              {
 
               $rows_num = mysql_num_rows($my_q_run);
@@ -379,10 +250,7 @@ header("Location:login_lit.php");
                          if($query_run = mysql_query($query))
                        
                           {
-
-                    
-
-echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info alert-dismissable"><div class="centered">Student Record inserted Successfully</div></div></article>';
+echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info"><div class="centered">Student Record inserted Successfully</div></div></article>';
 									  
 						  }
 						  
@@ -393,7 +261,7 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 							   else
                                   
 								  { 
-         echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger alert-dismissable"><div class="centered">Invalid Entry or Any Field Left Empty ... Please Re-enter</div></div></article>';
+         echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger"><div class="centered">Invalid Entry or Any Field Left Empty ... Please Re-enter</div></div></article>';
 		                           }
 
                     
@@ -402,7 +270,7 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 			     else
                                   
 								  { 
-                echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger alert-dismissable"><div class="centered">WARNING::No class Choosen Please Choose One </div></div></article>';
+                echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger"><div class="centered">WARNING::No class Choosen Please Choose One </div></div></article>';
 		                          
                    }
 
@@ -456,7 +324,7 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 				
 				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
                     
-                        <form name="myform" class="form-horizontal style-form" action ="newcontact.php" method="POST" onsubmit="return validate()">
+                        <form class="form-horizontal style-form" action ="contacttesting.php" method="POST">
                          
                             
                        
@@ -469,60 +337,38 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 
 
 							<div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Class</h4>  </label>
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Class</h4>  </label>
                                     
 						
-                                      <article class="col-md-4">
+                                      <article class="col-md-5">
                                        <select name="class" class="form-control">
-                                         <option >Choose Class</option>
                                        
-                                       
-                                        <option>Crech</option>
-                                        <option>Playgroup </option>
+										                     <option >Choose Class</option>
                                         <option  >Nursery</option>
-										                    
-										                
+										                     <option>Playgroup</option>
+										                        <option>Balvadi</option>
 										                            <option>KG-I</option>
                                         <option>KG-II</option>
-<<<<<<< HEAD
-                                                <option>Alumini</option>
-						
-                                        
-									                           </select>
-							                            </article> <br>
-                                           <span class="col-md-offset-1" style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
-                                 
-                            </div>    
-=======
 						
                                         
 									                           </select>
 							                            </article>
                                  
                             </div> 
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                              <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Student Name</h4></label>
-                                   <div class="col-sm-4">
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Student Name</h4></label>
+                                   <div class="col-sm-5">
                                         <input type="text" class="form-control round-form" name = "student" required>
                                         
                                     </div>
-                            
+                            </div>
 
 							
-				
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Contact No.</h4></label>
-                                   <div class="col-sm-4">
-<<<<<<< HEAD
-                                        <input  type="text" class="form-control round-form" name = "contact" required><br>
-                                     
-=======
-                                        <input type="text" class="form-control round-form" name = "contact" required><br>
-                                         <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-
-
+							<div class="form-group">
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Contact No.</h4></label>
+                                   <div class="col-sm-5">
+                                        <input type="text" class="form-control round-form" name = "contact" required>
                                         
                                     </div>
                             </div>
@@ -530,34 +376,32 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 
 
                               <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Mother's Name</h4></label>
-                                   <div class="col-sm-4">
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Mother's Name</h4></label>
+                                   <div class="col-sm-5">
                                         <input type="text" class="form-control round-form" name = "mother" required>
                                          
                                     </div>
-                          
-                            <label class="col-sm-2 col-sm-2 control-label"><h4>Father's Name</h4></label>
-                                   <div class="col-sm-4">
+                            </div>
+
+
+                              <div class="form-group">
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Father's Name</h4></label>
+                                   <div class="col-sm-5">
                                         <input type="text" class="form-control round-form" name = "father" required>
                                         
                                     </div>
                             </div>
 
                         <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Guardian's Name</h4></label>
-                                   <div class="col-sm-4">
-                                        <input type="text" class="form-control round-form" name = "guardian" value="none">
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Guardian's Name</h4></label>
+                                   <div class="col-sm-5">
+                                        <input type="text" class="form-control round-form" name = "guardian">
                                         
-                                    </div><br><br><br>
-<<<<<<< HEAD
-      <div class="centered">   <input type="submit" class="btn btn-lg btn-success"  value="Enter" name="enter"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
-=======
-      <div class="centered">   <input type="submit" class="btn btn-lg btn-success" value="Enter" name="enter"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-</div>            
+                                    </div>
                             </div>
 
-                   
+                      <div class="centered">   <input type="submit" class="btn btn-lg btn-success" value="Enter" name="enter"> 
+</div>					  
 					 
  </div>
  </div>

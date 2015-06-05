@@ -29,7 +29,11 @@ header("Location:login_lit.php");
     <style type="text/css">
     #slida-container{
       margin:30px auto;
+<<<<<<< HEAD
 			max-width:700px;
+=======
+			max-width:1024px;
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 			max-height:576px;
 		}
     </style>
@@ -146,6 +150,7 @@ header("Location:login_lit.php");
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
+<<<<<<< HEAD
         <section id="main-content">
           <section class="wrapper">
       
@@ -156,6 +161,14 @@ header("Location:login_lit.php");
   <article class="col-md-7 col-md-offset-1">
 
   <div id="slida-container" style="margin-top:-10px;margin-left:-52px;">  
+=======
+       <section id="main-content">
+          <section class="wrapper">
+		  
+		 <article class="col-md-offset-1 col-md-12" style="margin-top:-1%;margin-left:3.4%;background-color:"black";" >
+  
+  <div id="slida-container">	
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     <div id="slida-1" class="samp-slider samp-slider-mask">    
       <ul class="samp-container-horizontal">
         <li class="samp-container"><img src="imgs/im1.jpg"></li>
@@ -163,6 +176,7 @@ header("Location:login_lit.php");
         <li class="samp-container"><img src="imgs/im3.jpg"></li>
         <li class="samp-container"><img src="imgs/im4.jpg"></li>
         <li class="samp-container"><img src="imgs/im5.jpg"></li>
+<<<<<<< HEAD
     <li class="samp-container"><img src="imgs/im6.jpg"></li>
     <li class="samp-container"><img src="imgs/im7.jpg"></li>
     <li class="samp-container"><img src="imgs/im8.jpg"></li>
@@ -383,6 +397,19 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="sampslider.js?v1"></script>
   <script type="text/javascript">
+=======
+		<li class="samp-container"><img src="imgs/im6.jpg"></li>
+		<li class="samp-container"><img src="imgs/im7.jpg"></li>
+		<li class="samp-container"><img src="imgs/im8.jpg"></li>
+		<li class="samp-container"><img src="imgs/im9.jpg"></li>
+      </ul>
+    </div>
+  </div>
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="sampslider.js?v1"></script>
+	<script type="text/javascript">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   
     var slida = jQuery('#slida-1').sampSlider({
       aspectratio:1.8,
@@ -408,10 +435,17 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
   })();
 
 </script>
+<<<<<<< HEAD
       
 
   
    </article>
+=======
+		  
+
+  
+	 </article>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     </section>          <!--wrapper -->
       </section>   
             
@@ -434,12 +468,21 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
     
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+<<<<<<< HEAD
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
    
   
   
   
   <script type="application/javascript">
+=======
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+   
+	
+	
+	
+	<script type="application/javascript">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -472,8 +515,13 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
+<<<<<<< HEAD
     
     
+=======
+		
+		
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     </script>
   
 

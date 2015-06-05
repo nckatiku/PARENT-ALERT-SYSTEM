@@ -15,7 +15,10 @@ header("Location:login_lit.php");
 <html lang="en">
   <head>
 
+<<<<<<< HEAD
  <link href="forallcont.css" rel="stylesheet">
+=======
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
    <?php
 
@@ -24,7 +27,11 @@ header("Location:login_lit.php");
    ?>
   
    </head>
+<<<<<<< HEAD
 <body style="background-color:rgb(255,255,255)">
+=======
+<body>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 <section id="container" >
 	<!--header start-->
 		<nav class ="navbar navbar-inverse navbar-default navbar-fixed-top role = "navigation">
@@ -146,13 +153,18 @@ header("Location:login_lit.php");
 
                     <div class="table-responsive">
 
+<<<<<<< HEAD
 							<table  border ="2" class="table table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
+=======
+							<table  border ="2" class="table table-striped table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 				
 											<?php 
 
                       $serial = 1;
 											
 													if(isset($_POST['class']))
+<<<<<<< HEAD
 
 
 								{
@@ -165,6 +177,11 @@ header("Location:login_lit.php");
                          {
 
 														$query="SELECT * from student_info where class ='".$class."' ORDER BY `student`;";
+=======
+								{
+														$class=$_POST['class'];
+														$query="select * from student where class='".$class."' ORDER BY `student`;";
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 														if(mysql_query($query))
 								{
 															$query_run=mysql_query($query);
@@ -207,6 +224,7 @@ header("Location:login_lit.php");
 																}
 															}
 														}
+<<<<<<< HEAD
 
                           }
 
@@ -260,6 +278,9 @@ header("Location:login_lit.php");
 													}
 
                         }
+=======
+													}
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 													
 												?>
 				

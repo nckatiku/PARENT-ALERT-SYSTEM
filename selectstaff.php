@@ -210,7 +210,11 @@ header("Location:login_lit.php");
 								<form class="form-horizontal style-form" action ="updatestaff.php"  method="POST">
 									<div class="form-panel" >
 	
+<<<<<<< HEAD
        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Update  Staff Contact Number</span></div></div></h4><br>
+=======
+       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Delete Staff Record</span></div></div></h4><br>
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 									
 											
 										<br><br>
@@ -273,7 +277,11 @@ header("Location:login_lit.php");
 										
 										<br> <br>
 										
+<<<<<<< HEAD
 										<div class="col-sm-offset-2">
+=======
+										<div class="col-sm-offset-3">
+>>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 											<input type="submit" class="btn btn-lg btn-info" name ="Delete" value="Procced to Update Staff Record">
 										</div>
 									
