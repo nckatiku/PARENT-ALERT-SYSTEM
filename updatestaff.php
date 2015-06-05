@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -181,14 +181,10 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
 						  <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
-=======
-						    <li ><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -374,11 +370,7 @@ header("Location:login_lit.php");
  </div>
 
 
-<<<<<<< HEAD
           <article class="col-md-8 col-md-offset-2">
-=======
-          <article class="col-md-10 col-md-offset-2">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
         
 				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
@@ -395,8 +387,7 @@ header("Location:login_lit.php");
                
         
 						 
-<<<<<<< HEAD
-                           <br>
+                           
 
                    <?php 
 
@@ -421,17 +412,6 @@ header("Location:login_lit.php");
                         <label class="col-sm-5 col-sm-5 control-label"><h4>Exixsting Contact</h4> </label>
                     
                       <div class="col-sm-4">
-=======
-                           <br><br><br>
-
-                   
-
-                        <div class="form-group">
-                  
-                        <label class="col-sm-3 col-sm-3 control-label"><h4>Exixsting Contact</h4> </label>
-                    
-                      <div class="col-sm-5">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                             
                 
                          <input type="text" class="form-control round-form" name= "contact" class="form-control"  value= "<?php 
@@ -492,29 +472,19 @@ header("Location:login_lit.php");
 
 
                               <div class="form-group">
-<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>New Contact</h4></label>
                                    <div class="col-sm-4">
-=======
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>New Contact</h4></label>
-                                   <div class="col-sm-5">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         <input type="text" class="form-control round-form" name = "new" required>
                                         <span class="help-block"><p class="col-md-offset-1">Enter the new contact of the staff</p></span>
                                          
    
-<<<<<<< HEAD
                                     </div><br>
-=======
-                                    </div><br><br><br><br>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
-                                    <span class="col-md-offset-3"  style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+            <span class="col-md-offset-4"  style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
 
  
-                            </div><br>
+                            </div>
 
                               <div class="form-group">
-<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>Renter Contact</h4></label>
                                    <div class="col-sm-4">
                                     <input type="text" class="form-control round-form" name = "reent" required>
@@ -522,23 +492,13 @@ header("Location:login_lit.php");
 
                                     </div> <br>
 
-                              <span class="col-md-offset-5"  style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span>          
+                              <span class="col-md-offset-5"  style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span>  
+                                  <div class="centered">  <input type="submit" class="btn btn-lg btn-success" value="Update" name="enter"> </div>       
                             </div>
-=======
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Renter Contact</h4></label>
-                                   <div class="col-sm-5">
-                                    <input type="text" class="form-control round-form" name = "reent" required>
-                         <span class="help-block"><p class="col-md-offset-1">Again Enter the new contact of the staff</p></span> 
-
-                                    </div> <br><br>
-
-                              <span class="col-md-offset-5"  style= "color:white;  background-color:rgb(244,80,81)" id="span2"> </span>          
-                            </div><br>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                       
 
-                       <div class="centered">  <input type="submit" class="btn btn-lg btn-success" value="Update" name="enter"> </div>
+                   
 						 
 						 
 							</div> 
@@ -570,10 +530,62 @@ header("Location:login_lit.php");
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
       
-  <?php
-  include 'layout2.php';
+  <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
 
-  ?>
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
   
-  </body>
 </html>
+      
+  
+  
+

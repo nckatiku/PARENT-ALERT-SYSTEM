@@ -1,23 +1,14 @@
-<<<<<<< HEAD
 <?php
 
  require 'connect.php';
 
  session_start();
-=======
-
-<?php
-include 'connect.php';
-
-session_start();
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
-<<<<<<< HEAD
 
 
 
@@ -29,23 +20,10 @@ header("Location:login_lit.php");
 <html lang="en">
   <head>
   <?php
-=======
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-
-
-
-    <?php
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
     include 'layout.php';
 
    ?>
-<<<<<<< HEAD
 
   
     <link type="text/css" rel="stylesheet" media="all" href="sampslider.css" />
@@ -59,16 +37,6 @@ header("Location:login_lit.php");
   
    
   </head>8
-=======
-  
-	 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  
-    <link type="text/css" rel="stylesheet" media="all" href="sampslider.css" />
-    
-
-	
-  </head>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
   <body>
 
@@ -77,7 +45,6 @@ header("Location:login_lit.php");
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-<<<<<<< HEAD
       <header class="row">
            
       
@@ -114,55 +81,11 @@ header("Location:login_lit.php");
     
      
     <!--header end-->
-=======
-     
-	  <header class="row">
-           
-			
-		<nav class ="navbar navbar-inverse navbar-fixed-top role = "navigation">
-			 <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <div>
-	
-			<!--logo start-->
-            <a  class="logo"><b> Little Soldiers School - Parent Alert Syestem</div></b></a>
-
-          
-
-            <!--logo end-->
-            
-            <div class="top-menu">
-              <ul class="nav navbar-right top-nav">
-              <li>
-          
-              <button class="btn btn-warning" type="button">
-                          <a href="adminpage.php"><span style="color:white"><i class="li_user"> </i> Admin </span></a>
-                            </button>    
-                            
-                            
-
-                            <button class="btn btn-warning" type="button">
-                          <a href="logout.php"><span style="color:white"> Logout <i class="glyphicon glyphicon-off"> </i></span></a>
-                            </button>   </li>     
-
-                                </ul>
-
-
-            </div>
-    			</div>
-			</nav>
-
-        </header>
-				
-      <!--header end-->
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
       
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-<<<<<<< HEAD
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -174,29 +97,6 @@ header("Location:login_lit.php");
                           <span>Home</span>
                       </a>
                   </li>
-=======
-     
-	  <aside>
-
-          <div id="sidebar"  class="nav-collapse ">
-          
-            
-              <ul class="sidebar-menu" id="nav-accordion">
-
-
-              
- 
-              	  
-				  
-	
-              	  	
-                  <li class="sub-menu">
-                      <a class="active"  href="myhome.php">
-                          <i class="li_shop"></i>
-                         <span class ="active">Home</span>
-                      </a>
-                  </li> 
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                   <li class="sub-menu">
                       <a  href="javascript:;" >
@@ -205,7 +105,6 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li ><a  href="mycompose.php">New Event Message</a></li>
-<<<<<<< HEAD
                 <li ><a  href="simple.php">Simple Message</a></li>
                           
                       </ul>
@@ -213,23 +112,11 @@ header("Location:login_lit.php");
           
            <li class="sub-menu">
                       <a  href="javascript:;" >
-=======
-						     <li ><a  href="simple.php">Simple Message</a></li>
-                       
-                          
-                      </ul>
-                  </li> 
-				  
-				  
-				    <li class="sub-menu">
-                      <a href="javascript:;" >
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                           <i class="li_pen"></i>
                           <span> Contact</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
                <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
@@ -240,72 +127,40 @@ header("Location:login_lit.php");
                   </li>
           
           <li class="sub-menu">
-=======
-						    <li ><a  href="update.php">Update Contact</a></li>
-							   <li ><a  href="delete.php">Delete Contact</a></li>
-							   
-                      </ul>
-                  </li> 
-				  
-				  <li class="sub-menu">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       <a href="javascript:;" >
                           <i class="li_pen"></i>
                           <span> Class Operations</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="updateclass.php">Update Whole Class</a></li>
-<<<<<<< HEAD
                 <li ><a  href="getcontacts.php">Get All Contacts</a></li>
                  
                  <li ><a  href="delkgii.php">Delete Class KG-II</a></li>
-=======
-						    <li ><a  href="getcontacts.php">Get All Contacts</a></li>
-							   
-							   <li ><a  href="delkgii.php">Delete Class KG-II</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       </ul>
                   </li>
                 
 
-<<<<<<< HEAD
  
 
                 
 
         <li class="sub-menu">
-=======
-
-                
-				  <li class="sub-menu">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       <a href="javascript:;" >
                           <i class="li_user"></i>
                           <span>Staff</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="staffmessage.php">Message Staff</a></li>
-<<<<<<< HEAD
               <li><a  href="newstaff.php">Add New Staff </a></li>
               <li><a  href="staffdel.php">Delete a Staff</a></li>
               <li><a  href="selectstaff.php">Update Staff Contact</a></li>
  
-=======
-						  <li><a  href="newstaff.php">Add New Staff </a></li>
-						  <li><a  href="staffdel.php">Delete a Staff</a></li>
-              <li><a  href="selectstaff.php">Update Staff Contact</a></li>
- 
-						  
- 
-
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                  
                       </ul>
                   </li>
 
 
               </ul>
-<<<<<<< HEAD
               <!-- sidebar menu end-->
           </div>
       </aside>
@@ -342,7 +197,7 @@ header("Location:login_lit.php");
 
   <div class="col-md-offset-2">
   <div class="col-md-4">
-   <div class="thumbnail" style="color:black;background-color:rgb(210,210,210)">
+   <div class="thumbnail" style="color:black;background-color:rgb(210,210,210);">
    <div class="caption">
    <p class="centered" style="font-family:Magneto;font-size:20px;" ><i class="glyphicon glyphicon-flag"> </i> About Us </p>
    <p style="font-family:Monotype Corsiva;font-size:18px;">We the LIITTLE SOLDIERS is an organization working for the development of a child at his initial years.A child with just some months old arrived on this planet must be handle with care and love but also in a discilpilned manner.Estabilshed on 1992 by   Mrs. Prabha Rajput  she saw a dream to make little and brave soldiers from this institute who can  
@@ -552,60 +407,6 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="sampslider.js?v1"></script>
   <script type="text/javascript">
-=======
-        
-           
-          </div>
-      </aside>
-	 
-   <!--main content start-->
-       <section id="main-content">
-          <section class="wrapper">
-
- <div class="row">
-  
-
-<div class="col-md-offset-1">
-
-  <div class="col-md-4">
-
-<div class="thumbnail">
-
-  <div class="caption">
-
-  asasafa
-
-  </div>
-
-  </div>
-  </div>
-  </div>
-
-		<div class="col-md-3">  
-  <div style="width:700px;height:100px;margin-left:-1px;">	
- 
-    <div id="slida-1" class="samp-slider samp-slider-mask">    
-      <ul class="samp-container-horizontal">
-        <li class="samp-container"><img  src="imgs/im1.jpg"></li>
-        <li class="samp-container"><img src="imgs/im2.jpg"></li>
-        <li class="samp-container"><img src="imgs/im3.jpg"></li>
-        <li class="samp-container"><img src="imgs/im4.jpg"></li>
-        <li class="samp-container"><img src="imgs/im5.jpg"></li>
-		<li class="samp-container"><img src="imgs/im6.jpg"></li>
-		<li class="samp-container"><img src="imgs/im7.jpg"></li>
-		<li class="samp-container"><img src="imgs/im8.jpg"></li>
-		<li class="samp-container"><img src="imgs/im9.jpg"></li>
-      </ul>
-    </div>
-</div>
-</div>
-</div>
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="sampslider.js?v1"></script>
-	<script type="text/javascript">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   
     var slida = jQuery('#slida-1').sampSlider({
       aspectratio:1.8,
@@ -631,7 +432,6 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
   })();
 
 </script>
-<<<<<<< HEAD
       
 
   
@@ -642,20 +442,10 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
 
       
       <!--footer end-->-2
-=======
-
-
-		  
-
-  
-	 
-    
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
    
-<<<<<<< HEAD
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
@@ -709,16 +499,6 @@ $_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;
     
     
     </script>
-=======
-  
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-   
-	
-	<?php
-  include 'layout2.php';
-
-  ?>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   
 
   </body>

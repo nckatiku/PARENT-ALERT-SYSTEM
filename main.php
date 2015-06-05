@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 
@@ -23,12 +23,15 @@ header("Location:login_lit.php");
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
   
-  <script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
+
+   <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+    $( "#format" ).change(function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+    });
   });
   </script>
-
 
   
 
@@ -1118,11 +1121,33 @@ echo $output;
                                           <div class="col-sm-3">
                                           <input type="text" name ="when" id="datepicker"   class="form-control round-form" required/>
                                     
+
                                              <span class="help-block">Date of the event</span>
+
+                                                                                  </div>
+
+ <div class="col-md-3">
+  
+  <select id="format"  class="form-control round-form">
+    
+    <option> Select a format</option>
+    <option value="dd/mm/yy">DD/MM/YY</option>
+    
+  
+    <option value="d-MM-yy">Medium </option>
+    <option value="DD, d MM, yy">Full </option>
+  
+  </select>
+                                               <span class="help-block">Foramt of the Date</span>
+
+
+     
+</div>
+
+
                                               
                                                </div>
-                                           </div>
-
+      
                          
 
 
@@ -1145,8 +1170,14 @@ echo $output;
 
 
 										<div class="col-sm-offset-3">
-										<input type="submit" class="btn btn-lg btn-info" name ="send" value="Send" onmouseover="ct()">
-										<span class="col-md-offset-3">    <span  id="tot" style="margin-left:-120px;margin-bottom:5px;"> </span>	<span class="col-md-offset-3"><input type="reset" class="btn btn-lg btn-danger" name ="reset" value ="Clear"></span></span>
+										<input type="submit"  style="border-top-right-radius:20px;border-top-left-radius:20px;border-bottom-right-radius:20px;
+
+border-bottom-left-radius:20px;"class="btn btn-lg btn-warning" name ="send" value="Send" onmouseover="ct()">
+										<span class="col-md-offset-3">    <span  id="tot" style="margin-left:-120px;margin-bottom:5px;"> </span>	<span class="col-md-offset-3">
+
+                    <input type="reset" class="btn btn-lg btn-danger" style="border-top-right-radius:20px;border-top-left-radius:20px;border-bottom-right-radius:20px;
+
+border-bottom-left-radius:20px;" name ="reset" value ="Clear"></span></span>
 				   
 
 								
@@ -1173,15 +1204,59 @@ echo $output;
 
   
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-      
-  <?php
-  include 'layout2.php';
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
 
-  ?>
- 
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
   
-  </body>
 </html>
+      
+  
+  
+

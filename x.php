@@ -4,8 +4,6 @@
 
     include 'layout.php';
 
-    session_start();
-
 
 
    ?>
@@ -191,7 +189,6 @@ chart.render();
 </header>
 
 <aside>
-
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                 <br>
@@ -607,7 +604,7 @@ chart.render();
 
                                       
 
-                        $query="SELECT `name`,`date` FROM `events` WHERE `type` = 'national'";
+                        $query="SELECT * FROM `events` WHERE `type` = 'national'";
     
                             if(mysql_query($query))
              {
@@ -704,7 +701,7 @@ chart.render();
           
 
               if(!empty($type) && !empty($name) && !empty($date))
-    {
+              {
 
 
                 $chk = "SELECT * FROM `events` WHERE `type` = '$type' AND `name` = '$name'";
@@ -716,7 +713,7 @@ chart.render();
 
 
                   if($num == 0)
-        {
+                  {
 
                 if(isset($_POST['insert']))
                  {   
@@ -735,36 +732,32 @@ chart.render();
                 {
                   echo "error";
                 }
-    
-    }
-
-    }
-              
+              }
 
               else if(isset($_POST['delete']))
-         {   
+                 {   
 
 
                 $qu = "DELETE FROM `events` WHERE `name` = `$name`";
 
             
-        
-                if(mysql_query($qu))
+
+                if($qu_run = mysql_query($qu))
                 {
                   echo "Event Deleted";
                 }
 
                 else
                 {
-                  echo "error hghghg";
+                  echo "error";
                 }
-        }
+              }
               
-            
+            }
 
             }
           }
-?>
+            ?>
 
 
 

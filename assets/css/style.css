@@ -11,11 +11,7 @@ Premium: http://www.gridgum.com
 
 /* BASIC THEME CONFIGURATION */
 body {
-<<<<<<< HEAD
     color: rgb(90,90,90);
-=======
-    color: #797979;
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 	background: #f2f2f2;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
@@ -254,7 +250,7 @@ ul.top-menu > li > .logout {
 /*sidebar navigation*/
 
 #sidebar {
-    width: 270px;
+    width: 220px;
     height: 100%;
     position: fixed;
     background: #333332;
@@ -1955,11 +1951,7 @@ label {
 
 /*LOGIN CONFIGURATION PAGE*/
 .form-login {
-<<<<<<< HEAD
 	max-width: 350px;
-=======
-	max-width: 330px;
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 	margin: 100px auto 0;
 	background: #fff;
 	border-radius: 5px;

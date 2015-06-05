@@ -5,7 +5,7 @@ session_start();
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 ?> 	
@@ -15,10 +15,7 @@ header("Location:login_lit.php");
 <html lang="en">
   <head>
 
-<<<<<<< HEAD
  <link href="forallcont.css" rel="stylesheet">
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
    <?php
 
@@ -27,11 +24,7 @@ header("Location:login_lit.php");
    ?>
   
    </head>
-<<<<<<< HEAD
 <body style="background-color:rgb(255,255,255)">
-=======
-<body>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 <section id="container" >
 	<!--header start-->
 		<nav class ="navbar navbar-inverse navbar-default navbar-fixed-top role = "navigation">
@@ -81,7 +74,7 @@ header("Location:login_lit.php");
 			     <li class="sub-menu active">
                       <a href="getcontacts.php" >
                           <i class="fa fa-tasks"></i>
-                          <span>Select New Class To See Details</span>
+                          <span>Get All contacts</span>
                       </a>
                    </li>
 
@@ -153,18 +146,13 @@ header("Location:login_lit.php");
 
                     <div class="table-responsive">
 
-<<<<<<< HEAD
 							<table  border ="2" class="table table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
-=======
-							<table  border ="2" class="table table-striped table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 				
 											<?php 
 
                       $serial = 1;
 											
 													if(isset($_POST['class']))
-<<<<<<< HEAD
 
 
 								{
@@ -177,11 +165,6 @@ header("Location:login_lit.php");
                          {
 
 														$query="SELECT * from student_info where class ='".$class."' ORDER BY `student`;";
-=======
-								{
-														$class=$_POST['class'];
-														$query="select * from student where class='".$class."' ORDER BY `student`;";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 														if(mysql_query($query))
 								{
 															$query_run=mysql_query($query);
@@ -224,7 +207,6 @@ header("Location:login_lit.php");
 																}
 															}
 														}
-<<<<<<< HEAD
 
                           }
 
@@ -278,9 +260,6 @@ header("Location:login_lit.php");
 													}
 
                         }
-=======
-													}
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 													
 												?>
 				
@@ -302,17 +281,62 @@ header("Location:login_lit.php");
   
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-  <?php
-  include 'layout2.php';
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
 
-  ?>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
+  
+</html>
+      
+  
   
 
-
-
-  </body>
-</html>

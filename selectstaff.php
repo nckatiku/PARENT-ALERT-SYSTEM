@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -210,11 +210,7 @@ header("Location:login_lit.php");
 								<form class="form-horizontal style-form" action ="updatestaff.php"  method="POST">
 									<div class="form-panel" >
 	
-<<<<<<< HEAD
        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Update  Staff Contact Number</span></div></div></h4><br>
-=======
-       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Delete Staff Record</span></div></div></h4><br>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 									
 											
 										<br><br>
@@ -231,7 +227,7 @@ header("Location:login_lit.php");
 												
 													
 												
-														$query="SELECT `teacher` FROM `staff`";
+														$query="SELECT `teacher` FROM `staff` where `status` != 'inactive'";
 														if(mysql_query($query))
 														{
 															$query_run=mysql_query($query);
@@ -277,11 +273,7 @@ header("Location:login_lit.php");
 										
 										<br> <br>
 										
-<<<<<<< HEAD
 										<div class="col-sm-offset-2">
-=======
-										<div class="col-sm-offset-3">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 											<input type="submit" class="btn btn-lg btn-info" name ="Delete" value="Procced to Update Staff Record">
 										</div>
 									
@@ -303,17 +295,62 @@ header("Location:login_lit.php");
     <!--footer end-->
 </section>
 
+  <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
+  
+</html>
+      
+  
   
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-1.8.3.min.js"></script>
-   
-    <?php
-  include 'layout2.php';
-
-  ?>
- 
-
-  </body>
-</html>

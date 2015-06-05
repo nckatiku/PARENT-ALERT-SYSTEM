@@ -6,28 +6,19 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
-<<<<<<< HEAD
   
   
  ?>   
-=======
-	
-	
- ?> 	
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<<<<<<< HEAD
   
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
@@ -44,7 +35,6 @@ header("Location:login_lit.php");
   });
   </script>
 
-<<<<<<< HEAD
   
     <script>
       function countChar(val) {
@@ -101,8 +91,6 @@ header("Location:login_lit.php");
 
 
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
  <?php
 
@@ -113,7 +101,6 @@ header("Location:login_lit.php");
    </head>
 <body>
 <section id="container" >
-<<<<<<< HEAD
   <!--header start-->
     <nav class ="navbar navbar-inverse navbar-default navbar-fixed-top role = "navigation">
        <div class="sidebar-toggle-box">
@@ -122,21 +109,10 @@ header("Location:login_lit.php");
             <div>
       
       <!--logo start-->
-=======
-	<!--header start-->
-		<nav class ="navbar navbar-inverse navbar-default navbar-fixed-top role = "navigation">
-			 <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <div>
-			
-			<!--logo start-->
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
             <a  class="logo"><b><div class ="color">Little Soldiers School</div></b></a>
             <!--logo end-->
             
             <div class="top-menu">
-<<<<<<< HEAD
               <ul class="nav pull-right top-menu">
                    
               <button class="btn btn-warning" type="button">
@@ -145,16 +121,6 @@ header("Location:login_lit.php");
             </div>
       </div>
       </nav>
-=======
-            	<ul class="nav pull-right top-menu">
-                   
-              <button class="btn btn-warning" type="button">
-                          <a href="logout.php"><span style="color:white"> Logout <i class="glyphicon glyphicon-off"> </i></span></a>
-                            </button>             	</ul>
-            </div>
-			</div>
-			</nav>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
         </he    <!--logo end-->
 
@@ -170,13 +136,8 @@ header("Location:login_lit.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-<<<<<<< HEAD
        
           <li class="mt">
-=======
-			 
-				  <li class="mt">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       <a href="userhome.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Home</span>
@@ -190,13 +151,8 @@ header("Location:login_lit.php");
                    </li>
 
             
-<<<<<<< HEAD
         
            <li class="sub-menu active">
-=======
-			  
-			     <li class="sub-menu active">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       <a href="usersimple.php" >
                           <i class="fa fa-dashboard"></i>
                           <span>Back to Compose</span>
@@ -205,7 +161,6 @@ header("Location:login_lit.php");
 
               </ul>
               <!-- sidebar menu end-->
-<<<<<<< HEAD
       </div>
     </aside>
       <!--sidebar end-->  
@@ -227,29 +182,6 @@ header("Location:login_lit.php");
        <div style = "margin-top:-3%">
 
        <div><span style="color:rgb(70,70,70)"><div><h4><div class="centered" style="font-family:colona MT;padding:5px;background-color:rgb(85,85,85);color:white">Simple Message</div></h4></span></div>
-=======
-			</div>
-		</aside>
-      <!--sidebar end-->	
-	<!-- BASIC FORM ELELEMNTS -->
-	<section id="main-content">
-		<section class="wrapper">
-				
-			<div class="row mt">
-			<div class="col-md-offset-1">
-					<div class="col-lg-12">
-					
-					<form class="form-horizontal style-form" action ="usermain2.php"  method="POST">
-					    
-               <div style="margin-top:-3%; margin-left:2%">
-					
-              <div class="form-panel">
-                   
-							   <div style="background-color:rgb(179,223,247)">
-       <div style ="margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%">
-
-       <div><span style="color:rgb(70,70,70)"><div style="margin-left:1.5%"><h4>Simple Message</h4></span></div>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
              
 
         <?php
@@ -262,16 +194,11 @@ header("Location:login_lit.php");
          
            
 
-<<<<<<< HEAD
   if( isset($_POST['contact']) && isset($_POST['mes']) && isset($_POST['route']))
-=======
-  if( isset($_POST['contact']) && isset($_POST['mes']) )
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
      {
      
 
                       $contact = $_POST['contact'];
-<<<<<<< HEAD
 
                        $rou = $_POST['route'];
                       if($rou == "Transactional")
@@ -292,8 +219,6 @@ header("Location:login_lit.php");
                       $cont_300 = null;
                       $cont_400 = null;
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                       $m =   $_POST['mes'];
                       $date = " ";
 
@@ -302,7 +227,6 @@ header("Location:login_lit.php");
                       if(isset($_POST['when'])  && isset($_POST['when2']))
                       {
 
-<<<<<<< HEAD
                             $date = $_POST['when'];
 
                            $date2 = $_POST['when2'];
@@ -332,36 +256,6 @@ header("Location:login_lit.php");
 
 
                  }
-=======
-                      $date = $_POST['when'];
-
-                       $date2 = $_POST['when2'];
-
-                       $mes = $m. " "."Date:".$date." "."to"." ".$date2;
-
-                      
-                      }
-
-                      else if( isset($_POST['when'])  )
-                      {
-
-                      $date = $_POST['when'];
-
-                     $mes = $m." "."Date:".$date;
-
-                      
-          
-                      }
-
-                       else
-
-                       {
-
-                        $mes = $m;
-                       }
-
-        
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
         
             
                      $x = str_split($contact);
@@ -383,16 +277,12 @@ header("Location:login_lit.php");
                       
 
                      $cont = $cont."$value";
-<<<<<<< HEAD
 
                      $count_num = $count_num + 1;
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                     
                     }
             } 
 
-<<<<<<< HEAD
 
 
                   if($count_num <= 100)
@@ -674,7 +564,7 @@ echo "third";
   echo $mobileNumber;
 
 //Sender ID,While using route4 sender id should be 6 characters long.
-$senderId = "LILSOL";
+$senderId = "LitSol";
 
 //Your message to send, Add URL encoding here.
 $message = urlencode($mes);
@@ -756,97 +646,11 @@ echo $output;
        
 
  
-=======
-    
-            
-           
-            
-  
-            
-      
-
-
-              
-                if (isset($_POST['send'])) //to insert data in a table 
-    {
-             
-             
-               
-                    if(!empty($contact) && !empty($mes) )
-          
-    {
-          
-                         
-             /* place ur api here and enjoy */
-              $mobilenumbers =$cont;
-              
-                      $message = $mes;
-            
-          $user="swap81099"; //your username
-                    $password="86235184"; //your password
-                    $senderid="SMSCountry"; //Your senderid
-                    $messagetype="N"; //Type Of Your Message
-                    $DReports="Y"; //Delivery Reports
-                    $url="http://www.smscountry.com/SMSCwebservice_Bulk.aspx";
-                    $message = urlencode($message);
-          
-          
-                            
-              $ch = curl_init();
-                            if (!$ch){die("Couldn't initialize a cURL handle");}
-                            $ret = curl_setopt($ch, CURLOPT_URL,$url);
-                            curl_setopt ($ch, CURLOPT_POST, 1);
-                            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-                            curl_setopt ($ch, CURLOPT_POSTFIELDS,
-                "User=$user&passwd=$password&mobilenumber=$mobilenumbers&message=$message&sid=$senderid&mtype=$messagetype&DR=$DReports");
-                            $ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                            //If you are behind proxy then please uncomment below line and provide your proxy ip with port.
-                            // $ret = curl_setopt($ch, CURLOPT_PROXY, "PROXY IP ADDRESS:PORT");
-                            $curlresponse = curl_exec($ch); // execute
-                            if(curl_errno($ch))
-                            echo 'curl error : '. curl_error($ch);
-                            if (empty($ret)) 
-          {
-                      // some kind of an error happened
-                         die(curl_error($ch));
-                         curl_close($ch); // close cURL handler
-                } 
-        else 
-        {
-                          $info = curl_getinfo($ch);
-                          curl_close($ch); // close cURL handler
-                           //echo "";
-            
-                          
-                          echo $curlresponse;
-              echo '<article class="col-md-offset-2 col-md-10"><div style="margin-top:-2%; font-size:18px; color:rgb(0,0,220)"><div class="centered">Message Sent Succesfully </div> </div> </article>' ;
-                         
-
-         } 
-           
-
-   }
-        else
-  {
- echo '<article class="col-md-offset-2 col-md-10"><div style="margin-top:-2%; font-size:15px "><div style="color:rgb(248,81,81)"><div class="centered">Warning::::Blank message or no contact numbers selected please  resend</div></div></div></article>';
-        
-  }
-  
-}
-       
-
- }
-
- 
-
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
  
  
   
 ?>
 </div>
-<<<<<<< HEAD
               
                   <div class="form-group">
                       <div class="col-sm-3" style="margin-left:2%">
@@ -876,27 +680,6 @@ echo $output;
             
 
                   $query= "SELECT * FROM  student_info WHERE `class` LIKE 'KG-II' OR `class` LIKE 'Playgroup' OR `class` LIKE 'Crech' OR `class` LIKE 'KG-I' OR `class` LIKE 'Nursery'";
-=======
-							<br>
-									<div class="form-group">
-											<div class="col-sm-3" style="margin-left:2%">
-												<label class="label-control"><h4>Contact Numbers</h4></label>
-											</div>
-											<div class="col-sm-8">
-												<textarea class="form-control"  rows="3" name="contact">
-                        <?php 
-													
-                                $class=$_POST['class'];
-
-                         if($class == "All")
-
-
-        {
-                          
-                                      echo "Selected"." ".$class." "."Classes"."\n";
-
-                  $query= "SELECT * FROM  student ORDER BY `class`";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                            
                             if(mysql_query($query))
              {
@@ -913,7 +696,6 @@ echo $output;
                               {
 
                                 $i=0;
-<<<<<<< HEAD
 
 
                       echo "Selected"." ".$class[0]." "."Classes"." "." "; echo "Total Contacts Selected::";
@@ -923,8 +705,6 @@ echo $output;
 
                                       echo $num."\n";
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                 while($i<mysql_num_rows($query_run))
                                     {
                                     $contact =mysql_result($query_run,$i,'contact');
@@ -933,17 +713,11 @@ echo $output;
 
                                     $stud =mysql_result($query_run,$i,'student');
 
-<<<<<<< HEAD
                                     echo "$stud"."[".$class."]"."=>".$contact." ".",";
                                     
                                     $i=$i+1;
                       
                                   
-=======
-                                    echo "$stud"." "."[".$class."]"."=>".$contact." ".",";
-                                    
-                                    $i=$i+1;
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                     }
                               }
               }
@@ -953,7 +727,6 @@ echo $output;
         else if($class != "All")
 
                               {  
-<<<<<<< HEAD
 
 
                                    echo "Contacts::";
@@ -975,14 +748,6 @@ echo $output;
                                
 
                             $query="SELECT `student`,`contact`,`class` from student_info  where class='".$class[0]."';";
-=======
-        
-                          if(isset($_POST['class']))
-                          {
-                            $class=$_POST['class'];
-
-                            $query="select `student`,`contact` from student where class='".$class."';";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                             
                             if(mysql_query($query)){
                               $query_run=mysql_query($query);
@@ -991,7 +756,6 @@ echo $output;
                               }
                               else{
                                 $i=0;
-<<<<<<< HEAD
 
 
                                       echo "Total Contacts Selected::";
@@ -1003,14 +767,10 @@ echo $output;
 
                                       echo " "." ". " " . " ";
                       
-=======
-                                                       echo "Class Selected:".$class."\n"."All contacts::"." ";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
          
                                 while($i<mysql_num_rows($query_run)){
                                     $contacts=mysql_result($query_run,$i,'contact');
                                      $student=mysql_result($query_run,$i,'student');
-<<<<<<< HEAD
                                        $class=mysql_result($query_run,$i,'class');
 
                                     echo "[".$class."]"." "."$student"."=>".$contacts.", ";
@@ -1280,102 +1040,29 @@ echo $output;
   </section>   
   <!-- /MAIN CONTENT -->
   <!--main content end-->
-=======
-
-                                    echo $student." "."=>".$contacts.", ";
-
-                                    $i=$i+1;
-                                }
-                              }
-                            }
-                          }
-                          }
-                      
-													
-												?></textarea>
-											</div>	
-										</div>
-										
-										<div class="form-group" style="margin-left:1%" >
-                                            <label class="col-sm-3 col-sm-3 control-label"><h4>Message</h4></label>
-                                             <div class="col-sm-8">
-                                     <textarea class="form-control round-form"  name ="mes" rows="4" value=""></textarea> 
-                                           <span class="help-block"><p class ="centered">Type your message here</p></span>
-                                            </div>
-                                           </div>
-										   
-										     <div class="form-group" style="margin-left:1%">
-                                            <label class="col-sm-3 col-sm-3 control-label"><h4>Date</h4></label>
-                                          <div class="col-sm-3">
-                                    <input type="text" name ="when" id="datepicker"   class="form-control round-form"/>
-
-
-									 
-									     <span class="help-block">Type Start date</span><br> <div class="col-md-offset-4"> <b>TO</b> </div><br>
-
-
-					
-									    <input type="text" name ="when2" id="datepicker2"   class="form-control round-form"/>
-					     
-                                             <span class="help-block">Type End date.If only one day Event/holiday leave this filed Empty</span>
-                                               </div>
-                                           </div>
-
-										
-
-										   
-										   
-										  
-										<div class="col-sm-offset-4">
-											<input type="submit" class="btn btn-lg btn-info" name ="send" value="Send">
-											<span class="col-md-offset-3">	<input type="reset" class="btn btn-lg btn-danger" name ="reset" value ="Clear"></span>
-				
-								</div>
-						</div>
-	                </div>
-                         
-			 </form>
-			
-					</div>
-					<!-- col-lg-12-->       
-			</div>
-			</div>
-			<!-- /row -->
-		</section>  
-		<!--wrapper -->
-	</section>   
-	<!-- /MAIN CONTENT -->
-	<!--main content end-->
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     <!--footer end-->
 </section>
 
   
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+
+  <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="assets/js/jquery.sparkline.js"></script>
-
+   
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
     
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
 
-    
-<<<<<<< HEAD
-  
-  
-  <script type="application/javascript">
-=======
-	
-	
-	<script type="application/javascript">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
+
+    <script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -1409,7 +1096,11 @@ echo $output;
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
+
+    </body>
+  
+</html>
+      
+  
   
 
-  </body>
-</html>

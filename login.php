@@ -1,8 +1,3 @@
-<?php
-
-session_start();
-
-?>
 
 <?php
    
@@ -114,7 +109,7 @@ session_start();
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Liitle Soldiers Login</title>
+    <title>Liitle Soldires Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -129,11 +124,12 @@ session_start();
 
 <body>
 
+<!-- Form --------------------------------------FORM------------------------FORM-------------------FORM----------------FORM --> 
 <div class="col-md-offset-4" style="margin-top:170px">
 <div id="login-page">
 	<div class="container">
 
-             <form class="form-login"  action="login_lit.php" method="POST">
+             <form class="form-login"  action="login.php" method="POST">
 
                         <h2 class="form-login-heading">Little Soldiers</h2>
 
@@ -162,7 +158,7 @@ session_start();
 
             </form>
 			
-	
+	<!-- Form---------------------------FORM-----------------FORM---------------FORM -->
 
     </div>
 

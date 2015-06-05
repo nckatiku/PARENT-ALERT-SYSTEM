@@ -36,17 +36,10 @@ h1{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f32d27', endColorstr='#ff6b45',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
     
     width:950px;
-<<<<<<< HEAD
-    height:785px;
+    height:795px;
    /* height:70%; */
     position:absolute;
     top:5%;
-=======
-    height:720px;
-   /* height:70%; */
-    position:absolute;
-    top:2%;
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     left:15.5%;
 	
 	margin-top:-3%;

@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -17,18 +17,14 @@ header("Location:login_lit.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   
  <?php
 
     include 'layout.php';
 
    ?>
-<<<<<<< HEAD
    <script type="text/javascript">
  
     function blnkm(){
@@ -58,8 +54,6 @@ header("Location:login_lit.php");
     };
 
    </script>
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
   
 
   </head>
@@ -125,12 +119,8 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
 						    <li ><a  href="classselect.php">Update Contact Number</a></li>
 						        <li ><a  href="classselect2.php">Update Whole Contact</a></li>
-=======
-						    <li ><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -191,14 +181,11 @@ header("Location:login_lit.php");
 		 
                       $contact = $_POST['contact'];
                       $mes =   $_POST['mes'];
-<<<<<<< HEAD
 		
 
 		        if(!empty($contact))
 				
 		{
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 				
 
 			$x = str_split($contact);
@@ -239,22 +226,12 @@ header("Location:login_lit.php");
 
 
               
-<<<<<<< HEAD
         		     if(!empty($mes))
-=======
-                if (isset($_POST['send'])) //to insert data in a table 
- {
-		        if(!empty($cont))
-				
-		{
-				     if(!empty($mes))
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 		         
             {
                     
                          
 						 /* place ur api here and enjoy */
-<<<<<<< HEAD
 						  $authKey = "4545AaVEvTlYRiW5569a313";
 
 //Multiple mobiles numbers separated by comma
@@ -263,7 +240,7 @@ $mobileNumber = $cont;
 
 
 //Sender ID,While using route4 sender id should be 6 characters long.
-$senderId = "LILSOL";
+$senderId = "LitSol";
 
 
 
@@ -315,62 +292,12 @@ curl_close($ch);
 echo $output;
 						 
 echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="centered">Message Sent Succesfully to Staff Members </div></div></div>' ;
-=======
-						  $mobilenumbers =$cont;
-                      $message = $mes;
-
-
-					  
-					$user="swap81099"; //your username
-                    $password="86235184"; //your password
-                    $senderid="SMSCountry"; //Your senderid
-                    $messagetype="N"; //Type Of Your Message
-                    $DReports="Y"; //Delivery Reports
-                    $url="http://www.smscountry.com/SMSCwebservice_Bulk.aspx";
-                    $message = urlencode($message);
-					
-					
-                            
-							$ch = curl_init();
-                            if (!$ch){die("Couldn't initialize a cURL handle");}
-                            $ret = curl_setopt($ch, CURLOPT_URL,$url);
-                            curl_setopt ($ch, CURLOPT_POST, 1);
-                            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-                            curl_setopt ($ch, CURLOPT_POSTFIELDS,
-						    "User=$user&passwd=$password&mobilenumber=$mobilenumbers&message=$message&sid=$senderid&mtype=$messagetype&DR=$DReports");
-                            $ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                            //If you are behind proxy then please uncomment below line and provide your proxy ip with port.
-                            // $ret = curl_setopt($ch, CURLOPT_PROXY, "PROXY IP ADDRESS:PORT");
-                            $curlresponse = curl_exec($ch); // execute
-                            if(curl_errno($ch))
-                            echo 'curl error : '. curl_error($ch);
-                            if (empty($ret)) 
-			    {
-                      // some kind of an error happened
-                         die(curl_error($ch));
-                         curl_close($ch); // close cURL handler
-                } 
-				else 
-				{
-                          $info = curl_getinfo($ch);
-                          curl_close($ch); // close cURL handler
-                          
-                          
-                          echo $curlresponse;
-						 
-						  echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="centered">Message Sent Succesfully to Staff Members </div></div></div>' ;
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                          
 
                     } 
 		    
 
-<<<<<<< HEAD
 		    
-=======
-		    }
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 			else
 			{
 			  echo '<div class="col-md-offset-2"><div class="alert alert-danger"><div class="centered">Blank message cannot be send please resend</div></div></div>';
@@ -391,11 +318,7 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
   
 
  
-<<<<<<< HEAD
   
-=======
-  }
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
        
 
  
@@ -416,7 +339,6 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
 									
 										
 										<div class="form-group">
-<<<<<<< HEAD
 											<div class="col-sm-2">
 												<label class="label-control"><h4>Staff Numbers</h4> </label>
 											</div>
@@ -424,16 +346,6 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
                                             
 											  <textarea class="form-control"   rows="5" name="contact"><?php 
 												$query="SELECT `teacher`, `contact` FROM `staff`";
-=======
-											<div class="col-sm-4">
-												<label class="label-control"><h4>Staff Numbers</h4> </label>
-											</div>
-											<div class="col-md-8">
-                                            
-											  <textarea class="form-control"   rows="5" name="contact">
-											  <?php 
-												$query="SELECT `teacher`, `contact` FROM `staff` WHERE `status` = 'active'";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 				                                        if(mysql_query($query))
 														{
 															$query_run=mysql_query($query);
@@ -444,11 +356,7 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
 															else
 															{
 																$i=0;
-<<<<<<< HEAD
 																$take_stu = "\n"."All Teacher Contacts"."\n";
-=======
-																$take_stu = "\n"."All Teacher Contacts::"."\n";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 												
 												
 																while($i<mysql_num_rows($query_run))
@@ -475,14 +383,6 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
 													
                                            
                                                  echo $take_stu; 
-<<<<<<< HEAD
-=======
-
-
-
-                      
- 
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 													
 													
 													
@@ -501,17 +401,10 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
 										
 										
 										<div class="form-group">
-<<<<<<< HEAD
                                             <label class="col-sm-2 col-sm-2 control-label"><h4> Staff Mesage</h4></label>
                                              <div class="col-sm-7">
 											
                                              <textarea id="area" class="form-control round-form"  name ="mes" rows ="5" required></textarea>
-=======
-                                            <label class="col-sm-4 col-sm-4 control-label"><h4> Staff Mesage</h4></label>
-                                             <div class="col-sm-7">
-											
-                                             <textarea  class="form-control round-form"  name ="mes" rows ="5" required>  </textarea>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                            <span class="help-block"><p class ="centered">Type your message here for your staff</p></span>
                                             
                                             
@@ -523,14 +416,8 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
 										   
 										   
 										  
-<<<<<<< HEAD
 										<div class="col-sm-offset-3"> <input type="submit" class="btn btn-lg btn-info" onmouseover="blnkm()" name ="send" value="Send to Staff">
         <span class="col-md-offset-5">  <input type="reset" class="btn btn-lg btn-danger" name ="Clear" value="Clear"> </span>
-=======
-										<div class="col-sm-offset-3">
-											<input type="submit" class="btn btn-lg btn-info" name ="send" value="Send to Staff">
-        <span class="col-md-offset-5"> <input type="reset" class="btn btn-lg btn-danger" name ="Clear" value="Clear"> </span>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 										</div>
 									</div>
 	
@@ -550,18 +437,62 @@ echo '<div class="col-md-offset-2"><div class="alert alert-info"><div class="cen
     <!--footer end-->
 </section>
 
-  
-
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
-    	
-	<?php
-  include 'layout2.php';
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-  ?>
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
+  
+</html>
+      
+  
   
 
-  </body>
-</html>

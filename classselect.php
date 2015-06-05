@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -62,7 +62,7 @@ header("Location:login_lit.php");
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 			  
-			  <div style="margin-top:1%"> <p class="centered"><img  src="imgs/im5.jpg"class="img-circle"  width="250" height = "180"></p> </div>
+			 
 				  <li class="mt">
                       <a href="myhome.php">
                           <i class="fa fa-dashboard"></i>
@@ -88,15 +88,11 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
 						    <li class="active"><a  href="classselect.php">Update Contact Number</a></li>
 
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
-=======
-						    <li class="active"><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php"> Delete Contact </a></li>
 							   
                       </ul>
@@ -168,10 +164,7 @@ header("Location:login_lit.php");
                                     
                                            <option>KG-I</option>
                                         <option>KG-II</option>
-<<<<<<< HEAD
                                               <option>Alumini</option>
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                       
             
                                         
@@ -210,11 +203,59 @@ header("Location:login_lit.php");
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
-      
-  <?php
-  include 'layout2.php';
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-  ?>
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
   
-  </body>
 </html>
+      
+  
+  
+

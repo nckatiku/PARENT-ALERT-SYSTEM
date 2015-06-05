@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -152,7 +152,7 @@ header("Location:login_lit.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-                 	 <p class="centered"><img src="imgs/im7.jpg"class="img-circle"  width="250" height = "180"></p>	 
+                 	 
               	  	
                   <li class="mt">
                       <a  href="myhome.php">
@@ -381,14 +381,7 @@ header("Location:login_lit.php");
        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Update Student Record</span></div></div></h4><br><br>
 									
 	
-               
-        
-						 
-                        
-             
-                          
-
-                                 <?php
+                <?php
 
                         if(isset($_POST['st_name']))
    
@@ -402,7 +395,7 @@ header("Location:login_lit.php");
                         
                           
                         
-                                $query="select `class`,`student`,`class` from `student` where `student` ='".$stu."';";
+                                $query="select `class`,`student`,`class` from `student_info` where `student` ='".$stu."';";
 
                                 $query_run=mysql_query($query);
 
@@ -424,13 +417,17 @@ header("Location:login_lit.php");
 
                                   $class =mysql_result($query_run,$i,'class');
 
-                            echo '<div class="centered"><div class="btn btn-lg btn-warning">Class::'.$class.' </div></div>';
+                            echo '<div class="centered"><div class="btn btn-lg btn-info" style="border-top-right-radius:20px;border-top-left-radius:20px;border-bottom-right-radius:20px;
+
+border-bottom-left-radius:20px; ">Class::'.$class.' </div></div>';
 
               
 
                                  
 
-                                 echo '<div class="btn btn-warning">Student Name::'.$student.' </div>';
+                                 echo '<div class="btn btn-warning" style="border-top-right-radius:20px;border-top-left-radius:20px;border-bottom-right-radius:20px;
+
+border-bottom-left-radius:20px;">Student Name::'.$student.' </div>';
 
                       }
                           
@@ -590,15 +587,62 @@ header("Location:login_lit.php");
       <!--footer end-->-2
   </section>
 
-    <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
-      
-  <?php
-  include 'layout2.php';
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-  ?>
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
   
-  </body>
 </html>
+      
+  
+  
+

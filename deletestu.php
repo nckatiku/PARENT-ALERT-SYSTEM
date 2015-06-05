@@ -11,7 +11,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 
@@ -24,7 +24,7 @@ header("Location:login_lit.php");
   
  	function my() {
 
-    var x = confirm("Delete the Student Contact");
+    var x = confirm("Confrim Delete the Student Contact ??");
 
     if(x == true)
 
@@ -87,7 +87,7 @@ header("Location:login_lit.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-			     	 <p class="centered"><img src="imgs/im5.jpg"class="img-circle"  width="250" height = "180"></p>
+			     	
 				  <li class="mt">
                       <a href="myhome.php">
                           <i class="fa fa-dashboard"></i>
@@ -122,14 +122,10 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
 						 <li ><a  href="classselect.php">Update Contact Number</a></li>
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
-=======
-						    <li ><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -159,10 +155,7 @@ header("Location:login_lit.php");
                       <ul class="sub">
                           <li><a  href="staffmessage.php">Message Staff</a></li>
 						  <li><a  href="newstaff.php">Add New Staff </a></li>
-<<<<<<< HEAD
                <li><a  href="selectstaff.php">Update Staff Contact </a></li>
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 						  <li><a  href="staffdel.php">Delete a Staff</a></li>
 						  
  
@@ -248,7 +241,7 @@ include 'connect.php';
                               if(isset($_POST['class']))
                           {
                             $class=$_POST['class'];
-                            $query="select `student` from student where class='".$class."';";
+                            $query="select `student` from student_info where class='".$class."';";
                             if(mysql_query($query))
                             {
                               $query_run=mysql_query($query);

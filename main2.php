@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
   
@@ -23,29 +23,35 @@ header("Location:login_lit.php");
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
   
-  <script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
-  });
-  </script>
-
    <script>
-  $(document).ready(function() {
-    $("#datepicker2").datepicker();
+  $(function() {
+    $( "#datepicker" ).datepicker();
+    $( "#format" ).change(function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+    });
   });
   </script>
 
-  
+<script>
+  $(function() {
+    $( "#datepicker2" ).datepicker();
+    $( "#format" ).change(function() {
+      $( "#datepicker2" ).datepicker( "option", "dateFormat", $( this ).val() );
+    });
+  });
+  </script>
     <script>
       function countChar(val) {
         var len = val.value.length;
         if (len >= 500) {
           val.value = val.value.substring(0, 500);
         } else {
-          $('#charNum').text(0 + len);
+          $('#charNum').text(10 + len);
         }
       };
     </script>
+
+
 
            <script type="text/javascript">
 
@@ -562,7 +568,7 @@ echo "third";
   echo $mobileNumber;
 
 //Sender ID,While using route4 sender id should be 6 characters long.
-$senderId = "LILSOL";
+$senderId = "LitSol";
 
 //Your message to send, Add URL encoding here.
 $message = urlencode($mes);
@@ -988,18 +994,34 @@ echo $output;
                                              </select>
 
                   
+                    <span class="help-block">Select Promtional Route for Promotional Messaages </span>
+                                  
                    
                             
                       </article>  
                     </div>
+                                                                  <div class="col-sm-3 col-md-offset-1"><h5>Select a Date Format</h5>
+  <select id="format"  class="form-control round-form">
+    
+    <option> Select a format</option>
+    <option value="dd/mm/yy">DD/MM/YY</option>
+    
+  
+    <option value="d-MM-yy">Medium </option>
+    <option value="DD, d MM, yy">Full </option>
+  
+  </select>
+</p>
+</div>
+     
+
                        
                          <div class="form-group" style="margin-left:1%">
-                                            <label class="col-sm-3 control-label"><h4 class="centered">Date</h4></label>
+                                          
                                         
                                           <article class="col-sm-3 col-md-offset-2">
-                                    <input type="text" name ="when" id="datepicker" onclick="return x()"  class="form-control round-form" required/>
-
-
+                                  <h4 class="centered">Date</h4>  <input type="text" name ="when" id="datepicker" onclick="return x()"  class="form-control round-form" required/>
+                                                                  
                    
                        <span class="help-block">Enter Start date</span> <span class="col-md-offset-4"> <b>TO</b> </span><br><br>
 

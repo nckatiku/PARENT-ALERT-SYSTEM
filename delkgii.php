@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -91,7 +91,7 @@ header("Location:login_lit.php");
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 			  
-			  <div style="margin-top:1%"> <p class="centered"><img  src="imgs/im5.jpg"class="img-circle"  width="250" height = "180"></p> </div>
+			  
 				  <li class="mt">
                       <a href="myhome.php">
                           <i class="fa fa-dashboard"></i>
@@ -174,7 +174,7 @@ header("Location:login_lit.php");
 								<form class="form-horizontal style-form" action ="ondelkgii.php"  method="POST">
 									<div class="form-panel">
 	
-       <div  style ="padding:10px;background-color:rgb(255,80,80);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-1"><span style="color:white"><i class="glyphicon glyphicon-remove"> </i> Be Careful using this page :: Delete Class KG-II After End of the yearly Session  </span></div></div></h4><br>
+       <div  style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-1"><span style="color:white"><i class="glyphicon glyphicon-remove"> </i> Be Careful using this page :: Delete Class KG-II After End of the yearly Session  </span></div></div></h4><br>
 				
          <div class="alert alert-danger"><div style="color:red" class="centered"><b> PLEASE READ THE BELOW INSTRUCTIONS</b></div></div>
 

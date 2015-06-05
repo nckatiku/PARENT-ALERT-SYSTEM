@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -40,11 +40,8 @@ header("Location:login_lit.php");
      {
         document.getElementById("numloc").style.padding = "8px";
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
         
 
       document.getElementById("numloc").innerHTML = "Wrong value entered Enter only Numeric Value";
@@ -78,11 +75,7 @@ header("Location:login_lit.php");
 
                          
                         
-<<<<<<< HEAD
                             document.getElementById("numloc").innerHTML = " Entered" + " " +count+" "+ "digits Contact Number must be of 10 digits only";
-=======
-                            document.getElementById("numloc").innerHTML = " Entered" + " " +count+" "+ "digits Contact Number must be of 10 digits ony";
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                            
                             
                             return false;
@@ -100,7 +93,6 @@ header("Location:login_lit.php");
     </script>
 
 
-<<<<<<< HEAD
 
     <script type="text/javascript">
 
@@ -114,8 +106,6 @@ header("Location:login_lit.php");
     </script>
 
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
    
   </head>
 
@@ -166,7 +156,7 @@ header("Location:login_lit.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              <div style="margin-top-2%">   	 <p class="centered"><img  src="imgs/im3.jpg" class="img-circle"  width="250" height = "180"></p></div>	  
+           	  
               	  	
                   <li class="mt">
                       <a  href="myhome.php">
@@ -194,7 +184,6 @@ header("Location:login_lit.php");
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="newcontact.php">New Contact</a></li>
-<<<<<<< HEAD
 
 						    <li ><a  href="classselect.php">Update Contact Number</a></li>
 
@@ -202,9 +191,6 @@ header("Location:login_lit.php");
 
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
     
-=======
-						    <li ><a  href="classselect.php">Update Contact</a></li>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -268,10 +254,7 @@ header("Location:login_lit.php");
 
 	if( isset($_POST['class'])&& isset($_POST['student']) && isset($_POST['contact']) && isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['guardian']))
      {
-<<<<<<< HEAD
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 		
                       $class    =   $_POST['class'];
 					  $studen =   $_POST['student'];
@@ -290,28 +273,23 @@ header("Location:login_lit.php");
 					  
             $guardian =   $_POST['guardian'];
 
-<<<<<<< HEAD
-            echo "hello";
+        
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
       
 
             $rows_num = 0;
+
+      
 					  
 
-            $q = "SELECT  `student`, `contact`,`class` FROM `student` WHERE `student` = '$student' AND `contact` = '$contact' AND `class` != 'Alumini'";
+            $q = "SELECT  `student`, `contact`,`class` FROM `student_info` WHERE `student` = '$student' AND `contact` = '$contact' AND `class` != 'Alumini'";
 
-<<<<<<< HEAD
                if($my_q_run =  mysql_query($q))
-=======
-             if($my_q_run =  mysql_query($q))
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
              {
 
               $rows_num = mysql_num_rows($my_q_run);
-              echo $rows_num;
+            
 
             }
 
@@ -372,7 +350,7 @@ header("Location:login_lit.php");
 
               
                                 
-  $query="INSERT INTO `student`(`student`, `class`, `contact`, `mother`, `father`, `guardian`) VALUES ('$student','$class','$contact','$mother','$father','$guardian')";      
+  $query="INSERT INTO `student_info`(`student`, `class`, `contact`, `mother`, `father`, `guardian`) VALUES ('$student','$class','$contact','$mother','$father','$guardian')";      
 
                       
 				
@@ -484,7 +462,6 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 										                
 										                            <option>KG-I</option>
                                         <option>KG-II</option>
-<<<<<<< HEAD
                                                 <option>Alumini</option>
 						
                                         
@@ -493,14 +470,6 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
                                            <span class="col-md-offset-1" style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
                                  
                             </div>    
-=======
-						
-                                        
-									                           </select>
-							                            </article>
-                                 
-                            </div> 
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                              <div class="form-group">
                                  <label class="col-sm-2 col-sm-2 control-label"><h4>Student Name</h4></label>
@@ -514,13 +483,8 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 				
                                  <label class="col-sm-2 col-sm-2 control-label"><h4>Contact No.</h4></label>
                                    <div class="col-sm-4">
-<<<<<<< HEAD
                                         <input  type="text" class="form-control round-form" name = "contact" required><br>
                                      
-=======
-                                        <input type="text" class="form-control round-form" name = "contact" required><br>
-                                         <span style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
 
                                         
@@ -549,11 +513,7 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
                                         <input type="text" class="form-control round-form" name = "guardian" value="none">
                                         
                                     </div><br><br><br>
-<<<<<<< HEAD
       <div class="centered">   <input type="submit" class="btn btn-lg btn-success"  value="Enter" name="enter"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
-=======
-      <div class="centered">   <input type="submit" class="btn btn-lg btn-success" value="Enter" name="enter"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 </div>            
                             </div>
 
@@ -589,11 +549,56 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
     <script src="assets/js/jquery-1.8.3.min.js"></script>
    
       
-  <?php
-  include 'layout2.php';
-
-  ?>
+  
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
    
 
-  </body>
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
+  
 </html>

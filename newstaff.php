@@ -6,7 +6,7 @@
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
 
 	
@@ -22,7 +22,6 @@ header("Location:login_lit.php");
     include 'layout.php';
 
    ?>
-<<<<<<< HEAD
 
     <script>
 
@@ -93,8 +92,6 @@ header("Location:login_lit.php");
     </script>
 
 
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
     </head>
 
   <body>
@@ -171,10 +168,7 @@ header("Location:login_lit.php");
                       <ul class="sub">
                           <li><a  href="newcontact.php">New Contact</a></li>
 						    <li ><a  href="classselect.php">Update Contact</a></li>
-<<<<<<< HEAD
                     <li ><a  href="classselect2.php">Update Whole Contact</a></li>
-=======
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 							   <li ><a  href="delete.php">Delete Contact</a></li>
 							   
                       </ul>
@@ -235,7 +229,6 @@ header("Location:login_lit.php");
 
 	if(  isset($_POST['staff']) && isset($_POST['contact']) && isset($_POST['f_h']))
      {
-<<<<<<< HEAD
 
       
 
@@ -248,12 +241,6 @@ header("Location:login_lit.php");
                     $f  =   $_POST['f_h'];
 
                     $f_h = ucfirst($f);
-=======
-		
-                      $staff =   $_POST['staff'];
-                      $contact  =   $_POST['contact'];
-					  $f_h   =   $_POST['f_h'];
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
           
 		       
 
@@ -261,18 +248,13 @@ header("Location:login_lit.php");
               
                 if (isset($_POST['enter'])) //to insert data in a table 
 		{
-<<<<<<< HEAD
 				       
-=======
-				 
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 			   		 
 		            if(!empty($staff)&& !empty($contact) && !empty($f_h))
                
                   {
 
 
-<<<<<<< HEAD
                     
 
 
@@ -285,16 +267,6 @@ header("Location:login_lit.php");
                        
                           {
 
-=======
-              
-                                
-                               $query="INSERT INTO `staff`( `teacher`, `contact`, `f_or_h`) VALUES ('$staff','$contact','$f_h') ";
-                      
-				
-                         if($query_run = mysql_query($query))
-                       
-                          {
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 						   
 						     echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info alert-dismissable"><div class="centered">Staff Record '.$staff.' inserted Successfully</div></div></article>';
 									  
@@ -323,29 +295,17 @@ header("Location:login_lit.php");
 
 			</div>
     <div class="row mt">
-<<<<<<< HEAD
           <div class="col-lg-11">
 		  		<div class="col-sm-offset-4">
-=======
-          <div class="col-lg-12">
-		  		<div class="col-sm-offset-2">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
             <div class="form-panel" >
               
 				         
 				<!-- FORM --------------------FORM-------------------------FORM------------------------FORM --------------------------FORM-->
                     
-<<<<<<< HEAD
                         <form class="form-horizontal style-form" name="myform" action ="newstaff.php" method="POST" onsubmit="return validate()">
                          
                    
                        <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.8%;margin-right:-1.6%;margin-top:-1.6%"><h4><div class="col-md-offset-5"><span style="color:white">Enter New Staff Contact</span></div></div></h4><br>
-=======
-                        <form class="form-horizontal style-form" action ="newstaff.php" method="POST">
-                         
-                   
-                       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1.2%"><h4><div class="col-md-offset-5"><span style="color:white">Enter New Staff Contact</span></div></div></h4><br>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
 
                                
 							 
@@ -353,13 +313,8 @@ header("Location:login_lit.php");
                              <div class="form-group">
 							 
 
-<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>Staff Name</h4></label>
                                    <div class="col-sm-6">
-=======
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Staff Name</h4></label>
-                                   <div class="col-sm-5">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         <input type="text" class="form-control round-form" name = "staff" required>
                                         
                                     </div>
@@ -367,7 +322,6 @@ header("Location:login_lit.php");
 
 							
 							<div class="form-group">
-<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>Contact No.</h4></label>
                                    <div class="col-sm-6">
                                         <input type="text" class="form-control round-form" name = "contact" required> <br><br>
@@ -375,11 +329,6 @@ header("Location:login_lit.php");
                                            <div style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </div>
                                   
  
-=======
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Contact No.</h4></label>
-                                   <div class="col-sm-5">
-                                        <input type="text" class="form-control round-form" name = "contact" required>
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         
                                     </div>
                             </div>
@@ -387,13 +336,8 @@ header("Location:login_lit.php");
 
 
                               <div class="form-group">
-<<<<<<< HEAD
                                  <label class="col-sm-5 col-sm-5 control-label"><h4>Father/Husband Name</h4></label>
                                    <div class="col-sm-6">
-=======
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Father/Husband Name</h4></label>
-                                   <div class="col-sm-5">
->>>>>>> f0be7880be4e80ad5ab0d4af5c9dce0a7d843986
                                         <input type="text" class="form-control round-form" name = "f_h" required>
                                          
                                     </div>
@@ -429,16 +373,62 @@ header("Location:login_lit.php");
       <!--footer end-->-2
   </section>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
 
-      
-  <?php
-  include 'layout2.php';
+  <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+   
 
-  ?>
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>  
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    </body>
+  
+</html>
+      
+  
   
 
-  </body>
-</html>
