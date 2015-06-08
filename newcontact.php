@@ -4,10 +4,11 @@
 
  session_start();
 
-if(!$_SESSION['id'])
+if(!$_SESSION['id'] == "vb")
 {
 header("Location:index.php");
 }
+
 
 	
 	
@@ -44,7 +45,7 @@ header("Location:index.php");
 
         
 
-      document.getElementById("numloc").innerHTML = "Wrong value entered Enter only Numeric Value";
+      document.getElementById("numloc").innerHTML = "Wrong value entered Enter only Numeric Value in the Contact Number Field";
 
       return false;
 
@@ -252,28 +253,116 @@ header("Location:index.php");
          
            
 
-	if( isset($_POST['class'])&& isset($_POST['student']) && isset($_POST['contact']) && isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['guardian']))
+	if( isset($_POST['class'])&& isset($_POST['student'])&& isset($_POST['dob']) && isset($_POST['adr'])  && isset($_POST['contact']) &&isset($_POST['contact2'])&& isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['ocp']) && isset($_POST['guardian']))
      {
 
 		
                       $class    =   $_POST['class'];
 					  $studen =   $_POST['student'];
 
-            $student = ucfirst($studen);
+             $dob =  $_POST['dob'];
+
+          $adr = $_POST['adr'];
+
+            $stu = ucfirst($studen);
+
+          $ocp = $_POST['ocp'];
                      
            $contact  =   $_POST['contact'];
-					
+
+           $contact2  =   $_POST['contact2'];
+          
             $moth   =   $_POST['mother'];
 
-            $mother = ucfirst($moth);
+            $mothe = ucfirst($moth);
                      
             $fath   =   $_POST['father'];
             
-            $father = ucfirst($fath);
-					  
+            $fathe = ucfirst($fath);
+            
             $guardian =   $_POST['guardian'];
 
         
+
+            $student = " "; $father = " "; $mother = " ";
+
+           $p = str_split($stu);
+
+          for ($i=0; $i <strlen($stu); $i++) { 
+            
+                if($stu[$i] == " ")
+                {
+                 
+                   $i++;
+
+                    $up = ucfirst($p[$i]);
+
+                    $student = $student." ".$up;
+
+                }
+
+                else
+                {
+                   $student = $student.$p[$i];
+
+                }
+          }
+
+  
+
+           $q = str_split($mothe);
+
+          for ($i=0; $i <strlen($mothe); $i++) { 
+            
+                if($mothe[$i] == " ")
+                {
+                 
+                   $i++;
+
+                    $up = ucfirst($q[$i]);
+
+                    $mother = $mother." ".$up;
+
+                }
+
+                else
+                {
+                   $mother = $mother.$q[$i];
+
+                }
+          }
+
+
+
+ $r = str_split($fathe);
+
+          for ($i=0; $i <strlen($fathe); $i++) { 
+            
+                if($fathe[$i] == " ")
+                {
+                 
+                   $i++;
+
+                    $up = ucfirst($r[$i]);
+
+                    $father = $father ." ".$up;
+
+                }
+
+                else
+                {
+                   $father  = $father .$r[$i];
+
+                }
+          }
+
+        
+
+
+
+
+
+
 
 
       
@@ -348,19 +437,20 @@ header("Location:index.php");
                   {
 
 
-              
+          
                                 
-  $query="INSERT INTO `student_info`(`student`, `class`, `contact`, `mother`, `father`, `guardian`) VALUES ('$student','$class','$contact','$mother','$father','$guardian')";      
+  $query="INSERT INTO `student_info`(`student`, `dob`, `address`, `class`, `contact`, `contact2`, `mother`, `father`, `occupation`, `guardian`) VALUES ('$student','$dob','$adr','$class','$contact','$contact2','$mother','$father','$ocp','$guardian')";      
 
                       
 				
                          if($query_run = mysql_query($query))
                        
                           {
+                          
 
                     
 
-echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info alert-dismissable"><div class="centered">Student Record inserted Successfully</div></div></article>';
+echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info alert-dismissable"><div class="centered">Student Record '.$student.' inserted Successfully</div></div></article>';
 									  
 						  }
 						  
@@ -466,30 +556,54 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
 						
                                         
 									                           </select>
-							                            </article> <br>
-                                           <span class="col-md-offset-1" style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+							                            </article> 
                                  
-                            </div>    
+                         
 
-                             <div class="form-group">
+                          
                                  <label class="col-sm-2 col-sm-2 control-label"><h4>Student Name</h4></label>
                                    <div class="col-sm-4">
                                         <input type="text" class="form-control round-form" name = "student" required>
                                         
-                                    </div>
                             
+                                 </div>  
+                                </div>
 
-							
-				
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Contact No.</h4></label>
-                                   <div class="col-sm-4">
-                                        <input  type="text" class="form-control round-form" name = "contact" required><br>
+                                                            <div class="form-group"> 
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Date Of Birth</h4></label>
+                                   <div class="col-sm-2">
+                                        <input  type="text" class="form-control round-form" name = "dob" required>
                                      
+                                       </div>
+                               
 
-
+                                    <label class="col-sm-1 col-sm-1 control-label"><h4>Address</h4></label>
+                                   <div class="col-sm-7">
+                                        <input  type="text" class="form-control round-form" name = "adr" required>
+                                     
                                         
                                     </div>
-                            </div>
+                          
+                                        </div>
+							
+				                          <div class="form-group"> 
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Father's Name</h4></label>
+                                   <div class="col-sm-4">
+                                        <input  type="text" class="form-control round-form" name = "father" required>
+                                     
+                                       </div>
+                               
+
+                                    <label class="col-sm-2 col-sm-2 control-label"><h4>Occupation</h4></label>
+                                   <div class="col-sm-4">
+                                        <input  type="text" class="form-control round-form" name = "ocp" required>
+                                     
+                                        
+                                    </div>
+                          
+                                        </div>
+
+                                              
 
 
 
@@ -500,11 +614,14 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
                                          
                                     </div>
                           
-                            <label class="col-sm-2 col-sm-2 control-label"><h4>Father's Name</h4></label>
+                            <label class="col-sm-2 col-sm-2 control-label"><h4>Contact #1</h4></label>
                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control round-form" name = "father" required>
+                                        <input type="text" class="form-control round-form" name = "contact" required><br>
+                              
                                         
                                     </div>
+                                    <span class="col-md-offset-6" style= "color:white;  background-color:rgb(244,80,81)" id="numloc"> </span>
+                                 
                             </div>
 
                         <div class="form-group">
@@ -512,7 +629,15 @@ echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info al
                                    <div class="col-sm-4">
                                         <input type="text" class="form-control round-form" name = "guardian" value="none">
                                         
-                                    </div><br><br><br>
+                                    </div>
+
+                            <label class="col-sm-2 col-sm-2 control-label"><h4>Contact #2</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name = "contact2">
+                                        
+                                    </div>
+                            </div>
+
       <div class="centered">   <input type="submit" class="btn btn-lg btn-success"  value="Enter" name="enter"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
 </div>            
                             </div>

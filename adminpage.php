@@ -2,14 +2,16 @@
 
     <?php
 
-    include 'layout.php';
 
     session_start();
 
+    include 'mygraph.php';
+
+    include 'layout.php'
 
 
-   ?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /
 
     <title>Admin Panel-Little Soldiers School</title>
 
@@ -49,6 +52,7 @@
 <html>
 
 <head>
+
 
   <script type="text/javascript">
   window.onload = function x() {
@@ -102,6 +106,8 @@ chart.render();
 }
 </script>
 <script type="text/javascript" src="canvasjs.min.js"></script>
+
+
 
 
   
@@ -205,6 +211,10 @@ chart.render();
                         <a href="myhome.php" style="color:rgb(22,200,210)"><i class="glyphicon glyphicon-home"> </i> Home</a>
                     </li>
                    
+                    <li>
+                        <a href="report.php" style="color:rgb(22,200,210)"><i class="glyphicon glyphicon-home"> </i> Deleivery Report</a>
+                    </li>
+                   
                 
                     
                    
@@ -229,7 +239,12 @@ chart.render();
 
                          <div class="row">
 
+
     <div class="centered"><h3 style="color:rgb(110,110,110);">Monthly Analysis of Messages transactions </h3> <br></div>
+
+        <div class="col-sm-2"> <form action ="mygraph.php" method ="POST"> <select class="form-control" name="year"> <option value="select"> Select A year </option> <option> 2016 </option><option> 2017 </option><option> 2018 </option><option> 201 </option><option> 2018 </option></select> </form> </div> 
+
+
 
    </div>
 
@@ -239,20 +254,201 @@ chart.render();
     <div id="chartContainer" style="height: 300px; width: 100%;">
   </div>
   
+
                
 
+      
 
-</form>        
+
 
   
   </div>
 
+
+
           <hr>
 
           </div>
+          <div class="row">
+                  <div class="centered"> <h3 style="color:rgb(110,110,110);"> Message Count </h3> <br> </div>
+                
+                    <div class="centered"> <h4 style="color:rgb(110,110,110);">Transactional Message Count </h4> <br> </div>
+
+                       <div class="col-sm-4">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="panel-title">Total Message Credits</div>
+                            </div>
+
+  
+
+                            <div class="panel-body">
+                                30,000
+                            </div>
+                        </div>
+                    </div>
+                                  <div class="col-sm-4">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Messages Sent</h3>
+                            </div>
+                            <div class="panel-body">
+                     <?php $c = 30000; echo $c - $_SESSION['count']; ?>
+                            </div>
+                        </div>
+                    </div>
+        
+                       <div class="col-sm-4">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Message Credits Left</h3>
+                            </div>
+                            <div class="panel-body">
+                     
+                       <?php
+
+$authKey = "4545AaVEvTlYRiW5569a313";
+$route = 4;
+//Prepare you post parameters
+$postData = array(
+    'authkey' => $authKey,
+    'type' => $route,
+    
+);
+//API URL
+$url="http://sms.bulk24sms.com/api/balance.php";
+
+// init the resource
+$ch = curl_init();
+curl_setopt_array($ch, array(
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $postData
+    //,CURLOPT_FOLLOWLOCATION => true
+));
+
+
+//Ignore SSL certificate verification
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+
+//get response
+$output = curl_exec($ch);
+
+//Print error if any
+if(curl_errno($ch))
+{
+    echo 'error:' . curl_error($ch);
+}
+
+curl_close($ch);
+
+echo $output;
+
+$_SESSION['count'] = $output;
+
+
+?>
+
+                            </div>
+                        </div>
+                    </div>
+        
+                 
+
+                 </div>
+
+                 
+                 <div class="row">
+                    <div class="centered"> <h4 style="color:rgb(110,110,110);">Promotional Message Count </h4> <br> </div>
+
+                       <div class="col-sm-4">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="panel-title">Total Message Credits</div>
+                            </div>
+
+  
+
+                            <div class="panel-body">
+                                10,000
+                            </div>
+                        </div>
+                    </div>
+                                  <div class="col-sm-4">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Messages Sent</h3>
+                            </div>
+                            <div class="panel-body">
+                     <?php $c = 10000; echo $c - $_SESSION['count2']; ?>
+                            </div>
+                        </div>
+                    </div>
+        
+                       <div class="col-sm-4">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Message Credits Left</h3>
+                            </div>
+                            <div class="panel-body">
+                     
+                       <?php
+
+$authKey = "4545AaVEvTlYRiW5569a313";
+$route = 1;
+//Prepare you post parameters
+$postData = array(
+    'authkey' => $authKey,
+    'type' => $route,
+    
+);
+//API URL
+$url="http://sms.bulk24sms.com/api/balance.php";
+
+// init the resource
+$ch = curl_init();
+curl_setopt_array($ch, array(
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $postData
+    //,CURLOPT_FOLLOWLOCATION => true
+));
+
+
+//Ignore SSL certificate verification
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+
+//get response
+$output = curl_exec($ch);
+
+//Print error if any
+if(curl_errno($ch))
+{
+    echo 'error:' . curl_error($ch);
+}
+
+curl_close($ch);
+
+echo $output;
+
+$_SESSION['count2'] = $output;
+
+
+?>
+
+                            </div>
+                        </div>
+                    </div>
+        
                      
 
-                          
+                        
                    
                   <div class="centered"> <h3 style="color:rgb(110,110,110);">Number Of Students </h3><br> </div>
                 
@@ -839,177 +1035,10 @@ chart.render();
 
 
                 <br><br><br> <br>
-                   <div class="row">
-                    <div class="centered"> <h3 style="color:rgb(110,110,110);">Message Count </h3> <br> </div>
-
-                       <div class="col-sm-4">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="panel-title">Total Message Credits</div>
-                            </div>
-
-                            <?php
-
-  $p = 0;
-
-$q = "SELECT *  FROM `msg_count` WHERE `id` = '1'";
-
-
-$run = mysql_query($q);
-
-for($i = 1; $i <= 12; $i ++)
-
-{
-
-if($i == 1)
-{
- $k1 = mysql_result($run, $p, 'msg_jan');
-
-
-
-
-
-}
-
-else if($i == 2)
-{
-  $k2 = mysql_result($run, $p, 'msg_feb');
-
-  
-   
-
-}
-
-
-
-else if($i == 3)
-{
- $k3 = mysql_result($run, $p, 'msg_mar');
-
-
-
-
-
-}
-
-else if($i == 4)
-{
-  $k4 = mysql_result($run, $p, 'msg_apr');
-
-    
-
-}
-
-
-if($i == 5)
-{
- $k5 = mysql_result($run, $p, 'msg_may');
-
-
-
-
-
-}
-
-else if($i == 6)
-{
-  $k6 = mysql_result($run, $p, 'msg_jun');
-
-    
-    
-
-}
-
-
-if($i == 7)
-{
- $k7 = mysql_result($run, $p, 'msg_jul');
-
-
-
-
-}
-
-else if($i == 8)
-{
-  $k8 = mysql_result($run, $p, 'msg_aug');
-
-    
-    
-
-}
-else if($i == 9)
-{
-  $k9 = mysql_result($run, $p, 'msg_sep');
-
-
-}
-else if($i == 10)
-{
-  $k10 = mysql_result($run, $p, 'msg_oct');
-
-    
-
-}
-else if($i == 11)
-{
-  $k11 = mysql_result($run, $p, 'msg_nov');
-
-    
-     
-
-}
-else if($i == 12)
-{
-  $k12 = mysql_result($run, $p, 'msg_dec');
-
-    
-
-}
-
-
-}
-
-
- 
-$k_tot = $k1 + $k2 + $k3+ $k4+ $k5+ $k6+ $k7+ $k8+ $k9+ $k10+ $k11+ $k12;
-
-    ?>    
-
-  
-
-                            <div class="panel-body">
-                                40,000
-                            </div>
-                        </div>
-                    </div>
-                                  <div class="col-sm-4">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Messages Sent</h3>
-                            </div>
-                            <div class="panel-body">
-                            <?php echo $_SESSION['k_tot']; ?>
-                            </div>
-                        </div>
-                    </div>
-        
-                       <div class="col-sm-4">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Message Credits Left</h3>
-                            </div>
-                            <div class="panel-body">
-                     <?php $c = 40000; echo $c - $_SESSION['k_tot']; ?>
-                            </div>
-                        </div>
-                    </div>
-        
+                   
                  
 
                  </div>
-
-                 <br> <br>
 
                               <?php
              include 'connect.php';
@@ -1024,17 +1053,21 @@ $k_tot = $k1 + $k2 + $k3+ $k4+ $k5+ $k6+ $k7+ $k8+ $k9+ $k10+ $k11+ $k12;
 
               $cp = $_POST['cp'];
 
+            
+
               $nn = $_POST['nn'];
 
-              $np = $_POST['np'];
+              $nk = $_POST['np'];
+
+              $np = md5($nk);
 
           
 
-              if(!empty($cn) && !empty($cp) && !empty($nn)&&!empty($np))
+             if(!empty($cn) && !empty($cp) && !empty($nn)&&!empty($np))
               {
 
 
-
+       
             
                $qut = "UPDATE `admin` SET `id`='$nn',`password`='$np' WHERE `id` = '$cn' AND `password` = '$cp'";
 
