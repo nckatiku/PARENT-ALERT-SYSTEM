@@ -15,7 +15,7 @@ header("Location:index.php");
 <html lang="en">
   <head>
 
- <link href="forallcont.css" rel="stylesheet">
+ 
 
    <?php
 
@@ -24,7 +24,7 @@ header("Location:index.php");
    ?>
   
    </head>
-<body style="background-color:rgb(255,255,255)">
+<body style="background-color:rgb(300,300,300)">
 <section id="container" >
 	<!--header start-->
 		<nav class ="navbar navbar-inverse navbar-default navbar-fixed-top role = "navigation">
@@ -135,20 +135,32 @@ header("Location:index.php");
 	
 			<div class="row mt">
          <?php $class=$_POST['class']; ?>
-					<div class="col-md-6" style="margin-top:-3%">
+					<div style="margin-top:-3%">
     
-					<div class="col-md-offset-8">
+					<div class="col-md-offset-1">
+
+          <form action ="print_all_cont.php" method="POST">
+
+          <input type ="hidden" name = "class" value="<?php  if(isset($_POST['class'])) { echo $_POST['class'];} ?>">
+
+          <input type ="submit" value="Print" name="print" class="btn btn-info">
                   
 
-                    <div style="font-family:Algerian;position:relative;left:230px;"><?php echo "<h3>$class</h3>";?> </div>
 
-                   <div > <h3 style=font-family:Algerian;position:relative;left:190px;>Class Details</h3></div>
+          </form>
+        
+
+                    <div style="font-family:Algerian;" class="col-md-offset-5"><?php echo "<h3>$class</h3>";?> </div>
+
+                   <div > <h3 style="font-family:Algerian" class="col-md-offset-5">Class Details</h3></div>
 
                     <div class="table-responsive">
 
-							<table  border ="2" class="table table-hover" style="font-family:century-schoolbook;position:relative;left:-200px;color:rgb(31,37,116);width:950px;font-size:16px;">
+                  
+
+							<table  border ="2" class="table table-hover" style="font-family:century-schoolbook;color:rgb(30,30,30);width:1050px;font-size:16px;">
 				
-											<?php 
+									<?php 
 
                       $serial = 1;
 											
@@ -180,8 +192,9 @@ header("Location:index.php");
 																{
                                   
 											
-                      echo '<tr style="font-size:20px;color:rgb(46,55,169);"> <td>S.NO.</td><td>Student</td> <td>Contact</td><td>Class</td><td>Fathers Name</td><td>Guardian</td></tr>'; 
-															 
+                    
+                      echo '<tr style="font-size:20px;color:rgb(46,55,169);"> <td>S.NO.</td><td>Student</td><td>Contact</td> <td>Contact#2</td><td>Class</td><td>Fathers Name</td><td>Mothers Name</td><td>Guardian</td></tr>'; 
+                               				 
 															    $count = $count + 1;
 																
 																}
@@ -191,16 +204,15 @@ header("Location:index.php");
 																else{
 																    
 																		$contacts=mysql_result($query_run,$i,'contact');
+                                           $contact2=mysql_result($query_run,$i,'contact2');
 																		$student=mysql_result($query_run,$i,'student');
 																		$class=mysql_result($query_run,$i,'class');
 																		$father=mysql_result($query_run,$i,'father');
 																		$mother=mysql_result($query_run,$i,'mother');
 																		$guardian=mysql_result($query_run,$i,'guardian');
-																		
-			 echo "<tr><td>".$serial."</td><td>".$student."</td><td>".$contacts."</td><td>".$class."</td><td>".$father."</td><td>".$guardian."</td></tr> "; 
-																
-																
-																		
+						 
+              echo "<tr><td>".$serial."</td><td>".$student."</td><td>".$contacts."</td><td>".$contact2."</td><td>".$class."</td><td>".$father."</td><td>".$mother."</td><td>".$guardian."</td></tr> "; 
+     												
 																		$i=$i+1;
                                     $serial = $serial + 1;
 																}
@@ -230,7 +242,7 @@ header("Location:index.php");
                                 {
                                   
                       
-                      echo '<tr style="font-size:20px;color:rgb(46,55,169);"> <td>S.NO.</td><td>Student</td> <td>Contact</td><td>Class</td><td>Fathers Name</td><td>Guardian</td></tr>'; 
+                      echo '<tr style="font-size:20px;color:rgb(46,55,169);"> <td>S.NO.</td><td>Student</td><td>Contact</td> <td>Contact#2</td><td>Class</td><td>Fathers Name</td><td>Mothers Name</td><td>Guardian</td></tr>'; 
                                
                                   $count = $count + 1;
                                 
@@ -241,13 +253,14 @@ header("Location:index.php");
                                 else{
                                     
                                     $contacts=mysql_result($query_run,$i,'contact');
+                                    $contact2=mysql_result($query_run,$i,'contact2');
                                     $student=mysql_result($query_run,$i,'student');
                                     $class=mysql_result($query_run,$i,'class');
                                     $father=mysql_result($query_run,$i,'father');
                                     $mother=mysql_result($query_run,$i,'mother');
                                     $guardian=mysql_result($query_run,$i,'guardian');
                                     
-       echo "<tr><td>".$serial."</td><td>".$student."</td><td>".$contacts."</td><td>".$class."</td><td>".$father."</td><td>".$guardian."</td></tr> "; 
+       echo "<tr><td>".$serial."</td><td>".$student."</td><td>".$contacts."</td><td>".$contact2."</td><td>".$class."</td><td>".$father."</td><td>".$mother."</td><td>".$guardian."</td></tr> "; 
                                 
                                 
                                     
@@ -264,8 +277,8 @@ header("Location:index.php");
 												?>
 				
 							</table>
-
-						</div>
+             <div>
+			
 					</div>				
 			</div>
 			<!-- /row -->

@@ -5,6 +5,8 @@
 
     session_start();
 
+    $_SESSION['hm'] = $_SESSION['id'];
+
     include 'mygraph.php';
 
     include 'layout.php'
@@ -82,7 +84,7 @@
         type: "column",
         //lineThickness: 3,        
         dataPoints: [
-        { x: new Date(2012, 00, 1), y: <?php echo $_SESSION['jan']; ?> },
+        { x: new Date(2012, 00, 1), y: <?php echo 10000; ?> },
         { x: new Date(2012, 01, 1), y: <?php echo $_SESSION['feb']; ?> },
         { x: new Date(2012, 02, 1), y: <?php echo $_SESSION['mar']; ?>},
         { x: new Date(2012, 03, 1), y: <?php echo $_SESSION['apr']; ?>},
@@ -242,7 +244,20 @@ chart.render();
 
     <div class="centered"><h3 style="color:rgb(110,110,110);">Monthly Analysis of Messages transactions </h3> <br></div>
 
-        <div class="col-sm-2"> <form action ="mygraph.php" method ="POST"> <select class="form-control" name="year"> <option value="select"> Select A year </option> <option> 2016 </option><option> 2017 </option><option> 2018 </option><option> 201 </option><option> 2018 </option></select> </form> </div> 
+        <div class="col-sm-2"> <form action ="mygraph2.php" method ="POST"> 
+        <select class="form-control" name="year">
+
+        <option value="select"> Select A year </option>
+         <option> 2016 </option>
+         <option> 2017 </option>
+         <option> 2018 </option>
+         <option> 2019</option>
+         <option> 2020 </option>
+         </select>
+
+         <input type="submit" value="go" name="go">
+          </form>
+           </div> 
 
 
 
@@ -304,10 +319,32 @@ chart.render();
                                 <h3 class="panel-title">Message Credits Left</h3>
                             </div>
                             <div class="panel-body">
-                     
-                       <?php
+                     <?php
 
-$authKey = "4545AaVEvTlYRiW5569a313";
+include 'connect.php';
+
+
+$t = $_SESSION['hm'];
+
+$chk = "SELECT `is_admin` FROM `admin` WHERE 'id' = '$t'";
+
+$chk_run = mysql_query($chk);
+
+$p = mysql_result($chk_run, 0, 'is_admin');
+
+
+if($p == 1)
+
+{
+$q = "SELECT  `aki` FROM `texas` WHERE `sno` = 1";
+
+$rn = mysql_query($q);
+
+$val = mysql_result($rn, 0,'aki');
+
+
+
+$authKey = "$val";
 $route = 4;
 //Prepare you post parameters
 $postData = array(
@@ -315,6 +352,7 @@ $postData = array(
     'type' => $route,
     
 );
+
 //API URL
 $url="http://sms.bulk24sms.com/api/balance.php";
 
@@ -347,11 +385,10 @@ curl_close($ch);
 
 echo $output;
 
-$_SESSION['count'] = $output;
+$_SESSION['count2'] = $output;
 
-
+}
 ?>
-
                             </div>
                         </div>
                     </div>
