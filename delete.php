@@ -1,15 +1,14 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
-
 if(!$_SESSION['id'])
 {
 header("Location:index.php");
 }
 
-	
+
 	
  ?>
 
@@ -166,6 +165,9 @@ header("Location:index.php");
                                     
                                            <option>KG-I</option>
                                         <option>KG-II</option>
+                                        
+                                        <option> All</option>
+                                     
                                       
                                              </select>
 
@@ -255,4 +257,3 @@ header("Location:index.php");
       
   
   
-

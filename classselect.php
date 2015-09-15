@@ -1,13 +1,14 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
 
-if(!$_SESSION['id'])
+if(!$_SESSION['id'] == "vb")
 {
 header("Location:index.php");
 }
+
 
 	
 	

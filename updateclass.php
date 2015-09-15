@@ -147,9 +147,7 @@ header("Location:index.php");
       <!--main content start-->
        <section id="main-content">
           <section class="wrapper">
-           	
-	<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger"><div class="centered"><b>Alert::Be very Careful while updating choose right class in both the  fields else data will be messed up and students may have wrong class inserted and  Update KG-I TO KG-II only after deleting whole class KG-II after end of session</b></div></div></article>
-			<div>
+         		<div>
 			<?php
 
 	
@@ -157,12 +155,16 @@ header("Location:index.php");
          
            
 
-	if(isset($_POST['old_class']) && isset($_POST['new_class']))
+	if(isset($_POST['old_class']))
      {
 		        
                      
                       $old_class  =   $_POST['old_class'];
-					  $new_class  =       $_POST['new_class'];
+
+                      $new_class = " ";
+
+                      $query = " ";
+					  
 					  
 					
                   
@@ -174,19 +176,58 @@ header("Location:index.php");
                                 if (isset($_POST['update'])) 
 		                          {
 				                         
-		                                  if(!empty($old_class) && !empty($new_class))
+		                                  if(!empty($old_class))
                
                                             {
                                              
                     
-					                                    if($old_class != $new_class)
+					                      if($old_class == "Crech")
 					 
 					                                            {
 
                                 
-                                                        $query="UPDATE `student` SET `class`='$new_class' WHERE `class` ='$old_class'"; 
+                            $query="UPDATE `student_info` SET `class`='Playgroup' WHERE `class` ='$old_class'"; 
+
+                             $new_class = "Playgroup";
+
+                                }
+
+                                else if($old_class == "Playgroup")
+           
+                                                      {
+
+                                
+                            $query="UPDATE `student_info` SET `class`='Nursery' WHERE `class` ='$old_class'"; 
+
+                             $new_class = "Nursery";
+
+                                }
+
+
+                                else if($old_class == "Nursery")
+           
+                                                      {
+
+                                
+                            $query="UPDATE `student_info` SET `class`='KG-I' WHERE `class` ='$old_class'"; 
+
+                             $new_class = "KG-I";
+
+                                }
 				
-        
+                             
+                                else if($old_class == "KG-I")
+           
+                                                      {
+
+                                
+                            $query="UPDATE `student_info` SET `class`='KG-II' WHERE `class` ='$old_class'"; 
+
+                             $new_class = "KG-II";
+
+                                }  
+ 
+     
 
                       
 				
@@ -198,6 +239,15 @@ header("Location:index.php");
 		                                     
 									  
 						                                             }
+
+                                                         else 
+            
+                                                    {
+                                   
+     echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-dismissable alert-danger "><div class="centered">No update is performed.Some error Occured.  </div></div></aricle>';
+                                         
+                    
+                                                       }
 						  
 						  
 				                                                }
@@ -206,9 +256,10 @@ header("Location:index.php");
                             				                    else 
 						
 						                                        {
-						           
-			echo '<div class="alert alert-danger alert-dismissable">Warning:: You filled current class and promoting class with Wrong values Please Renter</div>';
-                               
+						                       
+     echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-dismissable alert-danger "><div class="centered">No Class is Choosen  </div></div></aricle>';
+                                         
+                    
 					                                             }
          					                              
 
@@ -216,11 +267,6 @@ header("Location:index.php");
 			                                } 
 										
 							  
-					                        else
-                                  
-						                    { 
-                  echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-danger alert-dismissable"><div class="centered">Warning:: Any Field  is Left Empty ... Please Re-enter</div></div></article>';
-		                                     }
 
                                                       
                                 
@@ -231,7 +277,7 @@ header("Location:index.php");
 		                        
 		
  
- }
+ 
 
  ?>
  </div>
@@ -250,7 +296,7 @@ header("Location:index.php");
 														   
 
                              <div class="form-group">
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4>Current Class </h4> </label>
+                                 <label class="col-sm-3 col-sm-3 control-label"><h4> Class  To Update</h4> </label>
                                     
 						       
                                    <div class ="col-md-offset-3">
@@ -261,13 +307,13 @@ header("Location:index.php");
 										
                                        
 										 <option > </option>
-                                        <option  >Playgroup</option>
+                                       
                                               <option>Crech</option>
-			
+			                        <option>Playgroup</option>
 										<option> Nursery</option>
 										<option>KG-I</option>
 
-                        <option>KG-II</option>
+              
                                         
 						
                                         
@@ -278,47 +324,16 @@ header("Location:index.php");
 																										
                                  
                             </div> 
-							<div class ="col-md-offset-5"><span class="help-block">Enter the current/existing class</span>
+							<div class ="col-md-offset-5"><span class="help-block"><h5>Enter the  Class to Update</span> <br>
                        <span class="help-block">For eg. The Yearly session is over and Your class KG-I promoted to KG-II </span>		
-                         <span class="help-block">So,choose KG-I here and KG-II in next box </span>		
+                         <span class="help-block">So,choose KG-I here and it will be  updated to  KG-II.<br> KG-II is not in the option by using DELETE CLASS KG-II u can update whole KG-II to Alumini </span></h5>		
                      					   </div><br><br><br>
 
 
                  
 							
 							
-                          
-						  
-						    <div class="form-group">
-                                 <label class="col-sm-3 col-sm-3 control-label"><h4> Promoted class </h4> </label>
-                                    
-									  <div class ="col-md-offset-3">
-								   <article class="col-md-8 col-md-offset-1">
-								   
-								<select name="new_class" class="form-control ">
-				
-						  
-                                 
-                                       
-										 <option > </option>
-                                   
-							
-										<option>Nursery</option>
-										<option>KG-I</option>
-                                        <option>KG-II</option>
-						
-                                        
-									    </select>
-				
-														
-                                 
-                            </div> 
-							 
-
-                               </div>
-							   <div class = "col-md-offset-5">Enter the Updated or promoted class.<br><br>
-							                   For eg. If U entered current class KG-I then here promoted class is KG-II</div><br><br>
-
+                       
 
 							   
                        <div class="col-md-offset-4"> <input type="submit" class="btn btn-lg btn-success" value="Update Class" name="update"></div>

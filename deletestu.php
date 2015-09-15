@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
     <?php
      
 
@@ -9,10 +5,11 @@
 
    session_start(); 
 
-if(!$_SESSION['id'])
+if(!$_SESSION['id'] == "vb")
 {
 header("Location:index.php");
 }
+
 
 
    ?>
@@ -232,7 +229,7 @@ include 'connect.php';
 											</div>
 											<div class="col-sm-6">
                                             
-				<select name="st_name" class="form-control">
+				<select name="st_name[]" multiple="multiple" class="form-control" size = "15">
                          
                           <option value="0">Select Student Name </option>
                           <?php 
@@ -241,6 +238,54 @@ include 'connect.php';
                               if(isset($_POST['class']))
                           {
                             $class=$_POST['class'];
+                            
+                            if($class == 'All')
+                            {
+                            
+                            $query="select `student` from student_info";
+                            if(mysql_query($query))
+                            {
+                              $query_run=mysql_query($query);
+                              if(mysql_num_rows($query_run)==NULL)
+                              {
+                                echo 'no contacts found';
+                              }
+                              else
+                              {
+                                $i=0;
+                                $count = 0;
+                        
+                                while($i<mysql_num_rows($query_run))
+                                {
+                                    $student=mysql_result($query_run,$i,'student');
+                                    $take_stu[$i] = $student;
+                                    $i=$i+1;
+                                    $count = $count + 1;
+                                }
+                              }
+                          
+                            }
+                          
+
+                                     
+                          
+                          
+                          
+                                 
+                                    $i = 0;
+                          
+                                while($i<=$count){
+                                    $class=mysql_result($run_query,$i,'class');
+                                    echo '<option value="'.$take_stu[$i].'">'.$take_stu[$i].'</option>';
+                                    $i=$i+1;
+                                }
+                            
+                            
+                            }
+                            
+                            else
+                            
+                            {
                             $query="select `student` from student_info where class='".$class."';";
                             if(mysql_query($query))
                             {
@@ -264,7 +309,7 @@ include 'connect.php';
                               }
                           
                             }
-                          }
+                          
 
                                      
                           
@@ -278,13 +323,16 @@ include 'connect.php';
                                     echo '<option value="'.$take_stu[$i].'">'.$take_stu[$i].'</option>';
                                     $i=$i+1;
                                 }
+                                
+                                }
+                                }
               
                           ?>
                         </select>
 
                         </div>
                         </div>
-                         <br><br>
+                        
 
                             
                         

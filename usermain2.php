@@ -1,6 +1,6 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
 if(!$_SESSION['id'])
@@ -340,9 +340,9 @@ href="http://www.hinkhoj.com/common/css/keyboard.css" />
                    {  
                    
               
-                      $cont_100 = substr($cont, 0 , 1102); echo "hello"."\n";
+                      $cont_100 = substr($cont, 0 , 1102); 
 
-                     $cont_200 = substr($cont, 1103, 1090); echo "hello"."\n";
+                     $cont_200 = substr($cont, 1103, 1090); 
 
 
                     $cont_300 = substr($cont, 2190);
@@ -356,8 +356,7 @@ href="http://www.hinkhoj.com/common/css/keyboard.css" />
                    {  
                    
               
-
-                      $cont_100 = substr($cont, 0 , 1102); 
+                     $cont_100 = substr($cont, 0 , 1102); 
 
                     $cont_200 = substr($cont, 1103, 1090); 
 
@@ -725,7 +724,7 @@ echo $output;
                   
                                          
              }
-                                           if(isset($_POST['cls']))
+                                           if(isset($_POST['cls']) && !empty($_POST['cls']))
                        
 
                        {           
@@ -751,6 +750,41 @@ echo $output;
               $del_query = "INSERT INTO `del_report`( `mes`, `date`, `time`, `sender`, `reciever`) 
                                            
                                             VALUES  ('$mes','$mes_date','$mes_time','$sender','$reciever')";
+
+
+                                            mysql_query($del_query);
+           
+
+
+                         } 
+                         
+                         
+                         else if(empty($_POST['cls']))
+                       
+
+                       {           
+                              $full_message;
+
+                             $mes_date = date("d/m/Y");
+
+                             $mes_time = date("h:i:s");
+
+                                $reciever = NULL;
+
+                                $class = $_POST['cls'];
+
+                               $reciever = $contact;
+
+                                $sender = $_SESSION['id'];
+      
+
+                            
+
+                               
+
+              $del_query = "INSERT INTO `del_report`( `mes`, `date`, `time`, `sender`, `reciever`) 
+                                           
+                                            VALUES  ('$full_message','$mes_date','$mes_time','$sender','$reciever')";
 
 
                                             mysql_query($del_query);
@@ -787,7 +821,7 @@ echo $output;
   
 ?>
 </div>
-                     <div class="text-right">   <input type="text" name="key" size="30"> </div> <br>
+                    KEY <div>   <input type="text" name="key" size="30"> </div> <br>
               
                   <div class="form-group">
                       <div class="col-sm-2" style="margin-left:2%">

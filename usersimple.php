@@ -1,7 +1,6 @@
 <?php
 
- require 'connect.php';
- 
+ include 'connect.php';
  session_start();
 
 if(!$_SESSION['id'])
@@ -62,7 +61,7 @@ header("Location:index.php");
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-                 	 <p class="centered"><img src="imgs/im6.jpg" class="img-circle"  width="250" height = "180"></p>	 
+                 
 
 			
               	  	
@@ -111,7 +110,7 @@ header("Location:index.php");
 									<div class="form-panel" >
 										<div class="form-group">
 	
-       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:0.5%;margin-right:0.5%;margin-top:-1.3%"><h4><div class="col-md-offset-5"><span style="color:white">Select Class</span></div></div></h4><br>
+       <div style ="padding:10px; box-shadow: 4px 4px 3px black;background-color:rgb(100,100,100);margin-left:0.5%;margin-right:0.5%;margin-top:-1.3%"><h4><div class="col-md-offset-5"><span style="color:white">Select Class</span></div></div></h4><br>
 									
 									<br><br>
 											<div class="col-sm-4">

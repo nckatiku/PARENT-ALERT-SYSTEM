@@ -235,10 +235,12 @@ header("Location:index.php");
          
            
 
-	if( isset($_POST['class'])&& isset($_POST['student']) && isset($_POST['contact']) && isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['guardian']))
+	if( isset($_POST['class'])&& isset($_POST['address']) && isset($_POST['student'])&& isset($_POST['dob']) && isset($_POST['contact']) && isset($_POST['mother']) && isset($_POST['father']) && isset($_POST['guardian']))
      {
 		
             $class    =   $_POST['class'];
+
+            $adr = $_POST['address'];
 
 					  $studen =   $_POST['student'];
 
@@ -252,6 +254,8 @@ header("Location:index.php");
                      
             $fath   =   $_POST['father'];
 
+            $dob = $_POST['dob'];
+
 
             
             $father = ucfirst($fath);
@@ -259,7 +263,7 @@ header("Location:index.php");
            $guardian =   $_POST['guardian'];
 
 
-if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) && !empty($class) && !empty($father))
+if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) && !empty($class) && !empty($father) && !empty($dob))
 {
 
    $sel = "SELECT *  FROM `student_info` where `student` = '$student' OR `father` = '$father' OR `mother` = '$mother' OR `contact` = '$contact'";
@@ -273,7 +277,7 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
    if($i > 0 )
 
    {          $i  = mysql_num_rows($sel_run);
-             echo "sdsdsdsdsdsdnbnbbbbbbbbbbbbbbbbbb"; echo $i;
+             
 
              $v1 = mysql_result($sel_run,'0','student');
                $v2 = mysql_result($sel_run,'0','father');
@@ -281,10 +285,23 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
             
                        $v4 = mysql_result($sel_run,'0','contact');
 
-                         $sel = "UPDATE `student_info` SET `student`='$student',`class`='$class',`contact`='$contact',`mother`='$mother',`father`= '$father',`guardian`= '$guardian'
-                          WHERE `student` = '$v1' OR `contact` = '$v1' OR `father` = '$v1' OR `mother` = '$v1'";
+                       $v5 = mysql_result($sel_run,'0','dob');
+ 
+                       $v6 = mysql_result($sel_run,'0','address');
+
+
+
+
+                         $sel = "UPDATE `student_info` SET `student`='$student',`dob` = '$dob',`address` = '$adr', `class`='$class',`contact`='$contact',`mother`='$mother',`father`= '$father',`guardian`= '$guardian'
+                          WHERE `student` = '$v1' OR `contact` = '$v1' OR `father` = '$v1' OR `mother` = '$v1' OR `dob` = '$v5' OR `address` = '$v6'";
 
                        $run_up =  mysql_query($sel);
+
+                       if($run_up)
+                       {
+
+echo '<article class="col-md-offset-2 col-md-10"><div class="alert alert-info alert-dismissable"><div class="centered">Student Record Updated Successfully</div></div></article>';
+                                 }
 
 
    }
@@ -436,12 +453,12 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
 
 
                               <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Mother's Name</h4></label>
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Date Of Birth</h4></label>
                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control round-form" name = "mother"  value="<?php
+                                        <input type="text" class="form-control round-form" name = "dob"  value="<?php
                                            if(isset($_POST['st_name'])) {$stu =$_POST['st_name'];$v = 0;
                         
-                                $query="select `mother` from `student_info` where `student` ='".$stu."';";$query_run=mysql_query($query);
+                                $query="select `dob` from `student_info` where `student` ='".$stu."';";$query_run=mysql_query($query);
 
                                 $v = mysql_num_rows($query_run);$i = 0;
 
@@ -451,7 +468,7 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
                               }
                                 if($v == 1)
                                {
-                                   $contact =mysql_result($query_run,$i,'mother');
+                                   $contact =mysql_result($query_run,$i,'dob');
                                    echo $contact;
                               }
                           
@@ -487,8 +504,35 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
                                     </div>
                             </div>
 
-                        <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Guardian's Name</h4></label>
+                       
+
+                              <div class="form-group">
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Mother's Name</h4></label>
+                                   <div class="col-sm-4">
+                                        <input type="text" class="form-control round-form" name = "mother"  value="<?php
+                                           if(isset($_POST['st_name'])) {$stu =$_POST['st_name'];$v = 0;
+                        
+                                $query="select `mother` from `student_info` where `student` ='".$stu."';";$query_run=mysql_query($query);
+
+                                $v = mysql_num_rows($query_run);$i = 0;
+
+                                 if($v == 0)
+                               {
+                                      echo "No Student Name selcted or Data not present";
+                              }
+                                if($v == 1)
+                               {
+                                   $contact =mysql_result($query_run,$i,'mother');
+                                   echo $contact;
+                              }
+                          
+                            }
+                            ?> 
+"required>
+                                         
+                                    </div>
+                          
+                            <label class="col-sm-2 col-sm-2 control-label"><h4>Guradian</h4></label>
                                    <div class="col-sm-4">
                                         <input type="text" class="form-control round-form" name = "guardian" value="<?php
                                            if(isset($_POST['st_name'])) {$stu =$_POST['st_name'];$v = 0;
@@ -509,20 +553,51 @@ if(!empty($student) && !empty($contact) && !empty($mother) && !empty($student) &
                           
                             }
                             ?> 
-">
+" required>
                                         
-                                    </div><br><br><br>
+                                    </div>
+                            </div>    
+
+
+                              <div class="form-group">
+                                 <label class="col-sm-2 col-sm-2 control-label"><h4>Address</h4></label>
+                                   <div class="col-sm-10">
+                                        <input type="text" class="form-control round-form" name = "address"  value="<?php
+                                           if(isset($_POST['st_name'])) {$stu =$_POST['st_name'];$v = 0;
+                        
+                                $query="select `address` from `student_info` where `student` ='".$stu."';";$query_run=mysql_query($query);
+
+                                $v = mysql_num_rows($query_run);$i = 0;
+
+                                 if($v == 0)
+                               {
+                                      echo "No Student Name selcted or Data not present";
+                              }
+                                if($v == 1)
+                               {
+                                   $contact =mysql_result($query_run,$i,'address');
+                                   echo $contact;
+                              }
+                          
+                            }
+                            ?> 
+"required>
+                                         
+                                    </div></div>                       <br>
+      
+
+
       <div class="centered">   <input type="submit" style="background-color:rgb(215,172,89)" class="btn btn-lg" value="Update" name="update"> <span class="col-md-offset-3"> <input type="reset" class="btn btn-lg btn-danger" value="clear" name="enter"></span>
 </div>            
-                            </div>
-
-                            <span class="help-block" style="font-size:15px;font-style:bold;color:green"><i class="glyphicon glyphicon-asterisk"></i> Note::Any 1 field out of student, father's name , mother's name or contact number must be the same for updation.<br><i class="glyphicon glyphicon-asterisk"></i> Dont Change all four fields else updation would not be completed.</span><br>
+                       
+<br>
+                            <span class="help-block" style="font-size:15px;font-style:bold;color:green"><i class="glyphicon glyphicon-asterisk"></i> Note::Any 1 field out of Student, Father's name , Mother's name, Address or contact number must be the same for updation.<br><i class="glyphicon glyphicon-asterisk"></i> Dont Change all five fields else updation would not be completed.</span><br>
                                     
 
                    
 					 
  </div>
- </div>
+ </div>     </div>
                           
                       </form>
                 

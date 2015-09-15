@@ -155,18 +155,18 @@ header("Location:index.php");
 
   <article class="col-md-7 col-md-offset-1">
 
-  <div id="slida-container" style="margin-top:-10px;margin-left:-52px;">  
+  <div id="slida-container" style="margin-top:10px;margin-left:-52px;">  
     <div id="slida-1" class="samp-slider samp-slider-mask">    
       <ul class="samp-container-horizontal">
-        <li class="samp-container"><img src="imgs/im1.jpg"></li>
+      <li class="samp-container"><img src="imgs/im1.jpg"></li>
         <li class="samp-container"><img src="imgs/im2.jpg"></li>
         <li class="samp-container"><img src="imgs/im3.jpg"></li>
         <li class="samp-container"><img src="imgs/im4.jpg"></li>
+        
         <li class="samp-container"><img src="imgs/im5.jpg"></li>
     <li class="samp-container"><img src="imgs/im6.jpg"></li>
     <li class="samp-container"><img src="imgs/im7.jpg"></li>
-    <li class="samp-container"><img src="imgs/im8.jpg"></li>
-    <li class="samp-container"><img src="imgs/im9.jpg"></li>
+ 
       </ul>
     </div>
   </article>

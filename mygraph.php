@@ -1,13 +1,8 @@
-
 <?php
 
 include 'connect.php';
 
-if(!$_SESSION['id'] == "vb")
-{
-header("Location:index.php");
-
-}
+session_start();
 
   $p = 0;
 

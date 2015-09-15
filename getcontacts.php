@@ -1,7 +1,9 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
+
  session_start();
+ 
 
 if(!$_SESSION['id'])
 {

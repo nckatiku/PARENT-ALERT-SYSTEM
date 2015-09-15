@@ -1,6 +1,6 @@
 <?php
 
- require 'connect.php';
+  include 'connect.php';
 
  session_start();
 
@@ -294,7 +294,7 @@ header("Location:index.php");
                       {
 
                                 
-                                                      $query="UPDATE `student` SET `contact`='$new' WHERE `contact` ='$contact'"; 
+                                                      $query="UPDATE `student_info` SET `contact`='$new' WHERE `contact` ='$contact'"; 
         
         
 
@@ -645,4 +645,3 @@ border-bottom-left-radius:20px;">Student Name::'.$student.' </div>';
       
   
   
-

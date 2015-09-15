@@ -1,19 +1,16 @@
+<?php
+include 'connect.php';	
 
+include 'mygraph.php';		
 
-    <?php
+session_start();
 
-
-    session_start();
-
-    $_SESSION['hm'] = $_SESSION['id'];
-
-    include 'mygraph.php';
-
-    include 'layout.php'
-
-
-
-?>
+if(!$_SESSION['id'])
+{
+header("Location:index.php");
+}
+  include 'layout.php';
+?> 	
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +81,7 @@
         type: "column",
         //lineThickness: 3,        
         dataPoints: [
-        { x: new Date(2012, 00, 1), y: <?php echo 10000; ?> },
+        { x: new Date(2012, 00, 1), y: <?php echo $_SESSION['jan']; ?> },
         { x: new Date(2012, 01, 1), y: <?php echo $_SESSION['feb']; ?> },
         { x: new Date(2012, 02, 1), y: <?php echo $_SESSION['mar']; ?>},
         { x: new Date(2012, 03, 1), y: <?php echo $_SESSION['apr']; ?>},
@@ -244,22 +241,8 @@ chart.render();
 
     <div class="centered"><h3 style="color:rgb(110,110,110);">Monthly Analysis of Messages transactions </h3> <br></div>
 
-        <div class="col-sm-2"> <form action ="mygraph2.php" method ="POST"> 
-        <select class="form-control" name="year">
-
-        <option value="select"> Select A year </option>
-         <option> 2016 </option>
-         <option> 2017 </option>
-         <option> 2018 </option>
-         <option> 2019</option>
-         <option> 2020 </option>
-         </select>
-
-         <input type="submit" value="go" name="go">
-          </form>
-           </div> 
-
-
+        
+   
 
    </div>
 
@@ -302,40 +285,19 @@ chart.render();
                             </div>
                         </div>
                     </div>
-                                  <div class="col-sm-4">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Messages Sent</h3>
-                            </div>
-                            <div class="panel-body">
-                     <?php $c = 30000; echo $c - $_SESSION['count']; ?>
-                            </div>
-                        </div>
-                    </div>
-        
+                          
                        <div class="col-sm-4">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Message Credits Left</h3>
                             </div>
                             <div class="panel-body">
-                     <?php
+                     
+                       <?php
 
 include 'connect.php';
 
 
-$t = $_SESSION['hm'];
-
-$chk = "SELECT `is_admin` FROM `admin` WHERE 'id' = '$t'";
-
-$chk_run = mysql_query($chk);
-
-$p = mysql_result($chk_run, 0, 'is_admin');
-
-
-if($p == 1)
-
-{
 $q = "SELECT  `aki` FROM `texas` WHERE `sno` = 1";
 
 $rn = mysql_query($q);
@@ -344,11 +306,11 @@ $val = mysql_result($rn, 0,'aki');
 
 
 
-$authKey = "$val";
+$otp = "$val";
 $route = 4;
 //Prepare you post parameters
 $postData = array(
-    'authkey' => $authKey,
+    'authkey' => $otp,
     'type' => $route,
     
 );
@@ -385,13 +347,25 @@ curl_close($ch);
 
 echo $output;
 
-$_SESSION['count2'] = $output;
+$_SESSION['count'] = $output;
 
-}
+
 ?>
+
                             </div>
                         </div>
                     </div>
+                            <div class="col-sm-4">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Messages Sent</h3>
+                            </div>
+                            <div class="panel-body">
+                     <?php $c = 30000; echo $c - $_SESSION['count']; ?>
+                            </div>
+                        </div>
+                    </div>
+        
         
                  
 
@@ -414,16 +388,6 @@ $_SESSION['count2'] = $output;
                             </div>
                         </div>
                     </div>
-                                  <div class="col-sm-4">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Messages Sent</h3>
-                            </div>
-                            <div class="panel-body">
-                     <?php $c = 10000; echo $c - $_SESSION['count2']; ?>
-                            </div>
-                        </div>
-                    </div>
         
                        <div class="col-sm-4">
                         <div class="panel panel-green">
@@ -434,14 +398,26 @@ $_SESSION['count2'] = $output;
                      
                        <?php
 
-$authKey = "4545AaVEvTlYRiW5569a313";
+include 'connect.php';
+
+
+$q = "SELECT  `aki` FROM `texas` WHERE `sno` = 1";
+
+$rn = mysql_query($q);
+
+$val = mysql_result($rn, 0,'aki');
+
+
+
+$otp = "$val";
 $route = 1;
 //Prepare you post parameters
 $postData = array(
-    'authkey' => $authKey,
+    'authkey' => $otp,
     'type' => $route,
     
 );
+
 //API URL
 $url="http://sms.bulk24sms.com/api/balance.php";
 
@@ -482,16 +458,28 @@ $_SESSION['count2'] = $output;
                             </div>
                         </div>
                     </div>
+                    
+                                              <div class="col-sm-4">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Messages Sent</h3>
+                            </div>
+                            <div class="panel-body">
+                     <?php $c = 10000; echo $c - $_SESSION['count2']; ?>
+                            </div>
+                        </div>
+                    </div>
+         </div>
         
-                     
+                     <br><br>
 
                         
+               
+                    
                    
                   <div class="centered"> <h3 style="color:rgb(110,110,110);">Number Of Students </h3><br> </div>
                 
-                 <div class="row">
-                    
-                
+                  <div class="row">
              
                     
                     <div class="col-md-2">
@@ -915,7 +903,7 @@ $_SESSION['count2'] = $output;
              </div>
 
 
-              <div id ="a"   onclick="newev()" ondblclick="newev2()" class="btn btn-success">Add / Delete  An  Event </div><br><br>
+              <div id ="a"   onclick="newev()" ondblclick="newev2()" class="btn btn-success">Add  An  Event </div><br><br>
 
              <?php
              include 'connect.php';
@@ -974,24 +962,6 @@ $_SESSION['count2'] = $output;
     }
               
 
-              else if(isset($_POST['delete']))
-         {   
-
-
-                $qu = "DELETE FROM `events` WHERE `name` = `$name`";
-
-            
-        
-                if(mysql_query($qu))
-                {
-                  echo "Event Deleted";
-                }
-
-                else
-                {
-                  echo "error hghghg";
-                }
-        }
               
             
 
@@ -1045,7 +1015,7 @@ $_SESSION['count2'] = $output;
                                                </div>
                                                <div class="col-sm-1">
                                         <input type="submit" class="btn" name = "insert" value="Add">
-                                        <input type="submit" class="btn btn-danger" name = "delete" value="Delete">
+                                    
 
                                         </div>
                                          
@@ -1077,7 +1047,7 @@ $_SESSION['count2'] = $output;
 
                  </div>
 
-                              <?php
+       <?php
              include 'connect.php';
 
 
@@ -1103,7 +1073,15 @@ $_SESSION['count2'] = $output;
              if(!empty($cn) && !empty($cp) && !empty($nn)&&!empty($np))
               {
 
-
+                $q = "SELECT FROM `admin` WHERE `id` = '$cn' AND `password` = '$cp'";
+                
+                $q_rn = mysql_query($q);
+                
+                $num = mysql_num_rows($q_rn);
+                
+                if($num == 1)
+                
+                {
        
             
                $qut = "UPDATE `admin` SET `id`='$nn',`password`='$np' WHERE `id` = '$cn' AND `password` = '$cp'";
@@ -1133,8 +1111,16 @@ $_SESSION['count2'] = $output;
                  echo '<div style="color:red;font-size:18px;"><b>Sub-user name and password chnges Unsuccessful</b></div>';
 
             }
+            
           
       }
+      
+                             echo '<div style="color:red;font-size:18px;"><b>Currrent Sub-user name or password doesnt match</b></div>';
+
+
+      
+      }
+      
 
 
             
@@ -1156,14 +1142,14 @@ $_SESSION['count2'] = $output;
                                     <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Current Sub-user Name</label>
                                           <div class="col-md-3">
-                                    <input name ="cn" id="datepicker"   class="form-control round-form" value="<?php $p ="SELECT `id` FROM `admin` WHERE `sno.` = '2'"; $p_run = mysql_query($p); $res = mysql_result($p_run,'0','id'); echo $res;?>">
+                                    <input name ="cn" id="datepicker"   class="form-control round-form" value="">
                     
                                         
                                                </div>
 
                                                         <label class="col-sm-3 col-sm-3 control-label">Current Sub-user Password</label>
                                           <div class="col-md-3">
-                                    <input name ="cp"   class="form-control" value="<?php $p ="SELECT `password` FROM `admin` WHERE `sno.` = '2'"; $p_run = mysql_query($p); $res = mysql_result($p_run,'0','password'); echo $res;?>">
+                                    <input name ="cp"   class="form-control" value=" ">
                     
                                         
                                                </div>

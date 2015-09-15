@@ -1,6 +1,6 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
 
@@ -366,9 +366,9 @@ border-bottom-right-radius: 30px;
                    {  
                    
               
-                     $cont_100 = substr($cont, 0 , 1102); echo "hello"."\n";
+                     $cont_100 = substr($cont, 0 , 1102); 
 
-                    $cont_200 = substr($cont, 1103, 1090); echo "hello"."\n";
+                    $cont_200 = substr($cont, 1103, 1090); 
 
 
                     $cont_300 = substr($cont, 2190);
@@ -382,10 +382,9 @@ border-bottom-right-radius: 30px;
                    {  
                    
               
+                                     $cont_100 = substr($cont, 0 , 1102); 
 
-                      $cont_100 = substr($cont, 0 , 1102); echo "hello"."\n";
-
-                    $cont_200 = substr($cont, 1103, 1090); echo "hello"."\n";
+                    $cont_200 = substr($cont, 1103, 1090); 
 
                     $cont_300 = substr($cont, 2190, 1090);
 
@@ -751,7 +750,7 @@ echo $output;
                 }
 
                 
-                         if(isset($_POST['cls']))
+                         if(isset($_POST['cls']) && !empty($_POST['cls']))
                        
 
                        {           
@@ -766,6 +765,40 @@ echo $output;
                                 $class = $_POST['cls'];
 
                                  $reciever = $class;
+
+                                $sender = $_SESSION['id'];
+      
+
+                            
+
+                               
+
+              $del_query = "INSERT INTO `del_report`( `mes`, `date`, `time`, `sender`, `reciever`) 
+                                           
+                                            VALUES  ('$full_message','$mes_date','$mes_time','$sender','$reciever')";
+
+
+                                            mysql_query($del_query);
+           
+
+
+                         } 
+                         
+                          if(empty($_POST['cls']))
+                       
+
+                       {           
+                              $full_message;
+
+                             $mes_date = date("d/m/Y");
+
+                             $mes_time = date("h:i:s");
+
+                                $reciever = NULL;
+
+                                $class = $_POST['cls'];
+
+                               $reciever = $contact;
 
                                 $sender = $_SESSION['id'];
       
@@ -866,7 +899,7 @@ echo $output;
                                              <div class="col-md-12">
                                    
                           <br>
-                                <div class="text-right">   <input type="text" name="key" size="30"> </div> <br>
+                              KEY  <div>   <input type="text" name="key" size="30" required> </div> <br>
     
                         <div class="form-group">
                       <div class="col-sm-2">
@@ -1344,4 +1377,3 @@ border-bottom-left-radius:20px;" type="submit" class="btn btn-lg btn-info" name 
       
   
   
-

@@ -21,7 +21,7 @@ if (!$db_selected) {
 }
 else
 { 
-    echo "selected db";
+    
      
  
 }

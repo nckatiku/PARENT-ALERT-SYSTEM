@@ -24,9 +24,25 @@ header("Location:index.php");
     include 'layout.php';
 
    ?>
+    
 
+  <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
   
+  <style>
+  
+  
+  p
+  {
+  font-size:18px;
+  font-family: 'Lora', serif;
+  color:rgb(70,70,70);
+  }
+  
+  
+  
+  </style>
     <link type="text/css" rel="stylesheet" media="all" href="sampslider.css" />
+       <link rel="stylesheet" type="text/css" href="assets/custom.css">
     <style type="text/css">
     #slida-container{
       margin:30px auto;
@@ -172,36 +188,25 @@ header("Location:index.php");
        <!--main content start-->
        <section id="main-content">
           <section class="wrapper">
+          
+          <br>
       
   
   <div class="row">
 
 
-  <article class="col-md-7 col-md-offset-1">
-
-  <div id="slida-container" style="margin-top:-10px;margin-left:-52px;">  
-    <div id="slida-1" class="samp-slider samp-slider-mask">    
-      <ul class="samp-container-horizontal">
-        <li class="samp-container"><img src="imgs/im1.jpg"></li>
-        <li class="samp-container"><img src="imgs/im2.jpg"></li>
-        <li class="samp-container"><img src="imgs/im3.jpg"></li>
-        <li class="samp-container"><img src="imgs/im4.jpg"></li>
-        <li class="samp-container"><img src="imgs/im5.jpg"></li>
-    <li class="samp-container"><img src="imgs/im6.jpg"></li>
-    <li class="samp-container"><img src="imgs/im7.jpg"></li>
-    <li class="samp-container"><img src="imgs/im8.jpg"></li>
-    <li class="samp-container"><img src="imgs/im9.jpg"></li>
-      </ul>
-    </div>
-  </article>
-
-  <div class="col-md-offset-2">
-  <div class="col-md-4">
-   <div class="thumbnail" style="color:black;background-color:rgb(210,210,210);">
-   <div class="caption">
-   <p class="centered" style="font-family:Magneto;font-size:20px;" ><i class="glyphicon glyphicon-flag"> </i> About Us </p>
-   <p style="font-family:Monotype Corsiva;font-size:18px;">We the LIITTLE SOLDIERS is an organization working for the development of a child at his initial years.A child with just some months old arrived on this planet must be handle with care and love but also in a discilpilned manner.Estabilshed on 1992 by   Mrs. Prabha Rajput  she saw a dream to make little and brave soldiers from this institute who can  
+  <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+  <div class="col-md-8">
+   <div class="panel panel-primary">
+   
+   <div class="panel-heading">
+   
+   <p class="centered" style ="font-size:20px;color:white" ><i class="glyphicon glyphicon-flag"> </i> About Us </p>
+   </div>
+   <div class="panel-body">
+   <p>We the LITTLE SOLDIERS is an organization working for the development of a child at his initial years.A child with just some months old arrived on this planet must be handle with care and love but also in a discilpilned manner.Estabilshed on 1992 by   Mrs. Prabha Rajput  she saw a dream to make little and brave soldiers from this institute who can  
    fight all against the odds in the world when they grow up and do respect of all. </p>
+   </div>
   </div>
   </div>
 
@@ -210,43 +215,46 @@ header("Location:index.php");
 
 </div>
 
- <div class="col-md-offset-1">
-  <div class="col-md-4">
-   <div class="thumbnail" style="color:black;background-color:rgb(210,210,210)">
-   <div class="caption" style="color:black">
- 
-   <p style="font-family:Monotype Corsiva;font-size:18px;"><i class="glyphicon glyphicon-pushpin"> </i> Discilpline is something that will make you a well bahaved and successfull person loved and honoured by all.</p>
-    <p class="text-right" style="font-family:Magneto;font-size:18px;" ><i class="li li_pen"> </i>Prabha Rajput </p>
-     <p class="text-right" style="font-family:Magneto;font-size:14px;" >Founder</p>
 
-  </div>
-  </div>
-
-  </div>
-  </div>
-
-  <div class="col-md-offset-1">
-  <div class="col-md-4">
-   <div class="thumbnail" style="color:black;background-color:rgb(210,210,210)">
-   <div class="caption">
-
-   <p class="centered" style="font-family:Magneto;font-size:18px;" ><i class="glyphicon glyphicon-send"> </i> Aim </p>
-    
- 
-   <p style="font-family:Monotype Corsiva;font-size:18px;">We have a clear objective in mind to make masters from our school that will perform best out of themselves in any situation and achieve their goals with passion.  </p>
-    
-
-  </div>
-  </div>
-
-  </div>
-
-  <div class="col-md-offset-1">
-  <div class="col-md-4">
-   <div class="thumbnail" style="background-color:rgb(210,210,210)">
+<br>
+ <div class="col-lg-offset-0 col-md-offset-0">
+  <div class="col-md-4 col-sm-4">
+   <div class="thumbnail" style="background-color:#fff">
    <div class="caption">
  
-   <p style="font-family:Monotype Corsiva;font-size:18px;"> <i class="glyphicon glyphicon-pushpin"> </i>A person's nature defines how well he is going to be recieved, aceepted  and respected by this world.</p>
+   <p><i class="glyphicon glyphicon-pushpin"> </i> Discilpline is something that will make you a well bahaved and successfull person loved and honoured by all.</p>
+    <p class="text-right" ><i class="li li_pen"> </i>Prabha Rajput </p>
+     <p class="text-right" >Founder</p>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  <div class="col-md-offset-1 col-sm-offset-1">
+  <div class="col-md-4 col-sm-4">
+   <div class="thumbnail" style="background-color:#fff">
+   <div class="caption">
+
+   <p class="text-center" ><i class="glyphicon glyphicon-send"> </i> Aim </p>
+    
+ 
+   <p>We have a clear objective in mind to make masters from our school that will perform best out of themselves in any situation and achieve their goals with passion.  </p>
+    
+
+  </div>
+  </div>
+
+  </div>
+
+  <div class="col-md-offset-1 col-sm-offset-1">
+  <div class="col-md-4 col-sm-4">
+   <div class="thumbnail" style="background-color:#fff">
+   <div class="caption">
+ 
+   <p> <i class="glyphicon glyphicon-pushpin"> </i>
+   A person's nature defines how well he is going to be recieved, aceepted  and respected by this world.</p>
     <p class="text-right" style="font-family:Magneto;font-size:18px;" ><i class="li li_pen"> </i>Vina Sharma</p>
      <p class="text-right" style="font-family:Magneto;font-size:14px;" >Head Faculty</p>
 
@@ -269,136 +277,6 @@ header("Location:index.php");
 
 
   <?php
-
-  $p = 0;
-
-$q = "SELECT *  FROM `msg_count` WHERE `id` = '1'";
-
-$k1;
-$k2;
-$k3;$k4;$k5;$k6;$k7;$k8;$k9;$k10;$k11;$k12;
-
-$run = mysql_query($q);
-
-for($i = 1; $i <= 12; $i ++)
-
-{
-
-if($i == 1)
-{
- $k1 = mysql_result($run, $p, 'msg_jan');
-
-
-$_SESSION['jan'] = $k1;
-
-
-}
-
-else if($i == 2)
-{
-  $k2 = mysql_result($run, $p, 'msg_feb');
-
-  
-   $_SESSION['feb'] = $k2;
-
-}
-
-
-
-else if($i == 3)
-{
- $k3 = mysql_result($run, $p, 'msg_mar');
-
-
-$_SESSION['mar'] = $k3;
-
-
-}
-
-else if($i == 4)
-{
-  $k4 = mysql_result($run, $p, 'msg_apr');
-
-    $_SESSION['apr'] = $k4;
-
-}
-
-
-if($i == 5)
-{
- $k5 = mysql_result($run, $p, 'msg_may');
-
-
-$_SESSION['may'] = $k5;
-
-
-}
-
-else if($i == 6)
-{
-  $k6 = mysql_result($run, $p, 'msg_jun');
-
-    
-    $_SESSION['jun'] = $k6;
-
-}
-
-
-if($i == 7)
-{
- $k7 = mysql_result($run, $p, 'msg_jul');
-
-$_SESSION['jul'] = $k7;
-
-
-}
-
-else if($i == 8)
-{
-  $k8 = mysql_result($run, $p, 'msg_aug');
-
-    
-    $_SESSION['aug'] = $k8;
-
-}
-else if($i == 9)
-{
-  $k9 = mysql_result($run, $p, 'msg_sep');
-
-        $_SESSION['sep'] = $k9;
-
-}
-else if($i == 10)
-{
-  $k10 = mysql_result($run, $p, 'msg_oct');
-
-      $_SESSION['oct'] = $k10;
-
-}
-else if($i == 11)
-{
-  $k11 = mysql_result($run, $p, 'msg_nov');
-
-    
-     $_SESSION['nov'] = $k11;
-
-}
-else if($i == 12)
-{
-  $k12 = mysql_result($run, $p, 'msg_dec');
-
-     $_SESSION['dec'] = $k12;
-
-}
-
-
-
-
-}
-
-
- 
-$_SESSION['k_tot'] = $k1+$k2+$k3+$k4+$k5+$k6+$k7+$k8+$k9+$k10+$k11+$k12;  
 
 
   ?>

@@ -1,6 +1,6 @@
 <?php
 
- require 'connect.php';
+  include 'connect.php';
 
  session_start();
 
@@ -90,7 +90,7 @@ header("Location:index.php");
           
           
             <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a  class="active"href="javascript:;" >
                           <i class="li_pen"></i>
                           <span> Contact</span>
                       </a>
@@ -98,7 +98,7 @@ header("Location:index.php");
                           <li><a  href="newcontact.php">New Contact</a></li>
              <li ><a  href="classselect.php">Update Contact Number</a></li>
 
-                    <li ><a  href="classselect2.php">Update Whole Contact</a></li>
+                    <li class="active"><a  href="classselect2.php">Update Whole Contact</a></li>
     
                  <li ><a  href="delete.php">Delete Contact</a></li>
                  

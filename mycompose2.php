@@ -1,13 +1,14 @@
 <?php
 
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
 
 if(!$_SESSION['id'])
 {
-header("Location:login_lit.php");
+header("Location:index.php");
 }
+
 
 	
 	
@@ -23,7 +24,6 @@ header("Location:login_lit.php");
     include 'layout.php';
 
    ?>
-   
     
 </head>
 <body>
@@ -104,7 +104,7 @@ header("Location:login_lit.php");
 								<form class="form-horizontal style-form" action ="usermain.php"  method="POST">
 									<div class="form-panel">
 									
-       <div style ="padding:10px;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Select Class</span></div></div></h4><br>
+       <div style ="padding:10px;box-shadow: 4px 4px 3px black;background-color:rgb(100,100,100);margin-left:-1.2%;margin-right:-1.2%;margin-top:-1%"><h4><div class="col-md-offset-5"><span style="color:white">Select Class</span></div></div></h4><br>
 									
 	                                      <br><br>
 									

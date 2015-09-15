@@ -1,6 +1,5 @@
 <?php
-
- require 'connect.php';
+ include 'connect.php';
 
  session_start();
 
@@ -407,6 +406,8 @@ header("Location:index.php");
               
                           ?> <br>
 
+
+
                         <div class="form-group">
                   
                         <label class="col-sm-5 col-sm-5 control-label"><h4>Exixsting Contact</h4> </label>
@@ -415,20 +416,21 @@ header("Location:index.php");
                                             
                 
                          <input type="text" class="form-control round-form" name= "contact" class="form-control"  value= "<?php 
+                         
+                         include 'connect.php';
 
                            if(isset($_POST['teacher']))
    
          {
-
-                                $teacher =$_POST['teacher'];
-
+ 
+                              
                             
-
+                                        $teacher =$_POST['teacher'];
 
                         
                           
                         
-                                $query="select `contact` from `staff` where `teacher` ='".$teacher."';";
+                                  $query="select `contact` from `staff` where `teacher` ='".$teacher."';";
 
                                 $query_run=mysql_query($query);
 
@@ -443,10 +445,10 @@ header("Location:index.php");
                         
                                   $contact =mysql_result($query_run,$i,'contact');
                                   
-                                   echo $contact;
+                                 
                               }
                           
-                            
+                              echo $contact;
                           
 
                     }         
@@ -588,4 +590,3 @@ header("Location:index.php");
       
   
   
-
