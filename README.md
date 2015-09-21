@@ -1,2 +1,2 @@
 # PAENT-ALERT-SYSTEM
-Its a system to give information to the parents/guardians about the school schedules,managent and other activities through text messages on thier cellphones.
+Its a system to give information to the parents/guardians about the school schedules,managent and other activities through text messages on their cellphones.
